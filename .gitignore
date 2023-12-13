@@ -1,0 +1,10 @@
+*.sqlite3
+db.sqlite3
+manage.py
+.vscode
+.w_venv
+w_venv
+.conf
+conf
+venv
+.venv
