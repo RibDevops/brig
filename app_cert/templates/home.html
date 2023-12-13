@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Sistema de Certificados Online{% endblock %}
+{% block content %}
+<!-- Security token -->
+{% csrf_token %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <header>
+                <h1>Bem-Vindo ao Sistema de Certificados Online</h1>
+            </header>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Descrição:</h2>
+            <p>O Sistema de Certificados Online é uma aplicação web desenvolvida para facilitar a geração e controle de certificados para alunos de uma organização. Este sistema permite que os administradores cadastrem alunos, associem certificados a eles e gerem certificados personalizados de forma rápida e eficiente.</p>
+
+            <h2>Funcionalidades do Sistema:</h2>
+            <ol>
+                <li><strong>Cadastro de Alunos:</strong> Os administradores podem cadastrar informações dos alunos, incluindo nome, CPF e outros dados relevantes.</li>
+                <li><strong>Associação de Certificados:</strong> É possível associar certificados específicos a cada aluno, indicando o tipo de certificado e outros detalhes.</li>
+                <li><strong>Geração de Certificados:</strong> O sistema permite a geração automática de certificados personalizados para os alunos cadastrados.</li>
+                <li><strong>Controle de Status:</strong> É possível acompanhar o status de cada certificado, indicando se foi gerado com sucesso ou se há algum problema.</li>
+                <li><strong>Visualização de Certificados:</strong> Os administradores podem visualizar e baixar os certificados gerados para cada aluno.</li>
+                <li><strong>Segurança de Dados:</strong> O sistema prioriza a segurança dos dados dos alunos e dos certificados, garantindo que apenas usuários autorizados tenham acesso às informações sensíveis.</li>
+            </ol>
+
+            <p>O Sistema de Certificados Online foi desenvolvido para tornar o processo de geração de certificados mais eficiente e organizado, proporcionando um ambiente seguro para o gerenciamento das informações dos alunos e a criação de certificados personalizados.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <footer>
+                <h5>Centro de Inteligência da Aeronáutica - CIAER</h5>
+            </footer>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

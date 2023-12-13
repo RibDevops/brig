@@ -1,0 +1,4281 @@
+[
+    {
+      "model": "app_cert.Forca_Orgao",
+      "pk": 1,
+      "fields": {
+        "forca_orgao": "FAB",
+        "forca_orgao_descricao": "Força Aérea Brasileira"
+      }
+    },
+    {
+      "model": "app_cert.Forca_Orgao",
+      "pk": 2,
+      "fields": {
+        "forca_orgao": "EB",
+        "forca_orgao_descricao": "Exército Brasileiro"
+      }
+    },
+    {
+      "model": "app_cert.Forca_Orgao",
+      "pk": 3,
+      "fields": {
+        "forca_orgao": "MB",
+        "forca_orgao_descricao": "Marinha do Brasil"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "1",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOAV",
+        "quadro_descricao": "QOAV"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "2",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOINT",
+        "quadro_descricao": "QOINT"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "3",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOINF",
+        "quadro_descricao": "QOINF"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "4",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOENG",
+        "quadro_descricao": "QOENG"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "5",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOMED",
+        "quadro_descricao": "QOMED"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "6",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QODENT",
+        "quadro_descricao": "QODENT"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "7",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOFARM",
+        "quadro_descricao": "QOFARM"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "9",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOAP",
+        "quadro_descricao": "QOAP"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "10",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QSCON",
+        "quadro_descricao": "QSCON"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "11",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QTA (*)",
+        "quadro_descricao": "QTA (*)"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "12",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOECTA",
+        "quadro_descricao": "QOECTA"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "13",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOEAV",
+        "quadro_descricao": "QOEAV"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "14",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOEFOT",
+        "quadro_descricao": "QOEFOT"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "15",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOEMET",
+        "quadro_descricao": "QOEMET"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "16",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOESUP",
+        "quadro_descricao": "QOESUP"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "17",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOEARM",
+        "quadro_descricao": "QOEARM"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "18",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOCON",
+        "quadro_descricao": "QOCON"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "19",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOE",
+        "quadro_descricao": "QOE"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "20",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOECOM",
+        "quadro_descricao": "QOECOM"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "21",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QTA",
+        "quadro_descricao": "QTA"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "22",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QFO",
+        "quadro_descricao": "QFO"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "23",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QOEA",
+        "quadro_descricao": "QOEA"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "24",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QFG",
+        "quadro_descricao": "QFG"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "25",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QCB",
+        "quadro_descricao": "QCB"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "26",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QESA",
+        "quadro_descricao": "QUESA"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "27",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QSS",
+        "quadro_descricao": "QSS"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "28",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QCOA",
+        "quadro_descricao": "QCOA"
+      }
+    },
+    {
+      "model": "app_cert.Quadro",
+      "pk": "29",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "quadro": "QSD",
+        "quadro_descricao": "QSD"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "1",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "1",
+        "posto": "MA",
+        "posto_descricao": "Marechal do Ar"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "2",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "2",
+        "posto": "TB",
+        "posto_descricao": "Tenente Brigadeiro"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "3",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "3",
+        "posto": "MB",
+        "posto_descricao": "Major Brigadeiro"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "4",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "4",
+        "posto": "BR",
+        "posto_descricao": "Brigadeiro"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "5",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "5",
+        "posto": "CL",
+        "posto_descricao": "Coronel"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "6",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "6",
+        "posto": "TC",
+        "posto_descricao": "Tenente Coronel"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "7",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "7",
+        "posto": "MJ",
+        "posto_descricao": "Major"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "8",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "8",
+        "posto": "CP",
+        "posto_descricao": "Capitão"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "9",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "9",
+        "posto": "1T",
+        "posto_descricao": "1º Tenente"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "10",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "10",
+        "posto": "2T",
+        "posto_descricao": "2º Tenente"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "11",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "11",
+        "posto": "AP",
+        "posto_descricao": "Aspirante a Oficial"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "12",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "12",
+        "posto": "SO",
+        "posto_descricao": "Suboficial"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "13",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "13",
+        "posto": "1S",
+        "posto_descricao": "1º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "14",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "14",
+        "posto": "2S",
+        "posto_descricao": "2º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "15",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "15",
+        "posto": "3S",
+        "posto_descricao": "3º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "16",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "16",
+        "posto": "CB",
+        "posto_descricao": "Cabo"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "17",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "17",
+        "posto": "TM",
+        "posto_descricao": "Taifeiro Mor"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "18",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "18",
+        "posto": "S1",
+        "posto_descricao": "Soldado de Primeira Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "19",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "19",
+        "posto": "T1",
+        "posto_descricao": "Taifeiro de Primeira Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "20",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "20",
+        "posto": "S2",
+        "posto_descricao": "Soldado de Segunda Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "21",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "hierarquia": "21",
+        "posto": "T2",
+        "posto_descricao": "Taifeiro de Segunda Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "22",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "1",
+        "posto": "MA",
+        "posto_descricao": "Marechal"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "23",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "2",
+        "posto": "GE",
+        "posto_descricao": "General de Exército"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "24",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "3",
+        "posto": "GD",
+        "posto_descricao": "General de Divisão"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "25",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "4",
+        "posto": "GB",
+        "posto_descricao": "General de Brigada"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "26",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "5",
+        "posto": "CL",
+        "posto_descricao": "Coronel"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "27",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "6",
+        "posto": "TC",
+        "posto_descricao": "Tenente Coronel"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "28",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "7",
+        "posto": "MJ",
+        "posto_descricao": "Major"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "29",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "8",
+        "posto": "CP",
+        "posto_descricao": "Capitão"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "30",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "9",
+        "posto": "1T",
+        "posto_descricao": "1º Tenente"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "31",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "10",
+        "posto": "2T",
+        "posto_descricao": "2º Tenente"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "32",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "11",
+        "posto": "AP",
+        "posto_descricao": "Aspirante a Oficial"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "33",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "12",
+        "posto": "SO",
+        "posto_descricao": "Suboficial"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "34",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "13",
+        "posto": "1S",
+        "posto_descricao": "1º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "35",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "14",
+        "posto": "2S",
+        "posto_descricao": "2º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "36",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "15",
+        "posto": "3S",
+        "posto_descricao": "3º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "37",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "16",
+        "posto": "CB",
+        "posto_descricao": "Cabo"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "38",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "17",
+        "posto": "TM",
+        "posto_descricao": "Taifeiro Mor"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "39",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "18",
+        "posto": "S1",
+        "posto_descricao": "Soldado de Primeira Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "40",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "19",
+        "posto": "T1",
+        "posto_descricao": "Taifeiro de Primeira Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "41",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "20",
+        "posto": "S2",
+        "posto_descricao": "Soldado de Segunda Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "42",
+      "fields": {
+        "fk_forca_orgao": "2",
+        "hierarquia": "21",
+        "posto": "T2",
+        "posto_descricao": "Taifeiro de Segunda Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "43",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "1",
+        "posto": "Alte",
+        "posto_descricao": "Almirante"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "44",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "2",
+        "posto": "AE",
+        "posto_descricao": "Almirante de Esquadra"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "45",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "3",
+        "posto": "VA",
+        "posto_descricao": "Vice Almirante"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "46",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "4",
+        "posto": "CA",
+        "posto_descricao": "Contra Almirante"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "47",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "5",
+        "posto": "CMG",
+        "posto_descricao": "Capitão de Mar e Guerra"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "48",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "6",
+        "posto": "CF",
+        "posto_descricao": "Capitão de Fragata"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "49",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "7",
+        "posto": "CC",
+        "posto_descricao": "Capitão de Corveta"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "50",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "8",
+        "posto": "CT",
+        "posto_descricao": "Capitão Tenente"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "51",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "9",
+        "posto": "1T",
+        "posto_descricao": "1º Tenente"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "52",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "10",
+        "posto": "2T",
+        "posto_descricao": "2º Tenente"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "53",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "11",
+        "posto": "Asp",
+        "posto_descricao": "Aspirante"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "54",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "12",
+        "posto": "SO",
+        "posto_descricao": "Suboficial"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "55",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "13",
+        "posto": "1S",
+        "posto_descricao": "1º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "56",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "14",
+        "posto": "2S",
+        "posto_descricao": "2º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "57",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "15",
+        "posto": "3S",
+        "posto_descricao": "3º Sargento"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "58",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "16",
+        "posto": "CB",
+        "posto_descricao": "Cabo"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "59",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "17",
+        "posto": "TM",
+        "posto_descricao": "Taifeiro Mor"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "60",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "18",
+        "posto": "S1",
+        "posto_descricao": "Soldado de Primeira Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "61",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "19",
+        "posto": "T1",
+        "posto_descricao": "Taifeiro de Primeira Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "62",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "20",
+        "posto": "S2",
+        "posto_descricao": "Soldado de Segunda Classe"
+      }
+    },
+    {
+      "model": "app_cert.Posto",
+      "pk": "63",
+      "fields": {
+        "fk_forca_orgao": "3",
+        "hierarquia": "21",
+        "posto": "T2",
+        "posto_descricao": "Taifeiro de Segunda Classe"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "1",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ADE",
+        "especialidade_descricao": "ADE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "2",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ADM",
+        "especialidade_descricao": "ADM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "3",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AER",
+        "especialidade_descricao": "AER"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "4",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AES",
+        "especialidade_descricao": "AES"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "5",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AEV",
+        "especialidade_descricao": "AEV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "6",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AGC",
+        "especialidade_descricao": "AGC"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "7",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AGM",
+        "especialidade_descricao": "AGM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "8",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AGR",
+        "especialidade_descricao": "AGR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "9",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AL",
+        "especialidade_descricao": "AL"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "10",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ALG",
+        "especialidade_descricao": "ALG"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "11",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ANE",
+        "especialidade_descricao": "ANE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "12",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ANP",
+        "especialidade_descricao": "ANP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "13",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ANS",
+        "especialidade_descricao": "ANS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "14",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ANV",
+        "especialidade_descricao": "ANV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "15",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AQT",
+        "especialidade_descricao": "AQT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "16",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AQV",
+        "especialidade_descricao": "AQV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "17",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ARM",
+        "especialidade_descricao": "ARM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "18",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ASS",
+        "especialidade_descricao": "ASS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "19",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "AV",
+        "especialidade_descricao": "AV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "20",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BBA",
+        "especialidade_descricao": "BBA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "21",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BCO",
+        "especialidade_descricao": "BCO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "22",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BCT",
+        "especialidade_descricao": "BCT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "23",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BEA",
+        "especialidade_descricao": "BEA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "24",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BEI",
+        "especialidade_descricao": "BEI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "25",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BEP",
+        "especialidade_descricao": "BEP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "26",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BET",
+        "especialidade_descricao": "BET"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "27",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BEV",
+        "especialidade_descricao": "BEV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "28",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BFT",
+        "especialidade_descricao": "BFT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "29",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BIB",
+        "especialidade_descricao": "BIB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "30",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BIO",
+        "especialidade_descricao": "BIO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "31",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BLG",
+        "especialidade_descricao": "BLG"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "32",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BLM",
+        "especialidade_descricao": "BLM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "33",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BMA",
+        "especialidade_descricao": "BMA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "34",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BMB",
+        "especialidade_descricao": "BMB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "35",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BML",
+        "especialidade_descricao": "BML"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "36",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BMN",
+        "especialidade_descricao": "BMN"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "37",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BMT",
+        "especialidade_descricao": "BMT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "38",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BO",
+        "especialidade_descricao": "BO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "39",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BSP",
+        "especialidade_descricao": "BSP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "40",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "BST",
+        "especialidade_descricao": "BST"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "41",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CAC",
+        "especialidade_descricao": "CAC"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "42",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CAP",
+        "especialidade_descricao": "CAP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "43",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CAR",
+        "especialidade_descricao": "CAR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "44",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CAT",
+        "especialidade_descricao": "CAT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "45",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CAU",
+        "especialidade_descricao": "CAU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "46",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CBM",
+        "especialidade_descricao": "CBM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "47",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CCA",
+        "especialidade_descricao": "CCA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "48",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CCO",
+        "especialidade_descricao": "CCO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "49",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CCP",
+        "especialidade_descricao": "CCP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "50",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CCT",
+        "especialidade_descricao": "CCT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "51",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CGE",
+        "especialidade_descricao": "CGE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "52",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CGO",
+        "especialidade_descricao": "CGO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "53",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CGR",
+        "especialidade_descricao": "CGR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "54",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CIV",
+        "especialidade_descricao": "CIV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "55",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CLI",
+        "especialidade_descricao": "CLI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "56",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CLM",
+        "especialidade_descricao": "CLM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "57",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CMP",
+        "especialidade_descricao": "CMP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "58",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "COM",
+        "especialidade_descricao": "COM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "59",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CPE",
+        "especialidade_descricao": "CPE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "60",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CPS",
+        "especialidade_descricao": "CPS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "61",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CSO",
+        "especialidade_descricao": "CSO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "62",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CTA",
+        "especialidade_descricao": "CTA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "63",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "CVP",
+        "especialidade_descricao": "CVP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "64",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "DENT",
+        "especialidade_descricao": "DENT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "65",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "DER",
+        "especialidade_descricao": "DER"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "66",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "DIR",
+        "especialidade_descricao": "DIR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "67",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "DNT",
+        "especialidade_descricao": "DNT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "68",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "DT",
+        "especialidade_descricao": "DT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "69",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ECO",
+        "especialidade_descricao": "ECO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "70",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "EF",
+        "especialidade_descricao": "EF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "71",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "EFI",
+        "especialidade_descricao": "EFI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "72",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ELE",
+        "especialidade_descricao": "ELE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "73",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ELN",
+        "especialidade_descricao": "ELN"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "74",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ELT",
+        "especialidade_descricao": "ELT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "75",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "END",
+        "especialidade_descricao": "END"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "76",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ENF",
+        "especialidade_descricao": "ENF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "77",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ENG",
+        "especialidade_descricao": "ENG"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "78",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ENT",
+        "especialidade_descricao": "ENT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "79",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "EST",
+        "especialidade_descricao": "EST"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "80",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ETM",
+        "especialidade_descricao": "ETM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "81",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "EVG",
+        "especialidade_descricao": "EVG"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "82",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FAR",
+        "especialidade_descricao": "FAR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "83",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FARM",
+        "especialidade_descricao": "FARM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "84",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FCO",
+        "especialidade_descricao": "FCO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "85",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FI",
+        "especialidade_descricao": "FI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "86",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FIS",
+        "especialidade_descricao": "FIS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "87",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FON",
+        "especialidade_descricao": "FON"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "88",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FOT",
+        "especialidade_descricao": "FOT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "89",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FSU",
+        "especialidade_descricao": "FSU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "90",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "FT",
+        "especialidade_descricao": "FT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "91",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "GDS",
+        "especialidade_descricao": "GDS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "92",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "GEN",
+        "especialidade_descricao": "GEN"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "93",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "GEO",
+        "especialidade_descricao": "GEO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "94",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "GER",
+        "especialidade_descricao": "GER"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "95",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "GOB",
+        "especialidade_descricao": "GOB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "96",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "HEM",
+        "especialidade_descricao": "HEM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "97",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "HET",
+        "especialidade_descricao": "HET"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "98",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "HIS",
+        "especialidade_descricao": "HIS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "99",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "HOS",
+        "especialidade_descricao": "HOS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "100",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "IES",
+        "especialidade_descricao": "IES"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "101",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "IFM",
+        "especialidade_descricao": "IFM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "102",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "IFT",
+        "especialidade_descricao": "IFT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "103",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "IMP",
+        "especialidade_descricao": "IMP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "104",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "IND",
+        "especialidade_descricao": "IND"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "105",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "INF",
+        "especialidade_descricao": "INF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "106",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "INF/R2",
+        "especialidade_descricao": "INF/R2"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "107",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ITS",
+        "especialidade_descricao": "ITS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "108",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "JOR",
+        "especialidade_descricao": "JOR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "109",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "LT",
+        "especialidade_descricao": "LT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "110",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MAM",
+        "especialidade_descricao": "MAM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "111",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MAS",
+        "especialidade_descricao": "MAS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "112",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MBM",
+        "especialidade_descricao": "MBM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "113",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MCS",
+        "especialidade_descricao": "MCS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "114",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MDM",
+        "especialidade_descricao": "MDM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "115",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MDR",
+        "especialidade_descricao": "MDR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "116",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MDS",
+        "especialidade_descricao": "MDS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "117",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ME",
+        "especialidade_descricao": "ME"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "118",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MEC",
+        "especialidade_descricao": "MEC"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "119",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MED",
+        "especialidade_descricao": "MED"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "120",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MEM",
+        "especialidade_descricao": "MEM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "121",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MET",
+        "especialidade_descricao": "MET"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "122",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MFM",
+        "especialidade_descricao": "MFM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "123",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MFS",
+        "especialidade_descricao": "MFS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "124",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MGM",
+        "especialidade_descricao": "MGM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "125",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MGS",
+        "especialidade_descricao": "MGS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "126",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MHM",
+        "especialidade_descricao": "MHM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "127",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MHS",
+        "especialidade_descricao": "MHS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "128",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MIM",
+        "especialidade_descricao": "MIM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "129",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MIS",
+        "especialidade_descricao": "MIS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "130",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MLE",
+        "especialidade_descricao": "MLE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "131",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MLI",
+        "especialidade_descricao": "MLI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "132",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MLM",
+        "especialidade_descricao": "MLM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "133",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MLS",
+        "especialidade_descricao": "MLS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "134",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MMA",
+        "especialidade_descricao": "MMA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "135",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MMM",
+        "especialidade_descricao": "MMM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "136",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MMS",
+        "especialidade_descricao": "MMS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "137",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MNM",
+        "especialidade_descricao": "MNM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "138",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MNS",
+        "especialidade_descricao": "MNS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "139",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MNU",
+        "especialidade_descricao": "MNU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "140",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MOM",
+        "especialidade_descricao": "MOM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "141",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MOS",
+        "especialidade_descricao": "MOS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "142",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MQM",
+        "especialidade_descricao": "MQM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "143",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MQS",
+        "especialidade_descricao": "MQS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "144",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MRI",
+        "especialidade_descricao": "MRI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "145",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MRM",
+        "especialidade_descricao": "MRM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "146",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MRS",
+        "especialidade_descricao": "MRS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "147",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MSM",
+        "especialidade_descricao": "MSM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "148",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MSO",
+        "especialidade_descricao": "MSO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "149",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MSS",
+        "especialidade_descricao": "MSS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "150",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MTB",
+        "especialidade_descricao": "MTB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "151",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MTL",
+        "especialidade_descricao": "MTL"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "152",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MTS",
+        "especialidade_descricao": "MTS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "153",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MUG",
+        "especialidade_descricao": "MUG"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "154",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MUM",
+        "especialidade_descricao": "MUM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "155",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MUS",
+        "especialidade_descricao": "MUS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "156",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "MXS",
+        "especialidade_descricao": "MXS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "157",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "Não Declar",
+        "especialidade_descricao": "Não Declarada"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "158",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "NE",
+        "especialidade_descricao": "NE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "159",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "NEC",
+        "especialidade_descricao": "NEC"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "160",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "NEF",
+        "especialidade_descricao": "NEF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "161",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "NER",
+        "especialidade_descricao": "NER"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "162",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "NEU",
+        "especialidade_descricao": "NEU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "163",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "NTE",
+        "especialidade_descricao": "NTE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "164",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "NUT",
+        "especialidade_descricao": "NUT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "165",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "O&M",
+        "especialidade_descricao": "O&M"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "166",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "OFT",
+        "especialidade_descricao": "OFT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "167",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ONC",
+        "especialidade_descricao": "ONC"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "168",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ONE",
+        "especialidade_descricao": "ONE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "169",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "OPE",
+        "especialidade_descricao": "OPE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "170",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ORD",
+        "especialidade_descricao": "ORD"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "171",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ORL",
+        "especialidade_descricao": "ORL"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "172",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ORT",
+        "especialidade_descricao": "ORT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "173",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PA",
+        "especialidade_descricao": "PA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "174",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PAS",
+        "especialidade_descricao": "PAS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "175",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PCL",
+        "especialidade_descricao": "PCL"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "176",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PDI",
+        "especialidade_descricao": "PDI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "177",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PDN",
+        "especialidade_descricao": "PDN"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "178",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PED",
+        "especialidade_descricao": "PED"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "179",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PER",
+        "especialidade_descricao": "PER"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "180",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PI",
+        "especialidade_descricao": "PI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "181",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PNE",
+        "especialidade_descricao": "PNE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "182",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "POE",
+        "especialidade_descricao": "POE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "183",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PRO",
+        "especialidade_descricao": "PRO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "184",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PSC",
+        "especialidade_descricao": "PSC"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "185",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PSE",
+        "especialidade_descricao": "PSE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "186",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PSI",
+        "especialidade_descricao": "PSI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "187",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PSL",
+        "especialidade_descricao": "PSL"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "188",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PSO",
+        "especialidade_descricao": "PSO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "189",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "PUP",
+        "especialidade_descricao": "PUP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "190",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "QUI",
+        "especialidade_descricao": "QUI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "191",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "RAD",
+        "especialidade_descricao": "RAD"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "192",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "RDE",
+        "especialidade_descricao": "RDE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "193",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "REP",
+        "especialidade_descricao": "REP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "194",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "REU",
+        "especialidade_descricao": "REU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "195",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ROI",
+        "especialidade_descricao": "ROI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "196",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "RT",
+        "especialidade_descricao": "RT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "197",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SAD",
+        "especialidade_descricao": "SAD"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "198",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SAF",
+        "especialidade_descricao": "SAF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "199",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SAI",
+        "especialidade_descricao": "SAI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "200",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SAN",
+        "especialidade_descricao": "SAN"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "201",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SAP",
+        "especialidade_descricao": "SAP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "202",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SAR",
+        "especialidade_descricao": "SAR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "203",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SAU",
+        "especialidade_descricao": "SAU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "204",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SBA",
+        "especialidade_descricao": "SBA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "205",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SBO",
+        "especialidade_descricao": "SBO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "206",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SCF",
+        "especialidade_descricao": "SCF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "207",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SCO",
+        "especialidade_descricao": "SCO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "208",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SDE",
+        "especialidade_descricao": "SDE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "209",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SE",
+        "especialidade_descricao": "SE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "210",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SEF",
+        "especialidade_descricao": "SEF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "211",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SEL",
+        "especialidade_descricao": "SEL"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "212",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SEM",
+        "especialidade_descricao": "SEM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "213",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SGS",
+        "especialidade_descricao": "SGS"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "214",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SH",
+        "especialidade_descricao": "SH"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "215",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SIA",
+        "especialidade_descricao": "SIA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "216",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SIN",
+        "especialidade_descricao": "SIN"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "217",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SJU",
+        "especialidade_descricao": "SJU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "218",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SLB",
+        "especialidade_descricao": "SLB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "219",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SML",
+        "especialidade_descricao": "SML"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "220",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SMU",
+        "especialidade_descricao": "SMU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "221",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SNE",
+        "especialidade_descricao": "SNE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "222",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SOB",
+        "especialidade_descricao": "SOB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "223",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SPV",
+        "especialidade_descricao": "SPV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "224",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SRD",
+        "especialidade_descricao": "SRD"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "225",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SSA",
+        "especialidade_descricao": "SSA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "226",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SSG",
+        "especialidade_descricao": "SSG"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "227",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SSO",
+        "especialidade_descricao": "SSO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "228",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SST",
+        "especialidade_descricao": "SST"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "229",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "STA",
+        "especialidade_descricao": "STA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "230",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "STB",
+        "especialidade_descricao": "STB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "231",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "STO",
+        "especialidade_descricao": "STO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "232",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "STP",
+        "especialidade_descricao": "STP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "233",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SUP",
+        "especialidade_descricao": "SUP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "234",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SVA",
+        "especialidade_descricao": "SVA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "235",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SVE",
+        "especialidade_descricao": "SVE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "236",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SVH",
+        "especialidade_descricao": "SVH"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "237",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SVI",
+        "especialidade_descricao": "SVI"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "238",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "SVM",
+        "especialidade_descricao": "SVM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "239",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TAD",
+        "especialidade_descricao": "TAD"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "240",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TAF",
+        "especialidade_descricao": "TAF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "241",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TAR",
+        "especialidade_descricao": "TAR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "242",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TBA",
+        "especialidade_descricao": "TBA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "243",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TCM",
+        "especialidade_descricao": "TCM"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "244",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TCO",
+        "especialidade_descricao": "TCO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "245",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TEE",
+        "especialidade_descricao": "TEE"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "246",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TEF",
+        "especialidade_descricao": "TEF"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "247",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TEL",
+        "especialidade_descricao": "TEL"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "248",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TES",
+        "especialidade_descricao": "TES"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "249",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TET",
+        "especialidade_descricao": "TET"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "250",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TIN",
+        "especialidade_descricao": "TIN"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "251",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TLB",
+        "especialidade_descricao": "TLB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "252",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TMA",
+        "especialidade_descricao": "TMA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "253",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TMT",
+        "especialidade_descricao": "TMT"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "254",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TMU",
+        "especialidade_descricao": "TMU"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "255",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TOB",
+        "especialidade_descricao": "TOB"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "256",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TOC",
+        "especialidade_descricao": "TOC"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "257",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TPV",
+        "especialidade_descricao": "TPV"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "258",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TRD",
+        "especialidade_descricao": "TRD"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "259",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TRR",
+        "especialidade_descricao": "TRR"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "260",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TSA",
+        "especialidade_descricao": "TSA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "261",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TTP",
+        "especialidade_descricao": "TTP"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "262",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "TVA",
+        "especialidade_descricao": "TVA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "263",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "URO",
+        "especialidade_descricao": "URO"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "264",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "VA",
+        "especialidade_descricao": "VA"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "265",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "VET",
+        "especialidade_descricao": "VET"
+      }
+    },
+    {
+      "model": "app_cert.Especialidade",
+      "pk": "266",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "especialidade": "ZOT",
+        "especialidade_descricao": "ZOT"
+      }
+    },
+    {
+      "model": "app_cert.Ano",
+      "pk": "1",
+      "fields": {
+        "ano": "2023"
+      }
+    },
+    {
+      "model": "app_cert.Status",
+      "pk": "1",
+      "fields": {
+        "status_descricao": "CURSANDO"
+      }
+    },
+    {
+      "model": "app_cert.Status",
+      "pk": "2",
+      "fields": {
+        "status_descricao": "APROVADO"
+      }
+    },
+    {
+      "model": "app_cert.Status",
+      "pk": "3",
+      "fields": {
+        "status_descricao": "REPROVADO"
+      }
+    },
+    {
+      "model": "app_cert.Status",
+      "pk": "4",
+      "fields": {
+        "status_descricao": "EXCLUÍDO"
+      }
+    },
+    {
+      "model": "app_cert.Tipo",
+      "pk": "1",
+      "fields": {
+        "tipo": "EAD"
+      }
+    },
+    {
+      "model": "app_cert.Tipo",
+      "pk": "2",
+      "fields": {
+        "tipo": "PRESENCIAL"
+      }
+    },
+    {
+      "model": "app_cert.Tipo",
+      "pk": "3",
+      "fields": {
+        "tipo": "EAD / PRESENCIAL"
+      }
+    },
+    {
+      "model": "app_cert.In_Ex",
+      "pk": "1",
+      "fields": {
+        "in_ex": "INTERNO"
+      }
+    },
+    {
+      "model": "app_cert.In_Ex",
+      "pk": "2",
+      "fields": {
+        "in_ex": "EXTERNO"
+      }
+    },
+    {
+      "model": "app_cert.Curso",
+      "pk": "1",
+      "fields": {
+        "curso_sigla": "CBI",
+        "curso_descricao": "Curso Básico de Inteligência"
+      }
+    },
+    {
+      "model": "app_cert.Curso",
+      "pk": "2",
+      "fields": {
+        "curso_sigla": "CBO",
+        "curso_descricao": "Curso Básico de Operações"
+      }
+    },
+    {
+      "model": "app_cert.Tratamento",
+      "pk": "1",
+      "fields": {
+        "tratamento": "o"
+      }
+    },
+    {
+      "model": "app_cert.Tratamento",
+      "pk": "2",
+      "fields": {
+        "tratamento": "a"
+      }
+    },
+    {
+      "model": "app_cert.Textos",
+      "pk": "1",
+      "fields": {
+        "texto": "CERTIFICADO"
+      }
+    },
+    {
+      "model": "app_cert.Textos",
+      "pk": "2",
+      "fields": {
+        "texto": "HONRA AO MÉRITO"
+      }
+    },
+    
+    {
+      "model": "app_cert.Textos",
+      "pk": "3",
+      "fields": {
+        "texto": "O Centro de Inteligência da Aeronáutica parabeniza"
+      }
+    },
+    {
+      "model": "app_cert.Textos",
+      "pk": "4",
+      "fields": {
+        "texto": "Certifico que"
+      }
+    },
+    {
+      "model": "app_cert.Textos",
+      "pk": "5",
+      "fields": {
+        "texto": "O Centro de Inteligência da Aeronáutica confere o presente certificado"
+      }
+    },
+    {
+      "model": "app_cert.Textos",
+      "pk": "6",
+      "fields": {
+        "texto": "concluiu, com aproveitamento, o "
+      }
+    },
+    {
+      "model": "app_cert.Imagem",
+      "pk": "1",
+      "fields": {
+        "imagem": "Frente",
+        "imagem_desc": "Fundo da frente s/ ass",
+        "imagem_img": "2023/10/frente_l_2nvA1Os.png",
+        "imagem_tipo": "1"
+
+      }
+    },
+    {
+      "model": "app_cert.Imagem",
+      "pk": "2",
+      "fields": {
+        "imagem": "Fundo",
+        "imagem_desc": "Fundo do verso ",
+        "imagem_img": "2023/10/verso_KOHvyqS.jpg",
+        "imagem_tipo": "2"
+      }
+    },
+    {
+      "model": "app_cert.Imagem",
+      "pk": "3",
+      "fields": {
+        "imagem": "Brig",
+        "imagem_desc": "Chefe",
+        "imagem_img": "2023/10/chefe_YlhJFdX.png",
+        "imagem_tipo": "3"
+      }
+    },
+    {
+      "model": "app_cert.Imagem",
+      "pk": "4",
+      "fields": {
+        "imagem": "Tx",
+        "imagem_desc": "DPL",
+        "imagem_img": "2023/10/dpl_eiFeAIb.png",
+        "imagem_tipo": "4"
+      }
+    },
+    {
+      "model": "app_cert.ImagemTipo",
+      "pk": "1",
+      "fields": {
+        "imagemTipo": "FRENTE"
+      }
+    },
+    {
+      "model": "app_cert.ImagemTipo",
+      "pk": "2",
+      "fields": {
+        "imagemTipo": "VERSO"
+      }
+    },
+    {
+      "model": "app_cert.ImagemTipo",
+      "pk": "3",
+      "fields": {
+        "imagemTipo": "CH"
+      }
+    },
+    {
+      "model": "app_cert.ImagemTipo",
+      "pk": "4",
+      "fields": {
+        "imagemTipo": "DIV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "1",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "I COMAR",
+        "om_descricao": "I COMAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "2",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "II COMAR",
+        "om_descricao": "II COMAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "3",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "III COMAR",
+        "om_descricao": "III COMAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "4",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "IV COMAR",
+        "om_descricao": "IV COMAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "5",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "V COMAR",
+        "om_descricao": "V COMAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "6",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "VI COMAR",
+        "om_descricao": "VI COMAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "7",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "VII COMAR",
+        "om_descricao": "VII COMAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "8",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "1 GDA",
+        "om_descricao": "1 GDA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "9",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "1\u00aa BDAAE",
+        "om_descricao": "1\u00aa BDAAE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "10",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "1\u00ba ETA",
+        "om_descricao": "1\u00ba ETA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "11",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "1\u00ba GTT",
+        "om_descricao": "1\u00ba GTT"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "12",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "1\u00ba/9\u00ba GAV",
+        "om_descricao": "1\u00ba/9\u00ba GAV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "13",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "2\u00ba GDAAE",
+        "om_descricao": "2\u00ba GDAAE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "14",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "3\u00ba GDAAE",
+        "om_descricao": "3\u00ba GDAAE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "15",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "3\u00ba/7\u00ba GAV",
+        "om_descricao": "3\u00ba/7\u00ba GAV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "16",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BAAN",
+        "om_descricao": "BAAN"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "17",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BABE",
+        "om_descricao": "BABE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "18",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BABR",
+        "om_descricao": "BABR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "19",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BAFL",
+        "om_descricao": "BAFL"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "20",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BAMN",
+        "om_descricao": "BAMN"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "21",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BANT",
+        "om_descricao": "BANT"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "22",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BAPV",
+        "om_descricao": "BAPV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "23",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BASM",
+        "om_descricao": "BASM"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "24",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BASP",
+        "om_descricao": "BASP"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "25",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "BAST",
+        "om_descricao": "BAST"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "26",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CAE",
+        "om_descricao": "CAE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "27",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CCA RJ",
+        "om_descricao": "CCA RJ"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "28",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CCA-BR",
+        "om_descricao": "CCA-BR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "29",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CCABR",
+        "om_descricao": "CCABR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "30",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CENCIAR",
+        "om_descricao": "CENCIAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "31",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CGABEG",
+        "om_descricao": "CGABEG"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "32",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CIAAR",
+        "om_descricao": "CIAAR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "33",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CIAER",
+        "om_descricao": "CIAER"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "34",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CIM - MB",
+        "om_descricao": "CIM - MB"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "35",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CIM-MB",
+        "om_descricao": "CIM-MB"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "36",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CINDACTA II",
+        "om_descricao": "CINDACTA II"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "37",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CISCEA",
+        "om_descricao": "CISCEA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "38",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CLA",
+        "om_descricao": "CLA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "39",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "COMAE",
+        "om_descricao": "COMAE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "40",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "COMPREP",
+        "om_descricao": "COMPREP"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "41",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CPBV",
+        "om_descricao": "CPBV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "42",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "CRCEA-SE",
+        "om_descricao": "CRCEA-SE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "43",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DCTA",
+        "om_descricao": "DCTA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "44",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DECEA",
+        "om_descricao": "DECEA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "45",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DIRAD",
+        "om_descricao": "DIRAD"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "46",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DT-INFRA MN",
+        "om_descricao": "DT-INFRA MN"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "47",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DTCEAGW",
+        "om_descricao": "DTCEAGW"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "48",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DTCEASC",
+        "om_descricao": "DTCEASC"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "49",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DTCEASJ",
+        "om_descricao": "DTCEASJ"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "50",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DTCEAST",
+        "om_descricao": "DTCEAST"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "51",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "DTI",
+        "om_descricao": "DTI"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "52",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "EMAER",
+        "om_descricao": "EMAER"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "53",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "FAYS",
+        "om_descricao": "FAYS"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "54",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GABAER",
+        "om_descricao": "GABAER"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "55",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GAP SP",
+        "om_descricao": "GAP SP"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "56",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GAP-AF",
+        "om_descricao": "GAP-AF"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "57",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GAP-BR",
+        "om_descricao": "GAP-BR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "58",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GAP-CO",
+        "om_descricao": "GAP-CO"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "59",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GAP-DF",
+        "om_descricao": "GAP-DF"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "60",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GAP-GL",
+        "om_descricao": "GAP-GL"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "61",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GAP-LS",
+        "om_descricao": "GAP-LS"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "62",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GEIV",
+        "om_descricao": "GEIV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "63",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GLOG MN",
+        "om_descricao": "GLOG MN"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "64",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GOP-SM",
+        "om_descricao": "GOP-SM"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "65",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GSAU-FZ",
+        "om_descricao": "GSAU-FZ"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "66",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GSD-BE",
+        "om_descricao": "GSD-BE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "67",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GSD-BR",
+        "om_descricao": "GSD-BR"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "68",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GSD-GL",
+        "om_descricao": "GSD-GL"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "69",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GSD-SM",
+        "om_descricao": "GSD-SM"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "70",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "GTE",
+        "om_descricao": "GTE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "71",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "HARF",
+        "om_descricao": "HARF"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "72",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "HFAB",
+        "om_descricao": "HFAB"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "73",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "IAOP",
+        "om_descricao": "IAOP"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "74",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "ICA",
+        "om_descricao": "ICA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "75",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "IEAV",
+        "om_descricao": "IEAV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "76",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "ILA",
+        "om_descricao": "ILA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "77",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "IPEV",
+        "om_descricao": "IPEV"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "78",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "MDEFESA",
+        "om_descricao": "MDEFESA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "79",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "MINIST\u00c9RIO P\u00daBLICO FEDERAL DO DF",
+        "om_descricao": "MINIST\u00c9RIO P\u00daBLICO FEDERAL DO DF"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "80",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "PABE",
+        "om_descricao": "PABE"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "81",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "PAGL",
+        "om_descricao": "PAGL"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "82",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "PASJ",
+        "om_descricao": "PASJ"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "83",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "POL\u00cdCIA MILITAR DE MINAS",
+        "om_descricao": "POL\u00cdCIA MILITAR DE MINAS"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "84",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "SEFA",
+        "om_descricao": "SEFA"
+      }
+    },
+    {
+      "model": "app_cert.Om",
+      "pk": "85",
+      "fields": {
+        "fk_forca_orgao": "1",
+        "om": "UNIFA",
+        "om_descricao": "UNIFA"
+      }
+    }
+  ]
+
+  

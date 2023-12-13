@@ -1,0 +1,185 @@
+{% load static %}
+<html>
+<head>
+<style>
+    @page {
+        size: a4 landscape;
+        background-image: url("media/{{ frente }}");
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 90pt; width: 660pt; top: 165pt; 
+            /* -pdf-frame-border: 1; */
+        }
+       
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            top: 480pt;
+            left: 90pt;
+            width: 660pt;
+            /* -pdf-frame-border: 1; */
+        }
+
+        @frame footer_img {           /* Another static Frame */
+            -pdf-frame-content: footer_img_content;
+            top: 375pt;
+            left: 90pt;
+            width: 660pt;
+            /* -pdf-frame-border: 1; */
+        }
+    }
+    @page page2 {
+        size: a4 landscape;
+        background-image: url("media/{{ verso }}");
+        @frame content_frame {
+            left: 85pt;
+            width: 668pt;
+            top: 10pt;
+            height: 500pt;
+            /* -pdf-frame-border: 1; for debugging the layout */
+        }
+
+        @frame footer2_img {           /* Another static Frame */
+            -pdf-frame-content: footer_img2_content;
+            top: 460pt;
+            left: 85pt;
+            width: 660pt;
+            /* -pdf-frame-border: 1; */
+        }
+
+    }
+
+
+</style>
+</head>
+
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    <div id="header_content">
+        <table class="tg" style="table-layout: fixed; width: 107px">
+            <colgroup>
+            <col style="width: 107px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <td class="tg-3xpg" style="border-style:solid;border-width:1px;font-size: 18px; font-weight: bold; overflow: hidden; word-break: normal; text-align: center; vertical-align: middle; font-family: Times New Roman;">
+                        MINISTÉRIO DA DEFESA
+                        <br />COMANDO DA AERONÁUTICA
+                        <br />CENTRO DE INTELIGÊNCIA DA AERONÁUTICA
+                        <br /><br />
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-3xpg" style="border-style:solid;border-width:1px;font-size: 30px; font-weight: bold; overflow: hidden; word-break: normal; text-align: center; vertical-align: middle; font-family: Times New Roman;">
+                        {{ texto_tipo }}
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:17px;overflow:hidden;text-align:center;vertical-align:middle;word-break:normal">
+                        <!--br /-->{{ texto_primeira_parte }} {{ tratamento }}<br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:28px;overflow:hidden;text-align:center;vertical-align:middle;word-break:normal">
+                        <b>{{ posto_quadro_esp }}{{ aluno }}</b></td>
+                </tr>
+                <tr>
+                    <td style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:17px;overflow:hidden;text-align:center;vertical-align:middle;word-break:normal">
+                        <br />{{ texto_motivo }} <b>{{ turma }}</b>{{ data_certificado }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Content for Static Frame 'footer_frame' -->
+    <div id="footer_content">
+        <table style="border-collapse:collapse;border-spacing:0" class="tg">
+            <thead>
+                <tr>
+                    <td style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal">
+                        {{ assinatura_dpl }}
+                        <br>{{ assinatura_dpl_cargo }}</td>
+                    <td style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal">
+                        {{ assinatura_ch }}
+                        <br>{{ assinatura_ch_cargo }}</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div id="footer_img_content">
+        <table style="border-collapse:collapse;border-spacing:0" class="tg">
+            <thead>
+                <tr>
+                    <td style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal;height: 200px;">
+                        <img src="media/{{ assinatura_dpl_img }}">
+                    </td>
+                    <td style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal;height: 200px;">
+                        <img src="media/{{ assinatura_ch_img }}">
+                    </td>
+                </tr>
+            </thead>
+        </table>>
+    </div>
+
+    <!-- HTML Content -->
+    <pdf:nexttemplate name="page2" />
+    <pdf:nextpage />
+    <div>
+            <table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100px" class="tgv">
+                <colgroup>
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th style="font-family:Times New Roman;font-size:25px;font-weight:normal;overflow:hidden;padding:5px 5px;text-align:center;vertical-align:middle;word-break:normal" colspan="2"><b>{{ turma }}</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border-color:black;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:18px;overflow:hidden;padding:2px 2px;text-align:center;vertical-align:middle;word-break:normal" colspan="2">CONTEÚDO CURRICULAR
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-color:black;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:12px;overflow:hidden;padding:2px 2px;text-align:center;vertical-align:middle;word-break:normal">DISCIPLINAS</td>
+                        <td style="border-color:black;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:12px;overflow:hidden;padding:2px 2px;text-align:center;vertical-align:middle;word-break:normal;width: 100;">CARGA HORÁRIA</td>
+                    </tr>
+                    {% for item in tempos_por_instrucao %}
+                    <tr>
+                        <td style="border-color:black;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:11px;overflow:hidden;padding:2px 2px;text-align:left;vertical-align:middle;word-break:normal">{{ item.descricao }}</td>
+                        <td style="border-color:black;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:11px;overflow:hidden;padding:2px 2px;text-align:center;vertical-align:middle;word-break:normal">{{ item.tempo }}h</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td style="border-color:black;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:12px;overflow:hidden;padding:4px 4px;text-align:left;vertical-align:middle;word-break:normal">TOTAL DE HORAS</td>
+                        <td style="border-color:black;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:12px;overflow:hidden;padding:4px 4px;text-align:center;vertical-align:middle;word-break:normal">{{ tempo_total }}h</td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
+
+    <div id="footer_img2_content">
+
+
+        <table style="border-collapse:collapse;border-spacing:0" class="tg">
+                <tr>
+                    <td class="background-cell" style="width: 150px;border-style:solid;border-width:1px;font-family:Times New Roman;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">
+                        <img src="media/{{ qrcode }}" height="150">
+                    </td>
+                    <td class="background-cell" style="border-style:solid;border-width:1px;font-family:Times New Roman;font-size:12px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">Este certificado foi gerado em {{ data_e_hora_formatadas }} e registrado no CIAER sob o código: {{ codigo_hash }}
+                        <br />O presente certificado pode ter a sua validade comprovada utilizando o QRCode à esquerda, ou, caso desejar, acessando a site http://www.ciaer.intraer/, informando o código acima na opção Facilidades >> Validação, ou, em uma unidade da Força Aérea Brasileira ou Adidância Aeronáutica no exterior.
+                        <br />A data de emissão pode ser anterior à data final do curso nos casos em que o participante alcançou os requisitos mínimos para aprovação antecipadamente.</td>
+                </tr>
+        </table>
+        
+        
+    </div>
+</body>
+</html>
+
+
+        

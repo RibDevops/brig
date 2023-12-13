@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Pagina Inicial{% endblock %}
+{% block content %}
+
+{% csrf_token %}
+<div class="container">
+    <div class="row">
+
+
+
+        {% for turma, alunos in context.items %}
+        <h2>Turma: {{ turma }}</h2>
+        {% if alunos %}
+            <ul>
+            {% for aluno in alunos %}
+                <li>
+                    ID: {{ aluno.id }}<br>
+                    Nome: {{ aluno.aluno_nome }}<br>
+                    CPF: {{ aluno.aluno_cpf }}<br>
+                    Email: {{ aluno.aluno_email }}<br>
+                    Turma: {{ aluno.fk_turma }}<br>
+                    FK Curso: {{ aluno.fk_curso }}<br>
+                    FK OM: {{ aluno.fk_om }}<br>
+                    FK Força/Orgão: {{ aluno.fk_forca_orgao }}<br>
+                    FK Posto: {{ aluno.fk_posto }}<br>
+                    FK Quadro: {{ aluno.fk_quadro }}<br>
+                    FK Especialidade: {{ aluno.fk_especialidade }}<br>
+                    FK In/Ex: {{ aluno.fk_in_ex }}<br>
+                    FK Tratamento: {{ aluno.fk_tratamento }}<br>
+                    <a href="/aluno_editar/{{ aluno.id }}/" class="btn btn btn-warning">EDITAR</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum aluno com campos em branco nesta turma.</p>
+        {% endif %}
+    {% endfor %}
+    
+
+
+
+                <!-- Adicionar os links de navegação para as páginas -->
+                <!-- <div class="pagination">
+                    <span class="step-links">
+                        {% if dataset.has_previous %}
+                            <a href="?page=1">&laquo; primeira</a>
+                            <a href="?page={{ dataset.previous_page_number }}">anterior</a>
+                        {% endif %}
+
+                        <span class="current">
+                            Página {{ dataset.number }} de {{ dataset.paginator.num_pages }}.
+                        </span>
+
+                        {% if dataset.has_next %}
+                            <a href="?page={{ dataset.next_page_number }}">próxima</a>
+                            <a href="?page={{ dataset.paginator.num_pages }}">última &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

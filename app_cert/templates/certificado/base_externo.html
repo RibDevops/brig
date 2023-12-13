@@ -1,0 +1,111 @@
+{% load static %}
+<html>
+<head>
+<style>
+    @page {
+        size: a4 landscape;
+        background-image: url("media/{{ frente }}");
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 90pt; width: 660pt; top: 165pt; 
+            /* -pdf-frame-border: 1; */
+        }
+       
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            top: 480pt;
+            left: 90pt;
+            width: 660pt;
+            /* -pdf-frame-border: 1; */
+        }
+
+        @frame footer_img {           /* Another static Frame */
+            -pdf-frame-content: footer_img_content;
+            top: 375pt;
+            left: 90pt;
+            width: 660pt;
+            /* -pdf-frame-border: 1; */
+        }
+    }
+    
+</style>
+</head>
+
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    <div id="header_content">
+        <table class="tg" style="table-layout: fixed; width: 107px; font-family: Arial, sans-serif;">
+            <colgroup>
+                <col style="width: 107px;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <td class="tg-3xpg" style="border-color:#fe0000;border-style:solid;border-width:1px;font-size: 18px; font-weight: bold; overflow: hidden; word-break: normal; text-align: center; vertical-align: middle; font-family: Arial, Helvetica, sans-serif;">
+                        MINISTÉRIO DA DEFESA
+                        <br>COMANDO DA AERONÁUTICA
+                        <br>CENTRO DE INTELIGÊNCIA DA AERONÁUTICA
+                        <br><br>
+                        <h style="font-size: 45px;">{{ tipo }}</h>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border-color:#fe0000;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;text-align:center;vertical-align:middle;word-break:normal">
+                        <br>{{ primeira_parte }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-color:#fe0000;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:18px;overflow:hidden;text-align:center;vertical-align:middle;word-break:normal">
+                        <br>{{ a_quem }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-color:#fe0000;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;text-align:center;vertical-align:middle;word-break:normal">
+                        <br>{{ motivo }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Content for Static Frame 'footer_frame' -->
+    <div id="footer_content">
+
+
+        <table style="border-collapse:collapse;border-spacing:0" class="tg">
+            <thead>
+                <tr>
+                    <td style="border-color:#fe0000;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal">
+                        {{ assinatura_dpl }}
+                        <br>{{ assinatura_dpl_cargo }}</td>
+                    <td style="border-color:#fe0000;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal">
+                        {{ assinatura_ch }}
+                        <br>{{ assinatura_ch_cargo }}</td>
+                </tr>
+            </thead>
+        </table>
+   
+
+    </div>
+
+    <div id="footer_img_content">
+        <table style="border-collapse:collapse;border-spacing:0" class="tg">
+            <thead>
+                <tr>
+                    <td style="border-color:#fe0000;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal;height: 200px;">
+                        <img src="media/{{ assinatura_dpl_img }}">
+                    </td>
+                    <td style="border-color:#fe0000;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal;height: 200px;">
+                        <img src="media/{{ assinatura_ch_img }}">
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+</body>
+</html>
+
+
+        

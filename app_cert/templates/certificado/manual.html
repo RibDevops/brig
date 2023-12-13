@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Pagina Inicial{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <form action="{% url 'gerar_certificados_externo' %}" method="POST" enctype="multipart/form-data" target="_blank">
+ 
+            <!-- Security token -->
+            {% csrf_token %}
+         
+            <!-- Using the formset -->
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">GRAVAR</button>
+        
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}Pagina Inicial{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-md-20"> -->
+            <form method="post">
+                {% csrf_token %}
+
+                <label for="id_fk_turma">Turma:</label>
+                {{ form.fk_turma }}
+
+                <table style="border-collapse:collapse;border-spacing:0" class="tg">
+                    <thead>
+                      <tr>
+                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Instrução</th>
+                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Interno&nbsp;&nbsp;&nbsp;</th>
+                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Externo&nbsp;&nbsp;&nbsp;</th>
+                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Tempo da Instrução</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for instrucao in instrucoes %}
+                      <tr>
+                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:left; vertical-align:middle; word-break:normal">
+                            <input type="checkbox" id="{{ instrucao.id }}" name="inst_{{ instrucao.id }}" value="{{ instrucao.id }}"> - {{ instrucao.instrucao_descricao }}</td>
+
+
+                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:left; vertical-align:middle; word-break:normal">
+                            
+                            
+                            <input type="checkbox" id="{{ instrucao.id }}" name="int_{{ instrucao.id }}" value="1">
+                            <!-- <input type="radio" id="{{ instrucao.id }}" name="int_{{ instrucao.id }}" value="1"> - SIM <br>
+                            <input type="radio" id="{{ instrucao.id }}" name="int_{{ instrucao.id }}" value="0"> - NÂO -->
+                            
+                            
+                        </td>
+
+                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:left; vertical-align:middle; word-break:normal">
+                            
+                            
+                            <input type="checkbox" id="{{ instrucao.id }}" name="ext_{{ instrucao.id }}" value="1">
+                            <!-- <input type="radio" id="{{ instrucao.id }}" name="ext_{{ instrucao.id }}" value="1"> - SIM <br>
+                            <input type="radio" id="{{ instrucao.id }}" name="ext_{{ instrucao.id }}" value="0"> - NÂO -->
+                            
+                            
+                        </td>
+
+                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">
+                            <input type="text" id="{{ instrucao.id }}" name="tempo_{{ instrucao.id }}" minlength="1" maxlength="8" size="10" />
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                
+                
+                <input type="submit" class="btn btn-success" value="Salvar">
+                
+            </form>
+            
+<!-- </div> -->
+</div>
+</div>
+
+{% endblock %}
+
+{% for inex in in_ex %}
+                            <input type="radio" id="{{ instrucao.id }}" name="{{ instrucao.id }}" value="1"> - SIM
+                            <input type="radio" id="{{ instrucao.id }}" name="{{ instrucao.id }}" value="0"> - NÂO
+                            
+                            {% endfor %}
+
+<input type="checkbox" id="{{ instrucao.id }}" name="{{ instrucao.id }}" value="{{ inex.id }}"> - {{ inex.in_ex }}<br>

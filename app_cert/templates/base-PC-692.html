@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}SNDO{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <!-- <script src="{% static '/js/jquery.min.js' %}"></script> -->
+    <!-- <script src="{% static '/js/bootstrap.min.js' %}"></script> -->
+
+</head>  
+
+<body> 
+  <!-- Security token -->
+
+    {% block menu %}
+    <div class=”header”>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <!-- <div class="navbar-header">
+                <a class="navbar-brand" href="main.php">SN</a>
+              </div> -->
+              <ul class="nav navbar-nav">
+              <li class="home"><a href="{% url 'home' %}">HOME</a></li>
+
+
+              {% for data in data_tipo %}
+            
+                  
+                  <!-- <li><a href="../{{ data.tipo_sigla }}/{{data.id}}"> {{data.tipo_doc}}</a></li> -->
+                  <li class="home"><a href="/list_view/{{data.id}}/">       {{data.tipo_doc}}</a></li>
+                  
+
+
+                  
+              {% endfor %}
+
+              
+              
+              <li class="home"><a href="{% url 'certificado_lista' %}">       Lista Certificados</a></li>
+              <li class="home"><a href="{% url 'certificado_lista' %}">       Gerar Certificado Convidado</a></li>
+              <li class="home"><a href="{% url 'aluno_lista' %}">       Alunos</a></li>
+              <li class="home"><a href="{% url 'turma_lista' %}">       Turmas</a></li>
+              <li class="home"><a href="{% url 'curso_lista' %}">       Curso</a></li>
+              <li class="home"><a href="{% url 'grade_lista' %}">       Grade</a></li>
+              <li class="home"><a href="{% url 'tipo_lista' %}">       Tipo</a></li>
+              <li class="home"><a href="{% url 'ano_lista' %}">       Ano</a></li>
+              <li class="home"><a href="{% url 'assinatura_ch_lista' %}">       ASS CH</a></li>
+              <li class="home"><a href="{% url 'assinatura_dpl_lista' %}">       ASS DPL</a></li>
+              <li class="home"><a href="{% url 'tratamento_lista' %}">       Tratamento</a></li>
+              <li class="home"><a href="{% url 'instrucao_lista' %}">       Instrução</a></li>
+    
+
+
+
+
+              
+              </ul>    
+              <ul class="nav navbar-nav navbar-right">
+        
+           
+              </ul>
+            </div>
+          </nav>
+    </div>
+  {% endblock %}
+
+	
+	{% block content %}
+    <div class="row">
+      <div class="col-8 mx-auto">
+
+      </div>        
+    </div>
+      
+	
+	{% endblock %}
+
+  {% block rodape %}
+
+  {% endblock %}
+ 
+	<!-- JS-->
+	
+</body>
+</html>
