@@ -24,11 +24,11 @@ import os
 from django.conf import settings
 import os
 
-def generate_qr_code(nome, data_gh):
+def generate_qr_code(data_gh, id):
     output_dir = os.path.join(settings.MEDIA_ROOT, 'qrcode')  # Caminho para a pasta 'media/qrcode'
     os.makedirs(output_dir, exist_ok=True)  # Cria o diretório se não existir
 
-    filename = os.path.join('qrcode', '{}.png'.format(nome)).replace('\\', '/')  # Salvar na pasta 'media' com a barra '/'
+    filename = os.path.join('qrcode', '{}.png'.format(id)).replace('\\', '/')  # Salvar na pasta 'media' com a barra '/'
     qr_code = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -41,7 +41,6 @@ def generate_qr_code(nome, data_gh):
 
     image.save(os.path.join(settings.MEDIA_ROOT, filename))
     return filename
-
 
 def generate_hash(data):
     sha256_hash = hashlib.sha256()
@@ -71,7 +70,7 @@ def aluno_hash(request, id):
     aluno_info = f"{aluno_ob.aluno_nome} {aluno_ob.aluno_cpf} {aluno_ob.aluno_email} {aluno_ob.fk_turma.turma}"
     hash_aluno = generate_hash(aluno_info)
 
-    qrcode = generate_qr_code(aluno_info, hash_aluno)
+    qrcode = generate_qr_code(hash_aluno, id)
 
 
 
