@@ -8,3 +8,5 @@ w_venv
 conf
 venv
 .venv
+core\settings.py
+core/settings.py
