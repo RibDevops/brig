@@ -29,6 +29,7 @@ from django.conf.urls.static import static
 #     URLPattern += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = [
+    # path('cert', include('core.urls')),
     path('', home, name='home'),
     path('turma_lista', turma_lista, name="turma_lista"),
     path('turma_nova', turma_nova, name="turma_nova"),
