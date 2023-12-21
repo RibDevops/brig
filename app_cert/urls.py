@@ -1,20 +1,6 @@
 from django.urls import URLPattern, path
 import urllib3
-from app_cert.views.views_turma import *
-from app_cert.views.views_textos import *
-from app_cert.views.views_curso import *
-from app_cert.views.views_aluno import *
-from app_cert.views.views_certificado import *
-from app_cert.views.views_modelo import *
-from app_cert.views.views_tipo import *
-from app_cert.views.views_ano import *
-from app_cert.views.views_grade import *
-from app_cert.views.views_imagem import *
-from app_cert.views.views_import import *
-# from app_cert.views.views_assinatura_dpl import *
-from app_cert.views.views_tratamento import *
-from app_cert.views.views_instrucao import *
-from app_cert.views.views_pdf import *
+from .views import *
 from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
@@ -23,14 +9,13 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls.static import static
 
-# from .views import Index2View, IndexView
+from django.contrib import admin
+from django.urls import path
 
-# if settings.DEBUG:
-#     URLPattern += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = [
     # path('cert', include('core.urls')),
-    path('', home, name='home'),
+    path('sgc', home, name='sgc'),
     path('turma_lista', turma_lista, name="turma_lista"),
     path('turma_nova', turma_nova, name="turma_nova"),
     path('turma_editar/<int:id>/', turma_editar, name="turma_editar"),
@@ -116,5 +101,8 @@ urlpatterns = [
     
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # ] 
+
+# if settings.DEBUG:
+#     URLPattern += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

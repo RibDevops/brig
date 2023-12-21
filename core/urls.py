@@ -19,5 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cert', include('app_cert.urls')),
+    path('sgc/', include('app_cert.urls')),#sistema de gerenciamento de certificados
+    path('sgu/', include('app_postos.urls')),#sitenma de gerenciamento de força, posto, quadro
+    path('scn/', include('app_scn.urls')),#sistema de numeração de doc da dci
+    path('ssa/', include('app_arq.urls')),#sistema de numeração de doc da dci
 ]

@@ -13,7 +13,7 @@ from ..forms import TipoForm
 
 def home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    return render(request, 'home.html')
+    return render(request, 'sgc_home.html')
 
 def tipo_novo(request):
     if request.method == 'POST':

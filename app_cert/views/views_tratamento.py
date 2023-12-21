@@ -3,7 +3,7 @@ from ..models import Tratamento
 from ..forms import TratamentoForm
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'sgc_home.html')
 
 def tratamento_novo(request):
     if request.method == 'POST':

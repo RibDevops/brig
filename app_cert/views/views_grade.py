@@ -7,7 +7,7 @@ from django.db.models import Count
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'sgc_home.html')
 
 def grade_nova(request):
     if request.method == 'POST':

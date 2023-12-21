@@ -5,7 +5,7 @@ from ..forms import TextoForm
 
 def home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    return render(request, 'home.html')
+    return render(request, 'sgc_home.html')
 
 def texto_novo(request):
     if request.method == 'POST':

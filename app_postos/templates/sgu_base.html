@@ -22,26 +22,7 @@
                 <a class="navbar-brand" href="main.php">SN</a>
               </div> -->
               <ul class="nav navbar-nav">
-              <li class="home"><a href="{% url 'home' %}">HOME</a></li>
-
-
-              {% for data in data_tipo %}
-            
-                  
-                  <!-- <li><a href="../{{ data.tipo_sigla }}/{{data.id}}"> {{data.tipo_doc}}</a></li> -->
-                  <li class="home"><a href="/list_view/{{data.id}}/">       {{data.tipo_doc}}</a></li>
-                  
-
-
-                  
-              {% endfor %}
-
-              
-              
-              <li class="home"><a href="{% url 'turma_lista' %}">       Turmas</a></li>
-
-
-
+              <li class="home"><a href="{% url 'sgu' %}">HOME</a></li>             
 
               
               </ul>    

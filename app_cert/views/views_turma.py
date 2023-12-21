@@ -5,7 +5,7 @@ from ..forms import TurmaForm
 
 def home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    return render(request, 'home.html')
+    return render(request, 'sgc_home.html')
 
 def turma_nova(request):
     if request.method == 'POST':

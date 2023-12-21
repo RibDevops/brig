@@ -4,7 +4,7 @@ from ..forms import InstrucaoForm # Importe o formulário adequado
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'sgc_home.html')
 
 def instrucao_nova(request):
     if request.method == 'POST':
