@@ -8,3 +8,4 @@ venv
 .venv
 core\settings.py
 core/settings.py
+staticfiles

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_cert.apps.AppCertConfig',
     'app_postos.apps.AppPostosConfig',
+    'app_login.apps.AppLoginConfig',
 
 ]
 
