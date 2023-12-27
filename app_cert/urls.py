@@ -14,8 +14,7 @@ from django.urls import path
 
 
 urlpatterns = [
-    # path('sgc_cert', sgc_include('core.urls')),
-    path('', sgc_home, name='sgc'),
+    path('', sgc_home, name='sgc_home'),
     path('sgc_turma_lista', sgc_turma_lista, name="sgc_turma_lista"),
     path('sgc_turma_nova', sgc_turma_nova, name="sgc_turma_nova"),
     path('sgc_turma_editar/<int:id>/', sgc_turma_editar, name="sgc_turma_editar"),
