@@ -16,7 +16,7 @@
         {% endif %}
 
         <div class="col-md-15">
-            <a href="{% url 'grade_lista' %}" class="btn btn-warning">VOLTAR</a>
+            <a href="{% url 'sgc_grade_lista' %}" class="btn btn-warning">VOLTAR</a>
             <div class="col-8 m-auto pt-4 pb-2 text-center">
 
                 <table class="table">
@@ -46,8 +46,8 @@
                             
                             
                             <td style="text-align: center">
-                                <a href="/grade_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
-                                <a href="/grade_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a>
+                                <a href="/sgc_grade_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
+                                <a href="/sgc_grade_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a>
                             </td>
                         </tr>
                         {% endfor %}

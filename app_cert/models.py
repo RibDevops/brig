@@ -232,7 +232,8 @@ class Turma(models.Model):
     fk_img_frente = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Frente", related_name='fk_img_frente',null=True)
     fk_img_fundo = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Fundo", related_name='fk_img_fundo',null=True)
 
-    turma = models.CharField(max_length=50, verbose_name="Descrição no certificado:")
+    turma_sgc = models.CharField(max_length=50, verbose_name="Descrição conforme arquivo da SGC Intraer:")
+    turma = models.CharField(max_length=50, verbose_name="Descrição que irá aparecer no certificado:")
     # turma_numerao = models.IntegerField(verbose_name="Ano")
 
     # turma_desc = models.CharField(max_length=50, verbose_name="Ex: 1/2023")
@@ -291,7 +292,7 @@ class GradeTurma(models.Model):
 class Aluno(models.Model):
     id = models.AutoField(primary_key=True)
     fk_status = models.ForeignKey(Status, on_delete=models.PROTECT, verbose_name="FK Status", null=True)
-    fk_curso = models.ForeignKey(Curso, on_delete=models.PROTECT, verbose_name="FK Curso", null=True)
+    # fk_curso = models.ForeignKey(Curso, on_delete=models.PROTECT, verbose_name="FK Curso", null=True)
     fk_turma = models.ForeignKey(Turma, on_delete=models.PROTECT, verbose_name="FK Turma", null=True)
     fk_om = models.ForeignKey(Om, on_delete=models.PROTECT, verbose_name="FK OM", null=True)
     
@@ -316,6 +317,5 @@ class Aluno(models.Model):
         verbose_name = 'Aluno'
         verbose_name_plural = 'Alunos'
         ordering = ['id']
-
 
 

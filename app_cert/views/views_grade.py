@@ -6,10 +6,10 @@ from django.db.models import F
 from django.db.models import Count
 
 
-def home(request):
+def sgc_home(request):
     return render(request, 'sgc_home.html')
 
-def grade_nova(request):
+def sgc_grade_nova(request):
     if request.method == 'POST':
         print(request.POST)
         post_p = request.POST
@@ -19,7 +19,7 @@ def grade_nova(request):
         if form.is_valid():
               
             form.save()
-            return redirect('grade_lista')  # Redirecione para a lista após criar
+            return redirect('sgc_grade_lista')  # Redirecione para a lista após criar
     else:
         form = GradeTurmaForm()
         dataset = {
@@ -30,7 +30,7 @@ def grade_nova(request):
         }
     return render(request, 'grade/criar.html', dataset)
 
-def grade_lista(request):
+def sgc_grade_lista(request):
     dataset = (
         GradeTurma.objects
         .values('fk_turma', 'fk_turma__turma')  # Adiciona o campo 'fk_turma__turma' para pegar a descrição da turma
@@ -41,7 +41,7 @@ def grade_lista(request):
     return render(request, 'grade/lista.html', context)
 
 
-def grade_detalhes(request, turma_id):
+def sgc_grade_detalhes(request, turma_id):
     # Obtém a instância da Turma com o ID fornecido ou retorna um erro 404 caso não exista
     turma = get_object_or_404(Turma, id=turma_id)
 
@@ -56,14 +56,14 @@ def grade_detalhes(request, turma_id):
     return render(request, 'grade/lista_grade_turma.html', context)
 
 
-# def grade_lista(request):
+# def sgc_grade_lista(request):
 #     # dataset = GradeTurma.objects.select_related('fk_turma', 'fk_in_ex', ).all()
 #     dataset = GradeTurma.objects.all().distinct('fk_turma')
 #     context = {"dataset": dataset}
 #     print(dataset)
 #     return render(request, 'grade/lista.html', context)
 
-# def grade_lista(request):
+# def sgc_grade_lista(request):
 #     # Obtendo valores únicos para fk_turma
 #     unique_fk_turma_ids = GradeTurma.objects.values('fk_turma').distinct()
 
@@ -77,7 +77,7 @@ def grade_detalhes(request, turma_id):
 
 
 
-# def grade_lista(request):
+# def sgc_grade_lista(request):
 #     dataset = (
 #         GradeTurma.objects
 #         .values('fk_turma', 'fk_in_ex')  # Seleciona as colunas desejadas para o distinct
@@ -92,14 +92,14 @@ def grade_detalhes(request, turma_id):
 #     print(dataset)
 #     return render(request, 'grade/lista.html', context)
 
-def grade_editar(request, id):
+def sgc_grade_editar(request, id):
     context ={}
     grade_ob = get_object_or_404(GradeTurma, id=id)
     if request.method == 'POST':
         form = GradeTurmaForm(request.POST, instance=grade_ob)
         if form.is_valid():
             form.save()
-            return redirect('grade_lista')
+            return redirect('sgc_grade_lista')
     else:
         form = GradeTurmaForm(instance=grade_ob)
     context = {
@@ -108,13 +108,13 @@ def grade_editar(request, id):
     }
     return render(request, 'grade/editar.html', context)
 
-def grade_delete(request, id):
+def sgc_grade_delete(request, id):
     context ={}
     grade_ob = get_object_or_404(GradeTurma, id=id)
     if request.method == 'POST':
         grade_ob.delete()
         # messages.success(request, 'Registro excluído com sucesso.')
-        return redirect('grade_lista')
+        return redirect('sgc_grade_lista')
     
     context = {
         'grade_ob': grade_ob

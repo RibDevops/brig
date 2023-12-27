@@ -16,7 +16,7 @@
         {% endif %}
 
         <div class="col-md-15">
-            <a href="{% url 'assinatura_ch_nova' %}" class="btn btn-primary">NOVA ASSINATURA</a>
+            <a href="{% url 'sgc_assinatura_ch_nova' %}" class="btn btn-primary">NOVA ASSINATURA</a>
             <div class="col-8 m-auto pt-4 pb-2 text-center">
 
                 <table class="table">
@@ -42,8 +42,8 @@
                             <td style="text-align: center"><img src="media/{{data.assinatura_ch_img}}" height="50"></td>
                             
                             <td>
-                                  <a href="/assinatura_ch_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
-                                <!-- <a href="/assinatura_ch_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a> -->
+                                  <a href="/sgc_assinatura_ch_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
+                                <!-- <a href="/sgc_assinatura_ch_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a> -->
                             </td>
                         </tr>
                         {% endfor %}

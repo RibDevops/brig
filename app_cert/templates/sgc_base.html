@@ -22,38 +22,27 @@
                 <a class="navbar-brand" href="main.php">SN</a>
               </div> -->
               <ul class="nav navbar-nav">
-              <li class="home"><a href="{% url 'home' %}">HOME</a></li>
+              <li class="home"><a href="{% url 'sgc' %}">HOME</a></li>
 
-
-              {% for data in data_tipo %}
-            
-                  
-                  <!-- <li><a href="../{{ data.tipo_sigla }}/{{data.id}}"> {{data.tipo_doc}}</a></li> -->
-                  <li class="home"><a href="/list_view/{{data.id}}/">       {{data.tipo_doc}}</a></li>
-                  
-
-
-                  
-              {% endfor %}
 
               
               
               
-              <li class="home"><a href="{% url 'curso_lista' %}">       Curso</a></li>
-              <li class="home"><a href="{% url 'turma_lista' %}">       Turmas</a></li>
-              <li class="home"><a href="{% url 'instrucao_lista' %}">       Instrução</a></li>
-              <li class="home"><a href="{% url 'grade_lista' %}">       Grade</a></li>
-              <li class="home"><a href="{% url 'aluno_lista' %}">       Alunos</a></li>
-              <li class="home"><a href="{% url 'import_csv_view' %}">       Import CSV</a></li>
-              <li class="home"><a href="{% url 'tipo_lista' %}">       Modalidades</a></li>
-              <li class="home"><a href="{% url 'ano_lista' %}">       Ano</a></li>
-              <li class="home"><a href="{% url 'imagem_lista' %}">       Imagem</a></li>
-              <li class="home"><a href="{% url 'tratamento_lista' %}">       Tratamento</a></li>
-              <li class="home"><a href="{% url 'texto_lista' %}">       Textos</a></li>
-              <li class="home"><a href="{% url 'modelo_lista' %}">       Modelo</a></li>
-              <li class="home"><a href="{% url 'certificado_lista' %}">       Pendências alunos</a></li>
-              <li class="home"><a href="{% url 'certificado_manual' %}">       Gerar Certificado Avulso</a></li>
-              <li class="home"><a href="{% url 'certificado_manual' %}">       Manual do usuário</a></li>
+              <li class="home"><a href="{% url 'sgc_curso_lista' %}">       Curso</a></li>
+              <li class="home"><a href="{% url 'sgc_turma_lista' %}">       Turmas</a></li>
+              <li class="home"><a href="{% url 'sgc_instrucao_lista' %}">       Instrução</a></li>
+              <li class="home"><a href="{% url 'sgc_grade_lista' %}">       Grade</a></li>
+              <li class="home"><a href="{% url 'sgc_aluno_lista' %}">       Alunos</a></li>
+              <li class="home"><a href="{% url 'sgc_import_csv_view' %}">       Import CSV</a></li>
+              <li class="home"><a href="{% url 'sgc_tipo_lista' %}">       Modalidades</a></li>
+              <li class="home"><a href="{% url 'sgc_ano_lista' %}">       Ano</a></li>
+              <li class="home"><a href="{% url 'sgc_imagem_lista' %}">       Imagem</a></li>
+              <li class="home"><a href="{% url 'sgc_tratamento_lista' %}">       Tratamento</a></li>
+              <li class="home"><a href="{% url 'sgc_texto_lista' %}">       Textos</a></li>
+              <li class="home"><a href="{% url 'sgc_modelo_lista' %}">       Modelo</a></li>
+              <li class="home"><a href="{% url 'sgc_certificado_lista' %}">       Pendências alunos</a></li>
+              <li class="home"><a href="{% url 'sgc_certificado_manual' %}">       Gerar Certificado Avulso</a></li>
+              <li class="home"><a href="{% url 'sgc_certificado_manual' %}">       Manual do usuário</a></li>
     
 
 

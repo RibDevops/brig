@@ -3,22 +3,22 @@ from ..models import Textos
 from ..forms import TextoForm
 
 
-def home(request):
+def sgc_home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
     return render(request, 'sgc_home.html')
 
-def texto_novo(request):
+def sgc_texto_novo(request):
     if request.method == 'POST':
         form = TextoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('texto_lista')  # Redirecione para a lista após criar
+            return redirect('sgc_texto_lista')  # Redirecione para a lista após criar
     else:
         form = TextoForm()
     
     return render(request, 'texto/criar.html', {'form': form})
 
-def texto_lista(request):
+def sgc_texto_lista(request):
     dataset = Textos.objects.all()
     # dataset = Textos.objects.select_related(
     #     'fk_curso',
@@ -28,14 +28,14 @@ def texto_lista(request):
     # print(dataset)
     return render(request, 'texto/lista.html', context)
 
-def texto_editar(request, id):
+def sgc_texto_editar(request, id):
     context ={}
     texto_ob = get_object_or_404(Textos, id=id)
     if request.method == 'POST':
         form = TextoForm(request.POST, instance=texto_ob)
         if form.is_valid():
             form.save()
-            return redirect('texto_lista')
+            return redirect('sgc_texto_lista')
     else:
         form = TextoForm(instance=texto_ob)
     context = {
@@ -44,13 +44,13 @@ def texto_editar(request, id):
     }
     return render(request, 'texto/editar.html', context)
 
-def texto_delete(request, id):
+def sgc_texto_delete(request, id):
     context ={}
     texto_ob = get_object_or_404(Textos, id=id)
     if request.method == 'POST':
         texto_ob.delete()
         # messages.success(request, 'Registro excluído com sucesso.')
-        return redirect('texto_lista')
+        return redirect('sgc_texto_lista')
     
     context = {
         'texto_ob': texto_ob

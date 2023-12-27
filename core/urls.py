@@ -21,6 +21,6 @@ urlpatterns = [
     path('', include('app_login.urls')),#sitenma de gerenciamento de força, posto, quadro
 
     path('admin/', admin.site.urls),
-    path('sgc/', include('app_cert.urls')),#sistema de gerenciamento de certificados
+    path('', include('app_cert.urls')),#sistema de gerenciamento de certificados
     path('sgu/', include('app_postos.urls')),#sitenma de gerenciamento de força, posto, quadro
 ]

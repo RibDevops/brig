@@ -4,18 +4,18 @@ from app_cert.models import Curso
 from app_cert.forms import CursoForm  # Importe o formulário adequado
 
 
-def curso_novo(request):
+def sgc_curso_novo(request):
     if request.method == 'POST':
         form = CursoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('curso_lista')  # Redirecione para a lista após criar
+            return redirect('sgc_curso_lista')  # Redirecione para a lista após criar
     else:
         form = CursoForm()
     
     return render(request, 'curso/criar.html', {'form': form})
 
-def curso_lista(request):
+def sgc_curso_lista(request):
     dataset = Curso.objects.all()
     context = {"dataset": dataset}
     # for curso in dataset:
@@ -32,14 +32,14 @@ def curso_lista(request):
     #         print("\n")
     return render(request, 'curso/lista.html', context)
 
-def curso_editar(request, id):
+def sgc_curso_editar(request, id):
     context ={}
     curso_ob = get_object_or_404(Curso, id=id)
     if request.method == 'POST':
         form = CursoForm(request.POST, instance=curso_ob)
         if form.is_valid():
             form.save()
-            return redirect('curso_lista')
+            return redirect('sgc_curso_lista')
     else:
         form = CursoForm(instance=curso_ob)
     context = {
@@ -48,13 +48,13 @@ def curso_editar(request, id):
     }
     return render(request, 'curso/editar.html', context)
 
-def curso_delete(request, id):
+def sgc_curso_delete(request, id):
     context ={}
     curso_ob = get_object_or_404(Curso, id=id)
     if request.method == 'POST':
         curso_ob.delete()
         # messages.success(request, 'Registro excluído com sucesso.')
-        return redirect('curso_lista')
+        return redirect('sgc_curso_lista')
     
     context = {
         'curso_ob': curso_ob

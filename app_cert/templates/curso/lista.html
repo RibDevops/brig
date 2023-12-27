@@ -16,7 +16,7 @@
         {% endif %}
 
         <div class="col-md-15">
-            <a href="{% url 'curso_novo' %}" class="btn btn-primary">NOVO CURSO</a>
+            <a href="{% url 'sgc_curso_novo' %}" class="btn btn-primary">NOVO CURSO</a>
             <div class="col-8 m-auto pt-4 pb-2 text-center">
 
 
@@ -43,8 +43,8 @@
                             <td style="text-align: center">{{ data.curso_descricao }}</td>
                            
                         <td>
-                                <a href="/curso_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
-                                <a href="/curso_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a>
+                                <a href="/sgc_curso_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
+                                <a href="/sgc_curso_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a>
                             </td>
                         </tr>
                         {% endfor %}

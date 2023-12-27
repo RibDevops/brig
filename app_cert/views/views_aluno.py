@@ -24,7 +24,8 @@ import os
 from django.conf import settings
 import os
 
-def generate_qr_code(data_gh, id):
+
+def sgc_generate_qr_code(data_gh, id):
     output_dir = os.path.join(settings.MEDIA_ROOT, 'qrcode')  # Caminho para a pasta 'media/qrcode'
     os.makedirs(output_dir, exist_ok=True)  # Cria o diretório se não existir
 
@@ -42,7 +43,7 @@ def generate_qr_code(data_gh, id):
     image.save(os.path.join(settings.MEDIA_ROOT, filename))
     return filename
 
-def generate_hash(data):
+def sgc_generate_hash(data):
     sha256_hash = hashlib.sha256()
     
     # Obtenha o caminho absoluto para o arquivo 'key.key'
@@ -62,15 +63,15 @@ def generate_hash(data):
     hash_value = sha256_hash.hexdigest()
     return hash_value[:15]
 
-def aluno_hash(request, id):
+def sgc_aluno_hash(id):
     aluno_ob = get_object_or_404(Aluno, id=id)
     
     # Gerar o hash com base nas informações do aluno
     # aluno_info = f"{aluno_ob.aluno_nome} {aluno_ob.aluno_cpf}"
     aluno_info = f"{aluno_ob.aluno_nome} {aluno_ob.aluno_cpf} {aluno_ob.aluno_email} {aluno_ob.fk_turma.turma}"
-    hash_aluno = generate_hash(aluno_info)
+    hash_aluno = sgc_generate_hash(aluno_info)
 
-    qrcode = generate_qr_code(hash_aluno, id)
+    qrcode = sgc_generate_qr_code(hash_aluno, id)
 
 
 
@@ -82,12 +83,12 @@ def aluno_hash(request, id):
     aluno_ob.save()
     
     # Redirecione de volta para a lista de alunos
-    return redirect('aluno_lista')
+    return redirect('sgc_aluno_lista')
 
 
 
 # Esta parte precisa ser implementada em sua view.
-def ajax_load_related_data_om(request):
+def sgc_ajax_load_related_data_om(request):
     forca_orgao_id = request.GET.get('forca_orgao_id')
 
     postos = Posto.objects.filter(fk_forca_orgao_id=forca_orgao_id).all()
@@ -116,18 +117,18 @@ def ajax_load_related_data_om(request):
     return JsonResponse(data)
 
 
-def aluno_novo(request):
+def sgc_aluno_novo(request):
     if request.method == 'POST':
         form = AlunoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('aluno_lista')  # Redirecione para a lista após criar
+            return redirect('sgc_aluno_lista')  # Redirecione para a lista após criar
     else:
         form = AlunoForm()
     
     return render(request, 'aluno/criar.html', {'form': form})
 
-# def aluno_lista(request):
+# def sgc_aluno_lista(request):
 #     dataset = Aluno.objects.all()
 #     for aluno in dataset:
 #         # Verifique se há um Certificado associado ao aluno
@@ -138,7 +139,7 @@ def aluno_novo(request):
 #         print(aluno.__dict__)
 #     return render(request, 'aluno/lista.html', context)dataset = Aluno.objects.select_related('fk_id_aluno').all()
 
-def aluno_lista(request):
+def sgc_aluno_lista(request):
     # Obtém todos os alunos
     dataset = Aluno.objects.all()
 
@@ -151,18 +152,18 @@ def aluno_lista(request):
     return render(request, 'aluno/lista.html', context)
 
 
-# def aluno_detalhes(request, pk):
+# def sgc_aluno_detalhes(request, pk):
 #     aluno_ob = get_object_or_404(AlunoForm, pk=pk)
 #     return render(request, 'aluno/detalhes.html', {'aluno_ob': aluno_ob})
 
-def aluno_editar(request, id):
+def sgc_aluno_editar(request, id):
     context ={}
     aluno_ob = get_object_or_404(Aluno, id=id)
     if request.method == 'POST':
         form = AlunoForm(request.POST, instance=aluno_ob)
         if form.is_valid():
             form.save()
-            return redirect('aluno_lista')
+            return redirect('sgc_aluno_lista')
     else:
         form = AlunoForm(instance=aluno_ob)
     context = {
@@ -171,13 +172,13 @@ def aluno_editar(request, id):
     }
     return render(request, 'aluno/editar.html', context)
 
-def aluno_delete(request, id):
+def sgc_aluno_delete(request, id):
     context ={}
     aluno_ob = get_object_or_404(Aluno, id=id)
     if request.method == 'POST':
         aluno_ob.delete()
         # messages.success(request, 'Registro excluído com sucesso.')
-        return redirect('aluno_lista')
+        return redirect('sgc_aluno_lista')
     
     context = {
         'aluno_ob': aluno_ob

@@ -15,11 +15,11 @@ except:
     from utils import extract_request_variables
 
 
-def index(request):
+def sgc_index(request):
     return render(request, 'xpdf/index.html')
 
 
-def link_callback(self, uri):
+def sgc_link_callback(self, uri):
         """
         Convert HTML URIs to absolute system paths so xhtml2pdf can access those
         resources
@@ -50,7 +50,7 @@ def link_callback(self, uri):
             )
         return path
 
-def render_pdf(request):
+def sgc_render_pdf(request):
 
     template_path = 'xpdf/user_printer.html'
     context = extract_request_variables(request)

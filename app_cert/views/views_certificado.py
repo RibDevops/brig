@@ -1,3 +1,4 @@
+import time
 import zipfile
 import io
 import os
@@ -21,14 +22,15 @@ from datetime import datetime
 from PyPDF2 import PdfMerger
 from django.db.models import Q
 from collections import defaultdict
+from .views_aluno import sgc_aluno_hash
 
 
-def certificado_novo(request):
+def sgc_certificado_novo(request):
     if request.method == 'POST':
         form = ModeloForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('certificado_lista')  # Redirecione para a lista após criar
+            return redirect('sgc_certificado_lista')  # Redirecione para a lista após criar
     else:
         form = ModeloForm()
 
@@ -41,12 +43,20 @@ class GeraPDFTurma(View):
 
         # Obtendo todos os alunos da turma fornecida
         alunos_turma = Aluno.objects.filter(fk_turma=id_turma)
+        print(alunos_turma)
 
         # Lista para armazenar as respostas de arquivo para download
         file_responses = []
 
+        for aluno_hash in alunos_turma:
+
+            sgc_aluno_hash(aluno_hash.id)
+
         # Iterando sobre todos os alunos da turma e gerando os certificados
         for aluno in alunos_turma:
+
+        # Adicionando uma pausa de 2 segundos
+            
             # Chamando a view GeraPDFAluno para gerar o PDF de cada aluno
             response = GeraPDFAluno.as_view()(request, id=aluno.id)
 
@@ -80,7 +90,7 @@ class GeraPDFTurma(View):
         return response
 
 
-def certificado_lista(request):
+def sgc_certificado_lista(request):
     # Passo 1: Pegar todos os alunos
     todos_alunos = Aluno.objects.order_by('id')
 
@@ -105,7 +115,7 @@ def certificado_lista(request):
             # aluno.codigo_hash == '' or
             # aluno.qrcode == '' or
             # aluno.fk_status is None or
-            aluno.fk_curso is None or
+            # aluno.fk_curso is None or
             aluno.fk_om is None or
             aluno.fk_forca_orgao is None or
             aluno.fk_posto is None or
@@ -123,14 +133,14 @@ def certificado_lista(request):
 
     return render(request, 'certificado/lista.html', {'context': context})
 
-def certificado_editar(request, id):
+def sgc_certificado_editar(request, id):
     context = {}
     certificado_ob = get_object_or_404(Modelo, id=id)
     if request.method == 'POST':
         form = ModeloForm(request.POST, instance=certificado_ob)
         if form.is_valid():
             form.save()
-            return redirect('certificado_lista')
+            return redirect('sgc_certificado_lista')
     else:
         form = ModeloForm(instance=certificado_ob)
     context = {
@@ -140,13 +150,13 @@ def certificado_editar(request, id):
     return render(request, 'certificado/editar.html', context)
 
 
-def certificado_delete(request, id):
+def sgc_certificado_delete(request, id):
     context = {}
     certificado_ob = get_object_or_404(Modelo, id=id)
     if request.method == 'POST':
         certificado_ob.delete()
         # messages.success(request, 'Registro excluído com sucesso.')
-        return redirect('certificado_lista')
+        return redirect('sgc_certificado_lista')
 
     context = {
         'certificado_ob': certificado_ob
@@ -192,7 +202,7 @@ class GeraPDFAluno(View):
         aluno = Aluno.objects.select_related(
             'fk_status',
             'fk_turma',
-            'fk_curso',
+            # 'fk_curso',
             'fk_forca_orgao',
             'fk_posto',
             'fk_quadro',
@@ -210,6 +220,8 @@ class GeraPDFAluno(View):
             # 'codigo_hash',
             # 'aluno_nota',
         ).get(id=id)
+
+        
 
         posto_quadro_esp = f"{aluno.fk_posto} {aluno.fk_quadro} {aluno.fk_especialidade} "
 
@@ -251,14 +263,16 @@ class GeraPDFAluno(View):
         # print(texto_quem)
 
         texto_motivo = str(aluno.fk_turma.fk_modelo.fk_texto_motivo)
-        
+
+        curso_descricao = aluno.fk_turma.turma
+        # turma = curso_descricao + ' - ' + aluno.fk_turma.turma
+        turma = curso_descricao
         
         status = aluno.fk_status
-        # turma = aluno.fk_curso.curso_descricao + 
         ano = aluno.fk_turma.fk_ano_curso
         print(ano)
-        turma = aluno.fk_curso.curso_descricao + ' - ' + aluno.fk_turma.turma
-        curso = aluno.fk_curso
+        # turma = aluno.fk_curso.curso_descricao + ' - ' + aluno.fk_turma.turma
+        curso = aluno.fk_turma.turma
         tratamento = aluno.fk_tratamento
         # data_curso = ' 06 de asfasf a 25 adfadsfasf 2023'
         # Obtendo a data e hora atuais
@@ -290,7 +304,6 @@ class GeraPDFAluno(View):
                 'aluno': aluno,
                 'posto_quadro_esp': posto_quadro_esp,
                 'status': status,
-                'turma': turma,
                 'curso': curso,
                 'tratamento': tratamento,
                 'data_curso': data_curso,
@@ -337,7 +350,7 @@ class GeraPDFAluno(View):
 
 
 
-def certificado_manual(request):
+def sgc_certificado_manual(request):
     if request.method == 'POST':
         form = CertExtForm(request.POST)
         if form.is_valid():

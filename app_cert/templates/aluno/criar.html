@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <form method="post" id="alunoForm" data-related-url="{% url 'ajax_load_related_data_om' %}">
+            <form method="post" id="alunoForm" data-related-url="{% url 'sgc_ajax_load_related_data_om' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input type="submit" value="Submit">
+                <button type="submit" class="btn btn-primary">GRAVAR</button>
             </form>
             
             <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

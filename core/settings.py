@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import posixpath
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,17 +127,22 @@ USE_I18N = True
 
 USE_TZ = True
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
 # Caminho para os arquivos estáticos coletados
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www/doc/staticfiles/'
+# STATIC_ROOT = '/var/www/doc/staticfiles/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Caminho para os arquivos de mídia
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/www/doc/media/'
+# MEDIA_ROOT = '/var/www/doc/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 
 
 # Default primary key field type
