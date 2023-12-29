@@ -63,7 +63,8 @@ def sgc_generate_hash(data):
     hash_value = sha256_hash.hexdigest()
     return hash_value[:15]
 
-def sgc_aluno_hash(id):
+# def sgc_aluno_hash(id):
+def sgc_aluno_hash(request, id):
     aluno_ob = get_object_or_404(Aluno, id=id)
     
     # Gerar o hash com base nas informações do aluno
@@ -84,7 +85,6 @@ def sgc_aluno_hash(id):
     
     # Redirecione de volta para a lista de alunos
     return redirect('sgc_aluno_lista')
-
 
 
 # Esta parte precisa ser implementada em sua view.

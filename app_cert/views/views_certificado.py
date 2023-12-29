@@ -223,8 +223,7 @@ class GeraPDFAluno(View):
             # 'aluno_nota',
         ).get(id=id)
 
-        
-
+    
         posto_quadro_esp = f"{aluno.fk_posto} {aluno.fk_quadro} {aluno.fk_especialidade} "
 
         codigo_hash = aluno.codigo_hash
