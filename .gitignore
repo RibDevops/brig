@@ -9,4 +9,6 @@ venv
 core\settings.py
 core/settings.py
 staticfiles
-__pycache__/
+__pycache__/core\settings.py 
+__pycache__/core/settings.py 
+settings.py
