@@ -62,8 +62,8 @@
                                 <a href="/sgc_geraPDFAluno/{{ data.id }}/" class="btn btn-info" target="_blank">Gerar Certificado</a>
                             {% else %}
                                 <!-- O aluno não tem um certificado -->
-                                <!-- <a href="/sgc_aluno_hash/{{ data.id }}/" class="btn btn-primary" >Gerar Hash</a> -->
-                                <a href="{% url 'sgc_aluno_hash' id=data.id %}">Gerar Hash</a>
+                                <a href="/sgc_aluno_hash/{{ data.id }}/" class="btn btn-primary" >Gerar Hash</a>
+                                <!-- <a href="{% url 'sgc_aluno_hash' id=data.id %}">Gerar Hash</a> -->
 
                             {% endif %}
                                 <a href="/sgc_aluno_editar/{{ data.id }}/" class="btn btn btn-warning">EDITAR</a>
