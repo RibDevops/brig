@@ -23,6 +23,8 @@ from PyPDF2 import PdfMerger
 from django.db.models import Q
 from collections import defaultdict
 from .views_aluno import sgc_aluno_hash
+from django.db.models import Q
+
 
 
 def sgc_certificado_novo(request):
@@ -239,10 +241,11 @@ class GeraPDFAluno(View):
         img_fundo = aluno.fk_turma.fk_img_fundo.imagem_img
 
         in_ex = str(aluno.fk_in_ex)
+        print(f'in_ex: {in_ex}')
 
         data_curso = []
 
-        if in_ex == 'INTERNO':
+        if in_ex == '1':
             data_certificado = str(aluno.fk_turma.data_turma_interno)
 
         else:
@@ -282,18 +285,42 @@ class GeraPDFAluno(View):
         data_e_hora_formatadas = data_e_hora_atuais.strftime('%Y-%m-%d %H:%M:%S')
    
         # grade_turmas = GradeTurma.objects.filter(fk_turma=aluno.fk_turma, fk_in_ex=aluno.fk_in_ex).order_by('fk_instrucao__instrucao_sigla')
-        grade_turmas = GradeTurma.objects.filter(fk_turma=aluno.fk_turma, fk_in_ex=aluno.fk_in_ex)
 
+        
+        # User.objects.filter(Q(income__gte=5000) | Q(income__isnull=True))
+        # grade_turmas = GradeTurma.objects.filter(fk_turma=aluno.fk_turma).filter(Q(interno=in_ex) | Q(externo=in_ex))
+        # from django.db.models import Q
+
+
+
+        if in_ex == '1':
+            grade_turmas = GradeTurma.objects.filter(fk_turma=aluno.fk_turma, interno=in_ex)
+        else:
+            grade_turmas = GradeTurma.objects.filter(fk_turma=aluno.fk_turma, externo=in_ex)
+
+        # Filtrando as instruções para o aluno atual baseado no tipo (interno ou externo)
+        instrucoes_aluno = grade_turmas.values_list('fk_instrucao_id', flat=True).distinct()
+
+        # Recuperando todas as instruções do aluno baseado nos IDs filtrados
+        instrucoes = Instrucao.objects.filter(id__in=instrucoes_aluno)
+
+        # Visualizando as instruções do aluno
+        for instrucao in instrucoes:
+            print(f"Instrução do aluno: {instrucao}")
+
+
+                
 
         tempo_total = 0
         tempos_por_instrucao = []
 
         for grade_turma in grade_turmas:
-            tempo_total += grade_turma.tempo_instrucao
-            tempos_por_instrucao.append({
-                'tempo': grade_turma.tempo_instrucao,
-                'descricao': grade_turma.fk_instrucao.instrucao_descricao
-            })
+            if grade_turma.tempo_instrucao is not None:
+                tempo_total += grade_turma.tempo_instrucao
+                tempos_por_instrucao.append({
+                    'tempo': grade_turma.tempo_instrucao,
+                    'descricao': grade_turma.fk_instrucao.instrucao_descricao
+                })
 
         try:
             template = get_template('certificado/base_cert.html')

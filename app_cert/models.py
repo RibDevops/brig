@@ -181,7 +181,7 @@ class In_Ex(models.Model):
     create_at = models.DateTimeField(auto_now_add=True, null=True)
     
     def __str__(self):
-        return str(self.in_ex)
+        return str(self.id)
     
     class Meta:
         verbose_name = 'Interno/Externo'
@@ -276,9 +276,9 @@ class Instrucao(models.Model):
 class GradeTurma(models.Model):
     id = models.AutoField(primary_key=True)
     fk_turma = models.ForeignKey(Turma, on_delete=models.PROTECT, verbose_name="FK Turma", null=True)
-    fk_in_ex = models.ForeignKey(In_Ex, on_delete=models.CASCADE, verbose_name="FK Tipo Interno Externo", null=True, blank=True)
-    #interno = models.IntegerField(verbose_name="Interno", null=True, blank=True, default=0)
-    #externo = models.IntegerField(verbose_name="Externo", null=True, blank=True, default=0)
+    # fk_in_ex = models.ForeignKey(In_Ex, on_delete=models.CASCADE, verbose_name="FK Tipo Interno Externo", null=True, blank=True)
+    interno = models.IntegerField(verbose_name="Interno", null=True, blank=True, default=0)
+    externo = models.IntegerField(verbose_name="Externo", null=True, blank=True, default=0)
 
     # fk_instrucao = models.ForeignKey(Instrucao, on_delete=models.CASCADE, verbose_name="FK Instrução", null=True, blank=True, default=0)
     fk_instrucao = models.ForeignKey(Instrucao, on_delete=models.CASCADE, verbose_name="FK Instrução", null=True, blank=True)

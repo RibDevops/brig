@@ -160,19 +160,13 @@ class StatusForm(forms.ModelForm):
 class GradeTurmaForm(forms.ModelForm):
     class Meta:
         model = GradeTurma
-        # fields = ['tempo_instrucao', 'fk_turma']  # Inclua os campos desejados aqui
-        fields = ['fk_turma']  # Inclua os campos desejados aqui
+        fields = ['fk_turma', 'fk_instrucao', 'interno', 'externo', 'tempo_instrucao']  # Inclua todos os campos necessários aqui
 
         widgets = {
-            # 'tempo_instrucao': forms.TextInput(attrs={
-            #     'class': 'form-control',
-            #     'maxlength': '5',
-            #     'placeholder': 'Ex: 10',
-            #     'size': '5'
-            # }),
             'fk_turma': forms.Select(attrs={
                 'class': 'form-control',
             }),
+            # Adicione widgets para os outros campos se necessário
         }
 
 
