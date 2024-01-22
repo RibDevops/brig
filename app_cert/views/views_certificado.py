@@ -314,8 +314,6 @@ class GeraPDFAluno(View):
             print(f"Instrução do aluno: {instrucao}")
 
 
-                
-
         tempo_total = 0
         tempos_por_instrucao = []
 
