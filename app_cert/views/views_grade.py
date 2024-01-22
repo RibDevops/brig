@@ -144,7 +144,7 @@ def sgc_grade_nova(request):
 def sgc_grade_lista(request):
     dataset = (
         GradeTurma.objects
-        .values('fk_turma', 'fk_turma__turma')  # Adiciona o campo 'fk_turma__turma' para pegar a descrição da turma
+        .values('fk_turma', 'fk_turma__turma_sgc')  # Adiciona o campo 'fk_turma__turma' para pegar a descrição da turma
         .annotate(total=Count('fk_turma'))  # Anotação para contar o número de ocorrências de cada valor de fk_turma
         .prefetch_related('fk_turma')  # Carrega os objetos relacionados usando prefetch_related
     )

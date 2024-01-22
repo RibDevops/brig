@@ -37,7 +37,7 @@
                         {% for data in dataset %}
                         <tr>
                             <td style="text-align: center">{{ data.fk_turma }}</td>  <!-- Exibe a chave estrangeira da Turma -->
-                            <td style="text-align: center">{{ data.fk_turma__turma }}</td>  <!-- Exibe a descrição da Turma -->
+                            <td style="text-align: center">{{ data.fk_turma__turma_sgc }}</td>  <!-- Exibe a descrição da Turma -->
                             <td style="text-align: center">{{ data.total }}</td>
                             <td style="text-align: center">
                                 <a href="/sgc_grade_detalhes/{{ data.fk_turma }}/" class="btn btn-info">Detalhes</a>
@@ -46,6 +46,7 @@
                         {% endfor %}
                     </tbody>
                 </table>
+
 
                 <!-- Adicionar os links de navegação para as páginas -->
                 <!-- <div class="pagination">

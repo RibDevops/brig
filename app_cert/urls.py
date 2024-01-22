@@ -95,8 +95,6 @@ urlpatterns = [
     # path('sgc_load-om/', sgc_load_om, name='ajax_load_om'),  # Verifique se o nome da função está correto
     path('sgc_ajax_load_related_data_om/', sgc_ajax_load_related_data_om, name="sgc_ajax_load_related_data_om"),
     path('sgc_import_csv_view/', sgc_import_csv_view, name="sgc_import_csv_view"),
-
-
     
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # ] 

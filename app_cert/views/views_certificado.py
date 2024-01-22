@@ -45,14 +45,20 @@ class GeraPDFTurma(View):
 
         # Obtendo todos os alunos da turma fornecida
         alunos_turma = Aluno.objects.filter(fk_turma=id_turma)
-        print(alunos_turma)
+        print(f"turma - {alunos_turma}")
 
         # Lista para armazenar as respostas de arquivo para download
         file_responses = []
 
-        for aluno_hash in alunos_turma:
+        # for aluno_hash in alunos_turma:
 
-            sgc_aluno_hash(aluno_hash.id)
+        #     sgc_aluno_hash(aluno_hash.id)
+
+        for aluno_hash in alunos_turma:
+            
+            aluno_id_hash = int(aluno_hash.id)
+            print(f"id - {aluno_id_hash}")
+            sgc_aluno_hash(aluno_id_hash)
 
         # Iterando sobre todos os alunos da turma e gerando os certificados
         for aluno in alunos_turma:
@@ -327,7 +333,7 @@ class GeraPDFAluno(View):
             # Contexto original
             base_context = {
                 'title': 'PDF Hello',
-                'aluno': aluno,
+                'aluno': aluno.aluno_nome,
                 'posto_quadro_esp': posto_quadro_esp,
                 'status': status,
                 'curso': curso,

@@ -64,7 +64,7 @@ def sgc_generate_hash(data):
     return hash_value[:15]
 
 # def sgc_aluno_hash(id):
-def sgc_aluno_hash(request, id):
+def sgc_aluno_hash(id):
     aluno_ob = get_object_or_404(Aluno, id=id)
     
     # Gerar o hash com base nas informações do aluno
