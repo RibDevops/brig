@@ -26,6 +26,7 @@ urlpatterns = [
     path('sgc_aluno_editar/<int:id>/', sgc_aluno_editar, name="sgc_aluno_editar"),
     path('sgc_aluno_delete/<int:id>/', sgc_aluno_delete, name="sgc_aluno_delete"),
     path('sgc_aluno_hash/<int:id>/', sgc_aluno_hash, name="sgc_aluno_hash"),
+    path('sgc_aluno_lista_detalhes/<int:id>/', sgc_aluno_lista_detalhes, name='sgc_aluno_lista_detalhes'),
 
     path('sgc_modelo_lista', sgc_modelo_lista, name="sgc_modelo_lista"),
     path('sgc_modelo_novo', sgc_modelo_novo, name="sgc_modelo_novo"),

@@ -1,3 +1,5 @@
+from collections import Counter
+import django.db.models
 from django.http import HttpResponse
 from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
@@ -20,9 +22,11 @@ from ..models import Forca_Orgao, Posto, Quadro, Especialidade, Turma
 
 from django.conf import settings
 import os
-
+from django.db.models import Count
 from django.conf import settings
 import os
+
+from itertools import count, groupby
 
 
 def sgc_generate_qr_code(data_gh, id):
@@ -64,7 +68,7 @@ def sgc_generate_hash(data):
     return hash_value[:15]
 
 # def sgc_aluno_hash(id):
-def sgc_aluno_hash(id):
+def sgc_aluno_hash(request, id):
     aluno_ob = get_object_or_404(Aluno, id=id)
     
     # Gerar o hash com base nas informações do aluno
@@ -73,8 +77,6 @@ def sgc_aluno_hash(id):
     hash_aluno = sgc_generate_hash(aluno_info)
 
     qrcode = sgc_generate_qr_code(hash_aluno, id)
-
-
 
     print(hash_aluno)
     # Salvar o hash no modelo Aluno
@@ -139,18 +141,41 @@ def sgc_aluno_novo(request):
 #         print(aluno.__dict__)
 #     return render(request, 'aluno/lista.html', context)dataset = Aluno.objects.select_related('fk_id_aluno').all()
 
+# def sgc_aluno_lista(request):
+#     # Obtém todos os alunos
+#     dataset = Aluno.objects.all()
+
+#     # Crie o contexto com a lista de alunos e se eles têm certificado
+#     context = {
+#         "dataset": dataset,
+#         # "alunos_com_certificado": Certificado.objects.values_list('fk_id_aluno_id', flat=True)
+#     }
+    
+#     return render(request, 'aluno/lista.html', context)
+
 def sgc_aluno_lista(request):
     # Obtém todos os alunos
-    dataset = Aluno.objects.all()
+    dataset = (
+        Aluno.objects
+        .values('fk_turma', 'fk_turma__turma_sgc')  # Adiciona o campo 'fk_turma__turma' para pegar a descrição da turma
+        .annotate(total=Count('id'))  # Anotação para contar o número de ocorrências de cada valor de fk_turma
+        .prefetch_related('fk_turma')  # Carrega os objetos relacionados usando prefetch_related
+    )
+    print(dataset)
+    context = {"dataset": dataset}
+    return render(request, 'aluno/lista_turma.html', context)
 
-    # Crie o contexto com a lista de alunos e se eles têm certificado
+def sgc_aluno_lista_detalhes(request, id):
+    print(id)
+    # Filtra o conjunto de dados de Aluno com base na turma específica
+    dataset = Aluno.objects.filter(fk_turma=id)
+    # print(alunos_turma)
+
     context = {
         "dataset": dataset,
-        # "alunos_com_certificado": Certificado.objects.values_list('fk_id_aluno_id', flat=True)
+        # "turma_sgc": turma_sgc
     }
-    
     return render(request, 'aluno/lista.html', context)
-
 
 # def sgc_aluno_detalhes(request, pk):
 #     aluno_ob = get_object_or_404(AlunoForm, pk=pk)

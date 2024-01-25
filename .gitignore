@@ -12,3 +12,4 @@ staticfiles
 __pycache__/core\settings.py 
 __pycache__/core/settings.py 
 settings.py
+db.sqlite3

@@ -24,6 +24,7 @@ from django.db.models import Q
 from collections import defaultdict
 from .views_aluno import sgc_aluno_hash
 from django.db.models import Q
+import time
 
 
 
@@ -45,7 +46,7 @@ class GeraPDFTurma(View):
 
         # Obtendo todos os alunos da turma fornecida
         alunos_turma = Aluno.objects.filter(fk_turma=id_turma)
-        print(f"turma - {alunos_turma}")
+        # print(alunos_turma)
 
         # Lista para armazenar as respostas de arquivo para download
         file_responses = []
@@ -58,7 +59,13 @@ class GeraPDFTurma(View):
             
             aluno_id_hash = int(aluno_hash.id)
             print(f"id - {aluno_id_hash}")
-            sgc_aluno_hash(aluno_id_hash)
+            sgc_aluno_hash(request, aluno_id_hash)
+        
+        
+
+        print("Início do programa")
+        time.sleep(3)
+        print("Fim do programa")
 
         # Iterando sobre todos os alunos da turma e gerando os certificados
         for aluno in alunos_turma:
@@ -137,7 +144,7 @@ def sgc_certificado_lista(request):
         if campos_vazios:
             context[turma].append(aluno)
 
-    print(f"Print variável CONTEXT: {context}")
+    # print(f"Print variável CONTEXT: {context}")
 
     return render(request, 'certificado/lista.html', {'context': context})
 
