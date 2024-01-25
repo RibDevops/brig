@@ -1,5 +1,6 @@
 manage.py
 .vscode
+.vscode/
 .w_venv
 w_venv
 .conf
@@ -9,7 +10,17 @@ venv
 core\settings.py
 core/settings.py
 staticfiles
+pycache
+__pycache__/
+**/__pycache__/
+__pycache__
+**/__pycache__/
 __pycache__/core\settings.py 
 __pycache__/core/settings.py 
 settings.py
 db.sqlite3
+C:\Users\suporte\Documents\doc\app_cert\__pycache__
+app_cert\__pycache__
+**pycache__
+.qrcode
+requirements.txt
