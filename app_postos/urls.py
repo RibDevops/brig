@@ -44,4 +44,19 @@ urlpatterns = [
     path('scp_espe_nova/', scp_espe_nova, name="scp_espe_nova"),
     path('scp_espe_detalhes/<int:id>/', scp_espe_detalhes, name="scp_espe_detalhes"),
     path('scp_espe_ditar/<int:id>/', scp_espe_ditar, name="scp_espe_ditar"),
+
+    path('scp_espe_lista/', scp_espe_lista, name="scp_espe_lista"),
+    path('scp_espe_nova/', scp_espe_nova, name="scp_espe_nova"),
+    path('scp_espe_detalhes/<int:id>/', scp_espe_detalhes, name="scp_espe_detalhes"),
+    path('scp_espe_ditar/<int:id>/', scp_espe_ditar, name="scp_espe_ditar"),
+
+    path('scp_espe_lista/', scp_espe_lista, name="scp_espe_lista"),
+    path('scp_espe_nova/', scp_espe_nova, name="scp_espe_nova"),
+    path('scp_espe_detalhes/<int:id>/', scp_espe_detalhes, name="scp_espe_detalhes"),
+    path('scp_espe_ditar/<int:id>/', scp_espe_ditar, name="scp_espe_ditar"),
+
+    path('scp_espe_lista/', scp_espe_lista, name="scp_espe_lista"),
+    path('scp_espe_nova/', scp_espe_nova, name="scp_espe_nova"),
+    path('scp_espe_detalhes/<int:id>/', scp_espe_detalhes, name="scp_espe_detalhes"),
+    path('scp_espe_ditar/<int:id>/', scp_espe_ditar, name="scp_espe_ditar"),
 ]

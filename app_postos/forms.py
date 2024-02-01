@@ -22,7 +22,10 @@ class EspecialidadeForm(forms.ModelForm):
         model = Especialidade
         fields = '__all__'  # Ou liste os campos que deseja incluir no formulário manualmente
 
-
+class PostoForm(forms.ModelForm):
+    class Meta:
+        model = Especialidade
+        fields = '__all__'  # Ou liste os campos que deseja incluir no formulário manualmente
 # class CSVUploadForm(forms.Form):
 #     file = forms.FileField()
 

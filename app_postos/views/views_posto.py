@@ -1,8 +1,12 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
-from app_cert.models import Om
-from ..forms import OmForm
+from app_cert.models import Posto
+from ..forms import PostoForm
 from django.db.models import Count
+from django.contrib import messages
+
+
+ 
 
 # Create your views here.
 def home(request):
@@ -10,17 +14,17 @@ def home(request):
     # return render(request, 'home.html', context )
     return render(request, 'sgu_home.html')
 
-# def scp_om_lista(request):
-#     dataset = Om.objects.all()
+# def scp_posto_lista(request):
+#     dataset = Posto.objects.all()
 #     context = {"dataset": dataset}
 #     # print(dataset)
-#     return render(request, 'om/lista.html', context)
+#     return render(request, 'posto/lista.html', context)
 
 
-def scp_om_lista(request):
+def scp_posto_lista(request):
     # Consulta para obter todas as OM ordenadas por força/orgão
     dataset = (
-        Om.objects
+        Posto.objects
         .values('fk_forca_orgao', 'fk_forca_orgao__forca_orgao' )  
             .annotate(total=Count('fk_forca_orgao'))  
             .prefetch_related('fk_forca_orgao')
@@ -28,64 +32,66 @@ def scp_om_lista(request):
     
     print(dataset)
     context = {"dataset": dataset}
-    return render(request, 'om/lista.html', context)
+    return render(request, 'posto/lista.html', context)
 
-def scp_om_detalhes(request, id):
-    # Obtém a instância da Om com o ID fornecido ou retorna um erro 404 caso não exista
-    # om = get_object_or_404(Om, pk=id)
+def scp_posto_detalhes(request, id):
+    # Obtém a instância da Posto com o ID fornecido ou retorna um erro 404 caso não exista
+    # om = get_object_or_404(Posto, pk=id)
 
-    # Filtra o conjunto de dados de Om com base na OM específica
-    dataset = Om.objects.filter(fk_forca_orgao=id)
+    # Filtra o conjunto de dados de Posto com base na OM postocífica
+    dataset = Posto.objects.filter(fk_forca_orgao=id)
 
     context = {
         "dataset": dataset,
-        # "om": om  # Passa a instância de Om para o contexto
+        # "om": om  # Passa a instância de Posto para o contexto
     }
-    return render(request, 'om/lista_om.html', context)
+    return render(request, 'posto/lista_posto.html', context)
 
 
-def scp_om_nova(request):
+def scp_posto_novo(request):
     if request.method == 'POST':
-        form = OmForm(request.POST)
+        form = PostoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('scp_om_lista')  # Redirecione para a lista após criar
+            messages.add_message(request, messages.SUCCESS, 'Posto cadastrado com sucesso.')
+            return redirect('scp_posto_lista')  # Redirecione para a lista após criar
     else:
-        form = OmForm()
+        form = PostoForm()
     
-    return render(request, 'om/criar.html', {'form': form})
+    return render(request, 'posto/criar.html', {'form': form})
 
-def scp_om_ditar(request, id):
+def scp_posto_ditar(request, id):
     context ={}
-    om_ob = get_object_or_404(Om, id=id)
+    posto_ob = get_object_or_404(Posto, id=id)
     if request.method == 'POST':
-        form = OmForm(request.POST, instance=om_ob)
+        form = PostoForm(request.POST, instance=posto_ob)
         if form.is_valid():
             form.save()
-            return redirect('scp_om_lista')
+            messages.add_message(request, messages.SUCCESS, 'Posto editado com sucesso.')
+            return redirect('scp_posto_lista')
     else:
-        form = OmForm(instance=om_ob)
+        form = PostoForm(instance=posto_ob)
     context = {
         'form': form,
-        'om_ob': om_ob
+        'posto_ob': posto_ob
     }
-    return render(request, 'om/editar.html', context)
+    return render(request, 'posto/editar.html', context)
 
-def scp_om_delete(request, id):
+def scp_posto_delete(request, id):
     context ={}
-    om_ob = get_object_or_404(Om, id=id)
+    posto_ob = get_object_or_404(Posto, id=id)
     if request.method == 'POST':
-        om_ob.delete()
-        # messages.success(request, 'Registro excluído com sucesso.')
-        return redirect('scp_om_lista')
+        posto_ob.delete()
+        messages.add_message(request, messages.SUCCESS, 'Posto excluído com sucesso.')
+        return redirect('scp_posto_lista')
     
     context = {
-        'om_ob': om_ob
+        'posto_ob': posto_ob
     }
     
-    return render(request, 'om/excluir.html', context)
+    return render(request, 'posto/excluir.html', context)
 
 
 # def sgc_ano_detalhes(request, pk):
-#     ano_ob = get_object_or_404(Om, pk=pk)
-#     return render(request, 'om/detalhes.html', {'ano_ob': ano_ob})
+#     ano_ob = get_object_or_404(Posto, pk=pk)
+#     return render(request, 'posto/detalhes.html', {'ano_ob': ano_ob})

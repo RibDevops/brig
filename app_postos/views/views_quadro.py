@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from app_cert.models import Om
 from ..forms import OmForm
 from django.db.models import Count
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -49,6 +50,7 @@ def scp_om_nova(request):
         form = OmForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Quadro cadastrado com sucesso.')
             return redirect('scp_om_lista')  # Redirecione para a lista após criar
     else:
         form = OmForm()
@@ -62,6 +64,7 @@ def scp_om_ditar(request, id):
         form = OmForm(request.POST, instance=om_ob)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Quadro editado com sucesso.')
             return redirect('scp_om_lista')
     else:
         form = OmForm(instance=om_ob)
@@ -76,7 +79,7 @@ def scp_om_delete(request, id):
     om_ob = get_object_or_404(Om, id=id)
     if request.method == 'POST':
         om_ob.delete()
-        # messages.success(request, 'Registro excluído com sucesso.')
+        messages.add_message(request, messages.SUCCESS, 'Quadro excluído com sucesso.') 
         return redirect('scp_om_lista')
     
     context = {

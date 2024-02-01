@@ -4,6 +4,12 @@ from app_cert.models import Especialidade
 from ..forms import EspecialidadeForm
 from django.db.models import Count
 
+from django.contrib import messages
+
+
+
+
+
 # Create your views here.
 def home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
@@ -49,6 +55,7 @@ def scp_espe_nova(request):
         form = EspecialidadeForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Especialidade cadastrada com sucesso.')
             return redirect('scp_espe_lista')  # Redirecione para a lista após criar
     else:
         form = EspecialidadeForm()
@@ -62,6 +69,7 @@ def scp_espe_ditar(request, id):
         form = EspecialidadeForm(request.POST, instance=espe_ob)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Especialidade editada com sucesso.')
             return redirect('scp_espe_lista')
     else:
         form = EspecialidadeForm(instance=espe_ob)
@@ -76,7 +84,7 @@ def scp_espe_delete(request, id):
     espe_ob = get_object_or_404(Especialidade, id=id)
     if request.method == 'POST':
         espe_ob.delete()
-        # messages.success(request, 'Registro excluído com sucesso.')
+        messages.add_message(request, messages.SUCCESS, 'Especialidade excluída com sucesso.') 
         return redirect('scp_espe_lista')
     
     context = {
