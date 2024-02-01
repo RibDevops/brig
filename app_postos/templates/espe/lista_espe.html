@@ -16,7 +16,8 @@
         {% endif %}
 
         <div class="col-md-15">
-            <a href="{% url 'scp_om_nova' %}" class="btn btn-primary">NOVA OM</a>
+            <a href="{% url 'scp_espe_lista' %}" class="btn btn-warning">VOLTAR</a>
+            <a href="{% url 'scp_espe_nova' %}" class="btn btn-primary">NOVA ESPECIALIDADE</a>
             <div class="col-8 m-auto pt-4 pb-2 text-center">
 
                 <table class="table">
@@ -27,18 +28,19 @@
                     <thead class="thead-dark">
                         <tr>
                             <th style="text-align: center">ID</th>
-                            <th style="text-align: center">Força/Orgão</th>
-                            <th style="text-align: center">Total</th>
+                            <th style="text-align: center">Especialidade</th>
+                            <th style="text-align: center">Descrição</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for om in dataset %}
+                        {% for ob in dataset %}
     <tr>
-        <td>{{ om.fk_forca_orgao }}</td>
-        <td>{{ om.fk_forca_orgao__forca_orgao }}</td>
-        <td>{{ om.total }}</td>
+        <td>{{ ob.id }}</td>
+        <td>{{ ob.especialidade }}</td>
+        <td>{{ ob.especialidade_descricao }}</td>
         <td>
-            <a href="/scp_om_detalhes/{{ om.fk_forca_orgao }}/" class="btn btn-info">Detalhes</a>
+            
+            <a href="/scp_espe_ditar/{{ ob.id }}/" class="btn btn-info">Editar</a>
         </td>
     </tr>
 {% endfor %}

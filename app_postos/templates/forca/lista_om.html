@@ -28,17 +28,18 @@
                         <tr>
                             <th style="text-align: center">ID</th>
                             <th style="text-align: center">Força/Orgão</th>
-                            <th style="text-align: center">Total</th>
+                            <th style="text-align: center">Descrição</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for om in dataset %}
     <tr>
-        <td>{{ om.fk_forca_orgao }}</td>
-        <td>{{ om.fk_forca_orgao__forca_orgao }}</td>
-        <td>{{ om.total }}</td>
+        <td>{{ om.id }}</td>
+        <td>{{ om.om }}</td>
+        <td>{{ om.om_descricao }}</td>
         <td>
-            <a href="/scp_om_detalhes/{{ om.fk_forca_orgao }}/" class="btn btn-info">Detalhes</a>
+            <a href="{% url 'scp_om_lista' %}" class="btn btn-warning">VOLTAR</a>
+            <a href="/scp_om_ditar/{{ om.id }}/" class="btn btn-info">Editar</a>
         </td>
     </tr>
 {% endfor %}

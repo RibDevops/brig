@@ -1,3 +1,4 @@
+from pyexpat.errors import messages
 import time
 import zipfile
 import io
@@ -25,6 +26,9 @@ from collections import defaultdict
 from .views_aluno import sgc_aluno_hash
 from django.db.models import Q
 import time
+from django.contrib import messages
+from django.shortcuts import redirect, render, get_object_or_404
+
 
 
 
@@ -40,6 +44,7 @@ def sgc_certificado_novo(request):
     return render(request, 'certificado/criar.html', {'form': form})
 
 class GeraPDFTurma(View):
+
     def get(self, request, id_turma):
         # Obtendo a turma
         turma = Turma.objects.get(pk=id_turma)
@@ -104,49 +109,226 @@ class GeraPDFTurma(View):
 
         return response
 
+#------------------------------------------
+
+
+def verificar_pendencias(aluno):
+    """
+    Verifica se o aluno possui campos vazios.
+    """
+    campos_vazios = (
+        aluno.aluno_nome == '' or
+        aluno.aluno_cpf == '' or
+        aluno.aluno_email == '' or
+        aluno.fk_turma == '' or
+        aluno.fk_om is None or
+        aluno.fk_forca_orgao is None or
+        aluno.fk_posto is None or
+        aluno.fk_quadro is None or
+        aluno.fk_especialidade is None or
+        aluno.fk_in_ex is None or
+        aluno.fk_tratamento is None
+    )
+    return campos_vazios
+
+def sgc_certificado_aluno(request, id):
+    """
+    Verifica se um aluno específico possui pendências e exibe detalhes ou redireciona.
+    """
+    aluno = get_object_or_404(Aluno, id=id)
+    if not verificar_pendencias(aluno):
+        messages.add_message(request, messages.SUCCESS, 'Este aluno não possui pendências.')
+        return redirect('sgc_aluno_lista_detalhes', id=aluno.fk_turma.id)
+    return render(request, 'certificado/detalhes_aluno.html', {'aluno': aluno})
 
 def sgc_certificado_lista(request):
-    # Passo 1: Pegar todos os alunos
+    """
+    Lista todos os alunos e verifica se algum possui pendências.
+    """
     todos_alunos = Aluno.objects.order_by('id')
-
-    # Inicializar um dicionário de contexto para armazenar os alunos com campos em branco por turma
     context = {}
 
-    # Passo 2: Organizar os alunos por turma e verificar campos vazios
     for aluno in todos_alunos:
         turma = aluno.fk_turma
-
-        # Se a turma não existir no contexto, inicializar uma lista vazia para ela
         if turma not in context:
             context[turma] = []
 
-        # Verificar se algum campo está vazio
-        campos_vazios = (
-            aluno.aluno_nome == '' or
-            aluno.aluno_cpf == '' or
-            aluno.aluno_email == '' or
-            aluno.fk_turma == '' or
-            # aluno.aluno_nota == '' or
-            # aluno.codigo_hash == '' or
-            # aluno.qrcode == '' or
-            # aluno.fk_status is None or
-            # aluno.fk_curso is None or
-            aluno.fk_om is None or
-            aluno.fk_forca_orgao is None or
-            aluno.fk_posto is None or
-            aluno.fk_quadro is None or
-            aluno.fk_especialidade is None or
-            aluno.fk_in_ex is None or
-            aluno.fk_tratamento is None
-        )
-
-        # Se algum campo estiver vazio, adicionar o aluno à lista da turma
-        if campos_vazios:
+        if verificar_pendencias(aluno):
             context[turma].append(aluno)
 
-    # print(f"Print variável CONTEXT: {context}")
+    if not any(context.values()):
+        messages.add_message(request, messages.SUCCESS, 'Não existem pendências.')
+        return redirect('sgc_aluno_lista')
 
     return render(request, 'certificado/lista.html', {'context': context})
+
+def sgc_certificado_turma_lista(request, id):
+    """
+    Lista os alunos de uma turma específica e verifica se algum possui pendências.
+    """
+    todos_alunos = Aluno.objects.filter(fk_turma=id)
+    context = {}
+
+    for aluno in todos_alunos:
+        turma = aluno.fk_turma
+        if turma not in context:
+            context[turma] = []
+
+        if verificar_pendencias(aluno):
+            context[turma].append(aluno)
+
+    if not any(context.values()):
+        messages.add_message(request, messages.SUCCESS, 'Não existem pendências nesta turma.')
+        return redirect('sgc_aluno_lista_detalhes', id=id)
+
+    return render(request, 'certificado/lista.html', {'context': context})
+
+
+
+
+
+
+
+
+# def sgc_certificado_lista(request):
+#     # Passo 1: Pegar todos os alunos
+#     todos_alunos = Aluno.objects.order_by('id')
+
+#     # Inicializar um dicionário de contexto para armazenar os alunos com campos em branco por turma
+#     context = {}
+
+#     # Passo 2: Organizar os alunos por turma e verificar campos vazios
+#     for aluno in todos_alunos:
+#         turma = aluno.fk_turma
+
+#         # Se a turma não existir no contexto, inicializar uma lista vazia para ela
+#         if turma not in context:
+#             context[turma] = []
+
+#         # Verificar se algum campo está vazio
+#         campos_vazios = (
+#             aluno.aluno_nome == '' or
+#             aluno.aluno_cpf == '' or
+#             aluno.aluno_email == '' or
+#             aluno.fk_turma == '' or
+#             # aluno.aluno_nota == '' or
+#             # aluno.codigo_hash == '' or
+#             # aluno.qrcode == '' or
+#             # aluno.fk_status is None or
+#             # aluno.fk_curso is None or
+#             aluno.fk_om is None or
+#             aluno.fk_forca_orgao is None or
+#             aluno.fk_posto is None or
+#             aluno.fk_quadro is None or
+#             aluno.fk_especialidade is None or
+#             aluno.fk_in_ex is None or
+#             aluno.fk_tratamento is None
+#         )
+
+#         # Se algum campo estiver vazio, adicionar o aluno à lista da turma
+#         if campos_vazios:
+#             context[turma].append(aluno)
+
+#     if not any(context.values()):
+        
+#         messages.add_message(request, messages.SUCCESS, 'Não exitem pendências.')
+#         return redirect('sgc_aluno_lista')
+
+#     # print(f"Print variável CONTEXT: {context}")
+
+#     return render(request, 'certificado/lista.html', {'context': context})
+
+# def sgc_certificado_turma_lista(request, id):
+#     # Passo 1: Pegar todos os alunos
+#     todos_alunos = Aluno.objects.filter(fk_turma=id)
+#     # todos_alunos = Aluno.objects.order_by('id')
+
+#     # Inicializar um dicionário de contexto para armazenar os alunos com campos em branco por turma
+#     context = {}
+
+#     # Passo 2: Organizar os alunos por turma e verificar campos vazios
+#     for aluno in todos_alunos:
+#         turma = aluno.fk_turma
+
+#         # Se a turma não existir no contexto, inicializar uma lista vazia para ela
+#         if turma not in context:
+#             context[turma] = []
+
+#         # Verificar se algum campo está vazio
+#         campos_vazios = (
+#             aluno.aluno_nome == '' or
+#             aluno.aluno_cpf == '' or
+#             aluno.aluno_email == '' or
+#             aluno.fk_turma == '' or
+#             # aluno.aluno_nota == '' or
+#             # aluno.codigo_hash == '' or
+#             # aluno.qrcode == '' or
+#             # aluno.fk_status is None or
+#             # aluno.fk_curso is None or
+#             aluno.fk_om is None or
+#             aluno.fk_forca_orgao is None or
+#             aluno.fk_posto is None or
+#             aluno.fk_quadro is None or
+#             aluno.fk_especialidade is None or
+#             aluno.fk_in_ex is None or
+#             aluno.fk_tratamento is None
+#         )
+
+#         # Se algum campo estiver vazio, adicionar o aluno à lista da turma
+#         if campos_vazios:
+#             context[turma].append(aluno)
+
+#     # print(f"Print variável CONTEXT: {context}")
+
+#     return render(request, 'certificado/lista.html', {'context': context})
+
+# def sgc_certificado_turma_lista(request, id):
+#     # Passo 1: Pegar todos os alunos
+#     todos_alunos = Aluno.objects.filter(fk_turma=id)
+
+#     # Inicializar um dicionário de contexto para armazenar os alunos com campos em branco por turma
+#     context = {}
+
+#     # Passo 2: Organizar os alunos por turma e verificar campos vazios
+#     for aluno in todos_alunos:
+#         turma = aluno.fk_turma
+
+#         # Se a turma não existir no contexto, inicializar uma lista vazia para ela
+#         if turma not in context:
+#             context[turma] = []
+
+#         # Verificar se algum campo está vazio
+#         campos_vazios = (
+#             aluno.aluno_nome == '' or
+#             aluno.aluno_cpf == '' or
+#             aluno.aluno_email == '' or
+#             aluno.fk_turma == '' or
+#             aluno.fk_om is None or
+#             aluno.fk_forca_orgao is None or
+#             aluno.fk_posto is None or
+#             aluno.fk_quadro is None or
+#             aluno.fk_especialidade is None or
+#             aluno.fk_in_ex is None or
+#             aluno.fk_tratamento is None
+#         )
+
+#         # Se algum campo estiver vazio, adicionar o aluno à lista da turma
+#         if campos_vazios:
+#             context[turma].append(aluno)
+
+#     # Verificar se houve algum aluno encontrado com campos vazios
+#     if not any(context.values()):
+        
+#         messages.add_message(request, messages.SUCCESS, 'Não exitem pendências nessa turma.')
+#         return redirect('sgc_aluno_lista_detalhes', id=id)
+    
+    # if not todos_alunos:
+    #     messages.info(request, "Não há pendências.")
+    #     return redirect('sgc_aluno_lista_detalhes', id=id)
+
+    # return render(request, 'certificado/lista.html', {'context': context})
+
+
 
 def sgc_certificado_editar(request, id):
     context = {}
@@ -214,6 +396,8 @@ class GeraPDFAluno(View):
 
     def get(self, request, id, *args, **kwargs):
 
+        sgc_aluno_hash(request, id)
+
         aluno = Aluno.objects.select_related(
             'fk_status',
             'fk_turma',
@@ -252,7 +436,7 @@ class GeraPDFAluno(View):
 
         img_fundo = aluno.fk_turma.fk_img_fundo.imagem_img
 
-        in_ex = str(aluno.fk_in_ex)
+        in_ex = str(aluno.fk_in_ex.id)
         print(f'in_ex: {in_ex}')
 
         data_curso = []
@@ -386,8 +570,11 @@ class GeraPDFAluno(View):
             return HttpResponseRedirect(reverse_lazy('certificado_lista'))
 
 
-
 def sgc_certificado_manual(request):
+    return render(request, 'certificado/manual.html')
+
+
+def sgc_certificado_ext(request):
     if request.method == 'POST':
         form = CertExtForm(request.POST)
         if form.is_valid():
@@ -397,8 +584,8 @@ def sgc_certificado_manual(request):
     else:
         form = CertExtForm()
     
-    return render(request, 'certificado/manual.html', {'form': form})
-
+    return render(request, 'certificado/externo.html', {'form': form})
+    # return render(request, 'certificado/manual.html')
 
 class GeraPDFExterno(View):
     def link_callback(self, uri, rel):

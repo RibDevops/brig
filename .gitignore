@@ -22,5 +22,7 @@ db.sqlite3
 C:\Users\suporte\Documents\doc\app_cert\__pycache__
 app_cert\__pycache__
 **pycache__
-.qrcode
+**qrcode
 requirements.txt
+media\qrcode
+**/media/qrcode

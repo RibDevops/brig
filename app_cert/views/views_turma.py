@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from requests import request
 from ..models import Turma, Aluno
 from ..forms import TurmaForm
-
+from django.contrib import messages
 
 def sgc_home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
@@ -12,6 +13,7 @@ def sgc_turma_nova(request):
         form = TurmaForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Turma cadastrada com sucesso.')
             return redirect('sgc_turma_lista')  # Redirecione para a lista após criar
     else:
         form = TurmaForm()
@@ -46,6 +48,7 @@ def sgc_turma_editar(request, id):
         form = TurmaForm(request.POST, instance=turma_ob)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Turma editada com sucesso.')
             return redirect('sgc_turma_lista')
     else:
         form = TurmaForm(instance=turma_ob)
@@ -60,7 +63,7 @@ def sgc_turma_delete(request, id):
     turma_ob = get_object_or_404(Turma, id=id)
     if request.method == 'POST':
         turma_ob.delete()
-        # messages.success(request, 'Registro excluído com sucesso.')
+        messages.add_message(request, messages.SUCCESS, 'Turma excluída com sucesso.')
         return redirect('sgc_turma_lista')
     
     context = {

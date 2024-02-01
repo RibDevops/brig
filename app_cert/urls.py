@@ -85,12 +85,12 @@ urlpatterns = [
     path('sgc_geraPDFAluno/<int:id>/', GeraPDFAluno.as_view(), name="sgc_geraPDFAluno"),
 
     path('sgc_certificado_lista/', sgc_certificado_lista, name="sgc_certificado_lista"),
+    path('sgc_certificado_turma_lista/<int:id>/', sgc_certificado_turma_lista, name="sgc_certificado_turma_lista"),
     path('sgc_certificado_manual/', sgc_certificado_manual, name="sgc_certificado_manual"),
-    # path('sgc_GeraPDFTurma/<int:id>/', sgc_GeraPDFTurma, name="sgc_GeraPDFTurma"),
     path('sgc_gerar_certificados_turma/<int:id_turma>/', GeraPDFTurma.as_view(), name="sgc_gerar_certificados_turma"),
+    path('sgc_certificado_ext/', sgc_certificado_ext, name="sgc_certificado_ext"),
     path('sgc_gerar_certificados_externo/', GeraPDFExterno.as_view(), name="sgc_gerar_certificados_externo"),
-    # path('sgc_testaPDFAluno/', sgc_pdf_report_create, name="sgc_testaPDFAluno"),
-    # urllib3(r'^download$', sgc_render_pdf),
+
 
     # path('sgc_load-om/', sgc_load_om, name='ajax_load_om'), # AJAX
     # path('sgc_load-om/', sgc_load_om, name='ajax_load_om'),  # Verifique se o nome da função está correto
@@ -98,9 +98,5 @@ urlpatterns = [
     path('sgc_import_csv_view/', sgc_import_csv_view, name="sgc_import_csv_view"),
     
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# ] 
 
-# if settings.DEBUG:
-#     URLPattern += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

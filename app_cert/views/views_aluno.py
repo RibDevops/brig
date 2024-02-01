@@ -1,4 +1,5 @@
 from collections import Counter
+# from pyexpat.errors import messages
 import django.db.models
 from django.http import HttpResponse
 from django.conf import settings
@@ -19,12 +20,12 @@ from django.http import JsonResponse
 import qrcode
 from django.http import JsonResponse
 from ..models import Forca_Orgao, Posto, Quadro, Especialidade, Turma
-
 from django.conf import settings
 import os
 from django.db.models import Count
 from django.conf import settings
 import os
+from django.contrib import messages
 
 from itertools import count, groupby
 
@@ -121,10 +122,16 @@ def sgc_ajax_load_related_data_om(request):
 
 def sgc_aluno_novo(request):
     if request.method == 'POST':
+        aluno_nome = request.POST.get('aluno_nome')
         form = AlunoForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('sgc_aluno_lista')  # Redirecione para a lista após criar
+            aluno = form.save()
+            aluno_id = aluno.id
+            print("ID do aluno:", aluno_id)
+            print("Turma do aluno:", aluno.fk_turma)  # Acesso direto ao atributo fk_turma
+            sgc_aluno_hash(request, int(aluno_id))
+            messages.add_message(request, messages.SUCCESS, 'Aluno cadastrado com sucesso')
+            return redirect('sgc_aluno_lista_detalhes', id=aluno.fk_turma.id)
     else:
         form = AlunoForm()
     
@@ -173,6 +180,7 @@ def sgc_aluno_lista_detalhes(request, id):
 
     context = {
         "dataset": dataset,
+        "id_turma": int(id),
         # "turma_sgc": turma_sgc
     }
     return render(request, 'aluno/lista.html', context)
@@ -188,7 +196,10 @@ def sgc_aluno_editar(request, id):
         form = AlunoForm(request.POST, instance=aluno_ob)
         if form.is_valid():
             form.save()
-            return redirect('sgc_aluno_lista')
+            sgc_aluno_hash(request, int(id))
+            messages.add_message(request, messages.SUCCESS, 'Aluno editado com sucesso')
+            return redirect('sgc_aluno_lista_detalhes', id=aluno_ob.fk_turma.id)
+            # return redirect('sgc_aluno_lista_detalhes', aluno_ob.fk_turma)
     else:
         form = AlunoForm(instance=aluno_ob)
     context = {
@@ -202,7 +213,7 @@ def sgc_aluno_delete(request, id):
     aluno_ob = get_object_or_404(Aluno, id=id)
     if request.method == 'POST':
         aluno_ob.delete()
-        # messages.success(request, 'Registro excluído com sucesso.')
+        messages.add_message(request, messages.SUCCESS, 'Registro excluído com sucesso.')
         return redirect('sgc_aluno_lista')
     
     context = {

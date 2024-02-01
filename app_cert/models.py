@@ -181,7 +181,7 @@ class In_Ex(models.Model):
     create_at = models.DateTimeField(auto_now_add=True, null=True)
     
     def __str__(self):
-        return str(self.id)
+        return str(self.in_ex)
     
     class Meta:
         verbose_name = 'Interno/Externo'
@@ -256,7 +256,7 @@ class Turma(models.Model):
     
     def __str__(self):
         # return f"Curso {self.id}"
-        return str(self.id)
+        return str(self.turma_sgc)
     
     class Meta:
         verbose_name = 'Turma'
@@ -288,7 +288,6 @@ class GradeTurma(models.Model):
         # return f"{self.fk_turma} - {self.fk_in_ex} - {self.fk_instrucao} - {self.tempo_instrucao}"
         return str(self.fk_turma)
     
-
 class Aluno(models.Model):
     id = models.AutoField(primary_key=True)
     fk_status = models.ForeignKey(Status, on_delete=models.PROTECT, verbose_name="FK Status", null=True)

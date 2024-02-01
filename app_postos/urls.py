@@ -35,4 +35,13 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('sgu', home, name='sgu'),
+    path('scp_om_lista/', scp_om_lista, name="scp_om_lista"),
+    path('scp_om_nova/', scp_om_nova, name="scp_om_nova"),
+    path('scp_om_detalhes/<int:id>/', scp_om_detalhes, name="scp_om_detalhes"),
+    path('scp_om_ditar/<int:id>/', scp_om_ditar, name="scp_om_ditar"),
+
+    path('scp_espe_lista/', scp_espe_lista, name="scp_espe_lista"),
+    path('scp_espe_nova/', scp_espe_nova, name="scp_espe_nova"),
+    path('scp_espe_detalhes/<int:id>/', scp_espe_detalhes, name="scp_espe_detalhes"),
+    path('scp_espe_ditar/<int:id>/', scp_espe_ditar, name="scp_espe_ditar"),
 ]

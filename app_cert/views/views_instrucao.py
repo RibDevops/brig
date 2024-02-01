@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from requests import request
 from ..models import Instrucao
 from ..forms import InstrucaoForm # Importe o formulário adequado
+
+from django.contrib import messages
+
+
+
 
 
 def sgc_home(request):
@@ -11,6 +17,7 @@ def sgc_instrucao_nova(request):
         form = InstrucaoForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Instrução cadastrada com sucesso.')
             return redirect('sgc_instrucao_lista')  # Redirecione para a lista após criar
     else:
         form = InstrucaoForm()
@@ -32,6 +39,7 @@ def sgc_instrucao_editar(request, id):
         form = InstrucaoForm(request.POST, instance=instrucao_ob)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Instrução editada com sucesso.')
             return redirect('sgc_instrucao_lista')
     else:
         form = InstrucaoForm(instance=instrucao_ob)
@@ -46,7 +54,7 @@ def sgc_instrucao_delete(request, id):
     instrucao_ob = get_object_or_404(Instrucao, id=id)
     if request.method == 'POST':
         instrucao_ob.delete()
-        # messages.success(request, 'Registro excluído com sucesso.')
+        messages.add_message(request, messages.SUCCESS, 'Instrução excluída com sucesso.') 
         return redirect('sgc_instrucao_lista')
     
     context = {

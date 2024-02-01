@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
+from requests import request
 from app_cert.models import Curso
 from app_cert.forms import CursoForm  # Importe o formulário adequado
+from django.contrib import messages
+
+
+
 
 
 def sgc_curso_novo(request):
@@ -9,6 +14,7 @@ def sgc_curso_novo(request):
         form = CursoForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Curso cadastrado com sucesso.')
             return redirect('sgc_curso_lista')  # Redirecione para a lista após criar
     else:
         form = CursoForm()
@@ -39,6 +45,7 @@ def sgc_curso_editar(request, id):
         form = CursoForm(request.POST, instance=curso_ob)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Curso editado com sucesso.')
             return redirect('sgc_curso_lista')
     else:
         form = CursoForm(instance=curso_ob)
@@ -53,7 +60,7 @@ def sgc_curso_delete(request, id):
     curso_ob = get_object_or_404(Curso, id=id)
     if request.method == 'POST':
         curso_ob.delete()
-        # messages.success(request, 'Registro excluído com sucesso.')
+        messages.add_message(request, messages.SUCCESS, 'Curso excluído com sucesso.') 
         return redirect('sgc_curso_lista')
     
     context = {

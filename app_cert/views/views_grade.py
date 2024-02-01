@@ -4,7 +4,7 @@ from ..models import GradeTurma, Instrucao, Turma
 from ..forms import GradeTurmaForm # Importe o formulário adequado
 from django.db.models import F
 from django.db.models import Count
-
+from django.contrib import messages
 
 def sgc_home(request):
     return render(request, 'sgc_home.html')
@@ -85,7 +85,6 @@ def sgc_home(request):
 #         }
 #         return render(request, 'grade/criar.html', dataset)
 
-
 def sgc_grade_nova(request):
     if request.method == 'POST':
         print(request.POST)
@@ -124,6 +123,7 @@ def sgc_grade_nova(request):
         if all(form.is_valid() for form in forms):
             for form in forms:
                 form.save()
+                messages.add_message(request, messages.SUCCESS, 'Grade cadastrada com sucesso.')
         else:
             print(f'Pelo menos um formulário é inválido')
 
@@ -136,10 +136,6 @@ def sgc_grade_nova(request):
             'form': form
         }
         return render(request, 'grade/criar.html', dataset)
-
-
-
-
 
 def sgc_grade_lista(request):
     dataset = (
@@ -207,6 +203,7 @@ def sgc_grade_editar(request, id):
         form = GradeTurmaForm(request.POST, instance=grade_ob)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Grade editada com sucesso.')
             return redirect('sgc_grade_lista')
     else:
         form = GradeTurmaForm(instance=grade_ob)
@@ -221,6 +218,8 @@ def sgc_grade_delete(request, id):
     grade_ob = get_object_or_404(GradeTurma, id=id)
     if request.method == 'POST':
         grade_ob.delete()
+        messages.add_message(request, messages.SUCCESS, 'Grade excluída com sucesso.')
+
         # messages.success(request, 'Registro excluído com sucesso.')
         return redirect('sgc_grade_lista')
     

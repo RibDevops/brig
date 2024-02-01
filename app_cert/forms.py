@@ -254,12 +254,6 @@ class TurmaForm(forms.ModelForm):
         self.fields['data_turma_externo'].widget.attrs['value'] = 'realizado pelo Centro de Inteligência da Aeronáutica, no período de [dd] a [dd] de [mês] de [ano].'
         # self.fields['turma_numerao'].widget.attrs['readonly'] = True
 
-
-
-
-
-
-
 class CertExtForm(forms.ModelForm):
     # primeira_parte = forms.CharField(label='Primeira Parte:', max_length=100, required=True)
     a_quem = forms.CharField(label='Para:', max_length=200, required=True)
