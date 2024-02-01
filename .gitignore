@@ -8,7 +8,9 @@ conf
 venv
 .venv
 core\settings.py
+core\urls.py
 core/settings.py
+core/urls.py
 staticfiles
 pycache
 __pycache__/
