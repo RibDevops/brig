@@ -36,10 +36,11 @@
 /* Estilos para o dropdown */
 .dropdown {
     position: absolute;
-    top: 100%;
+    top: 100%; /* Mudado para garantir visibilidade */
     left: 0;
     background-color: rgb(37, 37, 39);
     display: none;
+    z-index: 1; /* Adicionado para garantir que o submenu esteja acima dos outros elementos */
 }
 
 .dropdown li {
