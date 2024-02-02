@@ -43,7 +43,7 @@ urlpatterns = [
 
     path('scp_forca_lista/', scp_forca_lista, name="scp_forca_lista"),
     path('scp_forca_nova/', scp_forca_nova, name="scp_forca_nova"),
-    path('scp_forca_detalhes/<int:id>/', scp_forca_detalhes, name="scp_forca_detalhes"),
+    path('scp_forca_delete/<int:id>/', scp_forca_delete, name="scp_forca_delete"),
     path('scp_forca_ditar/<int:id>/', scp_forca_ditar, name="scp_forca_ditar"),
 
     path('scp_om_lista/', scp_om_lista, name="scp_om_lista"),

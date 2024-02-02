@@ -3,7 +3,7 @@ from django.db import models
 class Forca_Orgao(models.Model):
     id = models.AutoField(primary_key=True)
     forca_orgao = models.CharField(max_length=30, verbose_name="Força/Orgão Externo")
-    forca_orgao_descricao = models.CharField(max_length=30, verbose_name="Força/Orgão Externo Descrição", null=True)
+    forca_orgao_descricao = models.CharField(max_length=50, verbose_name="Força/Orgão Externo Descrição", null=True)
     create_at = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -164,7 +164,7 @@ class Tipo(models.Model):  # EAD Presencial
 
 class Tratamento(models.Model):
     id = models.AutoField(primary_key=True)
-    tratamento = models.CharField(max_length=2, verbose_name="Tratamento", null=True)
+    tratamento = models.CharField(max_length=20, verbose_name="Tratamento", null=True)
     create_at = models.DateTimeField(auto_now_add=True, null=True)
     
     def __str__(self):
@@ -319,5 +319,3 @@ class Aluno(models.Model):
         verbose_name = 'Aluno'
         verbose_name_plural = 'Alunos'
         ordering = ['id']
-
-

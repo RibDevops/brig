@@ -37,13 +37,15 @@
                             <td style="text-align: center">{{ data.id }}</td>
                             <td style="text-align: center">{{ data.tratamento }}</td>
                             <td style="text-align: center">
-                                <a href="/sgc_grade_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
-                                <a href="/sgc_grade_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a>
+                                <a href="/sgc_tratamento_editar/{{ data.id }}/" class="btn btn-primary">EDITAR</a>
+                                <a href="/sgc_tratamento_delete/{{ data.id }}/" class="btn btn-danger">EXCLUIR</a>
                             </td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+
+
 
                 <!-- Adicionar os links de navegação para as páginas -->
                 <!-- <div class="pagination">

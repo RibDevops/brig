@@ -32,14 +32,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for om in dataset %}
+                        {% for forca in dataset %}
     <tr>
-        <td>{{ om.id }}</td>
-        <td>{{ om.om }}</td>
-        <td>{{ om.om_descricao }}</td>
+        <td>{{ forca.id }}</td>
+        <td>{{ forca.om }}</td>
+        <td>{{ forca.om_descricao }}</td>
         <td>
             <a href="{% url 'scp_om_lista' %}" class="btn btn-warning">VOLTAR</a>
-            <a href="/scp_om_ditar/{{ om.id }}/" class="btn btn-info">Editar</a>
+            <a href="/scp_forca_ditar/{{ forca.id }}/" class="btn btn-info">Editar</a>
+            <a href="/sgc_forca_delete/{{ forca.id }}/" class="btn btn-danger">EXCLUIR</a>
         </td>
     </tr>
 {% endfor %}

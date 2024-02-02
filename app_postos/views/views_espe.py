@@ -6,10 +6,6 @@ from django.db.models import Count
 
 from django.contrib import messages
 
-
-
-
-
 # Create your views here.
 def home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
