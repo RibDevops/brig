@@ -29,7 +29,7 @@ def scp_quadro_lista(request):
     
     print(dataset)
     context = {"dataset": dataset}
-    return render(request, 'omlista.html', context)
+    return render(request, 'quadro/lista.html', context)
 
 def scp_quadro_detalhes(request, id):
     # Obtém a instância da Quadro com o ID fornecido ou retorna um erro 404 caso não exista
@@ -42,7 +42,7 @@ def scp_quadro_detalhes(request, id):
         "dataset": dataset,
         # "om": om  # Passa a instância de Quadro para o contexto
     }
-    return render(request, 'omlista_om.html', context)
+    return render(request, 'quadro/lista_quadro.html', context)
 
 
 def scp_quadro_novo(request):
@@ -55,38 +55,38 @@ def scp_quadro_novo(request):
     else:
         form = QuadroForm()
     
-    return render(request, 'omcriar.html', {'form': form})
+    return render(request, 'quadro/criar.html', {'form': form})
 
-def scp_quadro_ditar(request, id):
+def scp_quadro_editar(request, id):
     context ={}
-    om_ob = get_object_or_404(Quadro, id=id)
+    quadro_ob = get_object_or_404(Quadro, id=id)
     if request.method == 'POST':
-        form = QuadroForm(request.POST, instance=om_ob)
+        form = QuadroForm(request.POST, instance=quadro_ob)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'Quadro editado com sucesso.')
             return redirect('scp_quadro_lista')
     else:
-        form = QuadroForm(instance=om_ob)
+        form = QuadroForm(instance=quadro_ob)
     context = {
         'form': form,
-        'om_ob': om_ob
+        'quadro_ob': quadro_ob
     }
-    return render(request, 'omeditar.html', context)
+    return render(request, 'quadro/editar.html', context)
 
 def scp_quadro_delete(request, id):
     context ={}
-    om_ob = get_object_or_404(Quadro, id=id)
+    quadro_ob = get_object_or_404(Quadro, id=id)
     if request.method == 'POST':
-        om_ob.delete()
+        quadro_ob.delete()
         messages.add_message(request, messages.SUCCESS, 'Quadro excluído com sucesso.') 
         return redirect('scp_quadro_lista')
     
     context = {
-        'om_ob': om_ob
+        'quadro_ob': quadro_ob
     }
     
-    return render(request, 'omexcluir.html', context)
+    return render(request, 'quadro/excluir.html', context)
 
 
 # def sgc_ano_detalhes(request, pk):

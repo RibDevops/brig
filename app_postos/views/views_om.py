@@ -59,7 +59,7 @@ def scp_om_nova(request):
     
     return render(request, 'om/criar.html', {'form': form})
 
-def scp_om_ditar(request, id):
+def scp_om_editar(request, id):
     context ={}
     om_ob = get_object_or_404(Om, id=id)
     if request.method == 'POST':

@@ -16,7 +16,8 @@
         {% endif %}
 
         <div class="col-md-15">
-            <a href="{% url 'scp_om_nova' %}" class="btn btn-primary">NOVA OM</a>
+            <a href="{% url 'scp_posto_lista' %}" class="btn btn-warning">VOLTAR</a>
+            <a href="{% url 'scp_posto_novo' %}" class="btn btn-primary">NOVO POSTO</a>
             <div class="col-8 m-auto pt-4 pb-2 text-center">
 
                 <table class="table">
@@ -27,19 +28,20 @@
                     <thead class="thead-dark">
                         <tr>
                             <th style="text-align: center">ID</th>
-                            <th style="text-align: center">Força/Orgão</th>
+                            <th style="text-align: center">Nome</th>
                             <th style="text-align: center">Descrição</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for om in dataset %}
+                        {% for posto in dataset %}
     <tr>
-        <td>{{ om.id }}</td>
-        <td>{{ om.om }}</td>
-        <td>{{ om.om_descricao }}</td>
+        <td>{{ posto.id }}</td>
+        <td>{{ posto.posto }}</td>
+        <td>{{ posto.posto_descricao }}</td>
         <td>
-            <a href="{% url 'scp_om_lista' %}" class="btn btn-warning">VOLTAR</a>
-            <a href="/scp_om_ditar/{{ om.id }}/" class="btn btn-info">Editar</a>
+            
+            <a href="/scp_posto_editar/{{ posto.id }}/" class="btn btn-info">Editar</a>
+            <a href="/scp_posto_delete/{{ posto.id }}/" class="btn btn-danger">EXCLUIR</a>
         </td>
     </tr>
 {% endfor %}

@@ -5,9 +5,6 @@ from ..forms import PostoForm
 from django.db.models import Count
 from django.contrib import messages
 
-
- 
-
 # Create your views here.
 def home(request):
     # context = gera_menu()  # Mescla o contexto existente com o novo contexto
@@ -60,7 +57,7 @@ def scp_posto_novo(request):
     
     return render(request, 'posto/criar.html', {'form': form})
 
-def scp_posto_ditar(request, id):
+def scp_posto_editar(request, id):
     context ={}
     posto_ob = get_object_or_404(Posto, id=id)
     if request.method == 'POST':

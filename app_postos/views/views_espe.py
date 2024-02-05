@@ -58,7 +58,7 @@ def scp_espe_nova(request):
     
     return render(request, 'espe/criar.html', {'form': form})
 
-def scp_espe_ditar(request, id):
+def scp_espe_editar(request, id):
     context ={}
     espe_ob = get_object_or_404(Especialidade, id=id)
     if request.method == 'POST':

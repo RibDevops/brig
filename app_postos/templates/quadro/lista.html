@@ -16,7 +16,7 @@
         {% endif %}
 
         <div class="col-md-15">
-            <a href="{% url 'scp_om_nova' %}" class="btn btn-primary">NOVA OM</a>
+            <a href="{% url 'scp_quadro_novo' %}" class="btn btn-primary">NOVO QUADRO</a>
             <div class="col-8 m-auto pt-4 pb-2 text-center">
 
                 <table class="table">
@@ -32,13 +32,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for om in dataset %}
+                        {% for quadro in dataset %}
     <tr>
-        <td>{{ om.fk_forca_orgao }}</td>
-        <td>{{ om.fk_forca_orgao__forca_orgao }}</td>
-        <td>{{ om.total }}</td>
+        <td>{{ quadro.fk_forca_orgao }}</td>
+        <td>{{ quadro.fk_forca_orgao__forca_orgao }}</td>
+        <td>{{ quadro.total }}</td>
         <td>
-            <a href="/scp_om_detalhes/{{ om.fk_forca_orgao }}/" class="btn btn-info">Detalhes</a>
+            <a href="/scp_quadro_detalhes/{{ quadro.fk_forca_orgao }}/" class="btn btn-info">Detalhes</a>
         </td>
     </tr>
 {% endfor %}

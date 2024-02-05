@@ -16,6 +16,7 @@
         {% endif %}
 
         <div class="col-md-15">
+            <a href="{% url 'scp_forca_lista' %}" class="btn btn-warning">VOLTAR</a>
             <a href="{% url 'scp_om_nova' %}" class="btn btn-primary">NOVA OM</a>
             <div class="col-8 m-auto pt-4 pb-2 text-center">
 
@@ -38,7 +39,7 @@
         <td>{{ forca.om }}</td>
         <td>{{ forca.om_descricao }}</td>
         <td>
-            <a href="{% url 'scp_om_lista' %}" class="btn btn-warning">VOLTAR</a>
+            
             <a href="/scp_forca_ditar/{{ forca.id }}/" class="btn btn-info">Editar</a>
             <a href="/sgc_forca_delete/{{ forca.id }}/" class="btn btn-danger">EXCLUIR</a>
         </td>

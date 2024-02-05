@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.widgets import ClearableFileInput
-from app_cert.models import Om, Forca_Orgao, Quadro, Especialidade
+from app_cert.models import Om, Forca_Orgao, Quadro, Especialidade, Posto
 
 class OmForm(forms.ModelForm):
     class Meta:
@@ -24,7 +24,7 @@ class EspecialidadeForm(forms.ModelForm):
 
 class PostoForm(forms.ModelForm):
     class Meta:
-        model = Especialidade
+        model = Posto
         fields = '__all__'  # Ou liste os campos que deseja incluir no formulário manualmente
 # class CSVUploadForm(forms.Form):
 #     file = forms.FileField()

@@ -44,7 +44,7 @@ def scp_forca_nova(request):
     
     return render(request, 'forca/criar.html', {'form': form})
 
-def scp_forca_ditar(request, id):
+def scp_forca_editar(request, id):
     context ={}
     forca_ob = get_object_or_404(Forca_Orgao, id=id)
     if request.method == 'POST':

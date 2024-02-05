@@ -39,26 +39,30 @@ urlpatterns = [
     path('scp_espe_lista/', scp_espe_lista, name="scp_espe_lista"),
     path('scp_espe_nova/', scp_espe_nova, name="scp_espe_nova"),
     path('scp_espe_detalhes/<int:id>/', scp_espe_detalhes, name="scp_espe_detalhes"),
-    path('scp_espe_ditar/<int:id>/', scp_espe_ditar, name="scp_espe_ditar"),
+    path('scp_espe_editar/<int:id>/', scp_espe_editar, name="scp_espe_editar"),
+    path('scp_espe_delete/<int:id>/', scp_espe_delete, name="scp_espe_delete"),
 
     path('scp_forca_lista/', scp_forca_lista, name="scp_forca_lista"),
     path('scp_forca_nova/', scp_forca_nova, name="scp_forca_nova"),
     path('scp_forca_delete/<int:id>/', scp_forca_delete, name="scp_forca_delete"),
-    path('scp_forca_ditar/<int:id>/', scp_forca_ditar, name="scp_forca_ditar"),
+    path('scp_forca_editar/<int:id>/', scp_forca_editar, name="scp_forca_editar"),
 
     path('scp_om_lista/', scp_om_lista, name="scp_om_lista"),
     path('scp_om_nova/', scp_om_nova, name="scp_om_nova"),
     path('scp_om_detalhes/<int:id>/', scp_om_detalhes, name="scp_om_detalhes"),
-    path('scp_om_ditar/<int:id>/', scp_om_ditar, name="scp_om_ditar"),
+    path('scp_om_editar/<int:id>/', scp_om_editar, name="scp_om_editar"),
+    path('scp_om_delete/<int:id>/', scp_om_delete, name="scp_om_delete"),
 
     path('scp_posto_lista/', scp_posto_lista, name="scp_posto_lista"),
-    path('scp_posto_nova/', scp_posto_novo, name="scp_posto_nova"),
+    path('scp_posto_novo/', scp_posto_novo, name="scp_posto_novo"),
     path('scp_posto_detalhes/<int:id>/', scp_posto_detalhes, name="scp_posto_detalhes"),
-    path('scp_posto_ditar/<int:id>/', scp_posto_ditar, name="scp_posto_ditar"),
+    path('scp_posto_editar/<int:id>/', scp_posto_editar, name="scp_posto_editar"),
+    path('scp_posto_delete/<int:id>/', scp_posto_delete, name="scp_posto_delete"),
 
     path('scp_quadro_lista/', scp_quadro_lista, name="scp_quadro_lista"),
-    path('scp_quadro_nova/', scp_quadro_novo, name="scp_quadro_nova"),
+    path('scp_quadro_novo/', scp_quadro_novo, name="scp_quadro_novo"),
     path('scp_quadro_detalhes/<int:id>/', scp_quadro_detalhes, name="scp_quadro_detalhes"),
-    path('scp_quadro_ditar/<int:id>/', scp_quadro_ditar, name="scp_quadro_ditar"),
+    path('scp_quadro_editar/<int:id>/', scp_quadro_editar, name="scp_quadro_editar"),
+    path('scp_quadro_delete/<int:id>/', scp_quadro_delete, name="scp_quadro_delete"),
 
 ]

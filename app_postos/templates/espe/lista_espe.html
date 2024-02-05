@@ -33,14 +33,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for ob in dataset %}
+                        {% for espe in dataset %}
     <tr>
-        <td>{{ ob.id }}</td>
-        <td>{{ ob.especialidade }}</td>
-        <td>{{ ob.especialidade_descricao }}</td>
+        <td>{{ espe.id }}</td>
+        <td>{{ espe.especialidade }}</td>
+        <td>{{ espe.especialidade_descricao }}</td>
         <td>
             
-            <a href="/scp_espe_ditar/{{ ob.id }}/" class="btn btn-info">Editar</a>
+            <a href="/scp_espe_editar/{{ espe.id }}/" class="btn btn-info">Editar</a>
+            <a href="/scp_espe_delete/{{ espe.id }}/" class="btn btn-danger">EXCLUIR</a>
         </td>
     </tr>
 {% endfor %}
