@@ -2,21 +2,21 @@
 {% block title %}Pagina Inicial{% endblock %}
 {% block content %}
 <div class="container">
-    <div class="row">
-        <!-- <div class="col-md-20"> -->
+    
+
             <form method="post">
                 {% csrf_token %}
 
                 <label for="id_fk_turma">Turma:</label>
                 {{ form.fk_turma }}
-
-                <table style="border-collapse:collapse;border-spacing:0" class="tg">
+                <br />
+                <table>
                     <thead>
                       <tr>
-                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Instrução</th>
-                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Interno&nbsp;&nbsp;&nbsp;</th>
-                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Externo&nbsp;&nbsp;&nbsp;</th>
-                        <th style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; font-weight:bold; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">Tempo da Instrução</th>
+                        <th>Instrução</th>
+                        <th>Interno&nbsp;&nbsp;&nbsp;</th>
+                        <th>Externo&nbsp;&nbsp;&nbsp;</th>
+                        <th>Tempo da Instrução</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -58,8 +58,8 @@
                 
             </form>
             
-<!-- </div> -->
-</div>
+
+
 </div>
 
 {% endblock %}

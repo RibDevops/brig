@@ -9,8 +9,11 @@
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
+                <b style="color:red;">Atenção - 1 para interna e 2 para externa </style></b>
+                <br />
+                <br />
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                <a href="{% url 'sgc_turma_lista' %}" class="btn btn-danger">Cancelar</a>
+                <a href="{% url 'sgc_grade_lista' %}" class="btn btn-warning">Cancelar</a>
             </form>
         </div>
     </div>
