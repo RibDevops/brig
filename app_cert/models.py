@@ -232,7 +232,7 @@ class Turma(models.Model):
     fk_img_frente = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Frente", related_name='fk_img_frente',null=True)
     fk_img_fundo = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Fundo", related_name='fk_img_fundo',null=True)
 
-    turma_sgc = models.CharField(max_length=50, verbose_name="Descrição conforme arquivo da SGC Intraer:")
+    turma_sgc = models.CharField(max_length=50, verbose_name="Nome conforme arquivo da SGC Intraer:")
     turma = models.CharField(max_length=50, verbose_name="Descrição que irá aparecer no certificado:")
     # turma_numerao = models.IntegerField(verbose_name="Ano")
 
@@ -266,8 +266,8 @@ class Turma(models.Model):
 class Instrucao(models.Model):
     id = models.AutoField(primary_key=True)
     # fk_turma = models.ForeignKey(Turma, on_delete=models.CASCADE, verbose_name="Turma")
-    instrucao_sigla = models.CharField(max_length=255, verbose_name="Instrução")
-    instrucao_descricao = models.CharField(max_length=255, verbose_name="Instrução da Instrução")
+    instrucao_sigla = models.CharField(max_length=255, verbose_name="Sigla da instrução")
+    instrucao_descricao = models.CharField(max_length=255, verbose_name="Descrição da instrução")
 
     def __str__(self):
         # return f"{self.instrucao_sigla} - {self.instrucao_descricao}"
@@ -290,17 +290,18 @@ class GradeTurma(models.Model):
     
 class Aluno(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_status = models.ForeignKey(Status, on_delete=models.PROTECT, verbose_name="FK Status", null=True)
-    # fk_curso = models.ForeignKey(Curso, on_delete=models.PROTECT, verbose_name="FK Curso", null=True)
-    fk_turma = models.ForeignKey(Turma, on_delete=models.PROTECT, verbose_name="FK Turma", null=True)
-    fk_om = models.ForeignKey(Om, on_delete=models.PROTECT, verbose_name="FK OM", null=True)
     
-    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.PROTECT, verbose_name="FK Força/Orgão", null=True)
-    fk_posto = models.ForeignKey(Posto, on_delete=models.PROTECT, verbose_name="FK Posto", null=True)
-    fk_quadro = models.ForeignKey(Quadro, on_delete=models.PROTECT, verbose_name="FK Quadro", null=True)
-    fk_especialidade = models.ForeignKey(Especialidade, on_delete=models.PROTECT, verbose_name="FK Especialidade", null=True)
-    fk_in_ex = models.ForeignKey(In_Ex, on_delete=models.CASCADE, verbose_name="FK Tipo do Aluno - Interno/Externo", null=True)
-    fk_tratamento = models.ForeignKey(Tratamento, on_delete=models.CASCADE, verbose_name="FK Tratamento", null=True)
+    # fk_curso = models.ForeignKey(Curso, on_delete=models.PROTECT, verbose_name="FK Curso", null=True)
+    fk_turma = models.ForeignKey(Turma, on_delete=models.PROTECT, verbose_name="Turma", null=True)
+    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.PROTECT, verbose_name="Força/Orgão", null=True)
+    fk_om = models.ForeignKey(Om, on_delete=models.PROTECT, verbose_name="OM", null=True)
+    
+    
+    fk_posto = models.ForeignKey(Posto, on_delete=models.PROTECT, verbose_name="Posto", null=True)
+    fk_quadro = models.ForeignKey(Quadro, on_delete=models.PROTECT, verbose_name="Quadro", null=True)
+    fk_especialidade = models.ForeignKey(Especialidade, on_delete=models.PROTECT, verbose_name="Especialidade", null=True)
+    fk_in_ex = models.ForeignKey(In_Ex, on_delete=models.CASCADE, verbose_name="Tipo do Aluno - Interno/Externo", null=True)
+    fk_tratamento = models.ForeignKey(Tratamento, on_delete=models.CASCADE, verbose_name="Tratamento", null=True)
     aluno_nome = models.CharField(max_length=100, verbose_name="Nome do Aluno")
     aluno_cpf = models.CharField(max_length=14, verbose_name="CPF", null=True)
     aluno_email = models.CharField(max_length=50, verbose_name="Email do Aluno", null=True)
@@ -308,7 +309,9 @@ class Aluno(models.Model):
     # codigo_hash = models.TextField(verbose_name="Código de Verificação", null=True,)
     codigo_hash = models.CharField(max_length=20,verbose_name="Código de Verificação", null=True, blank=True)
     qrcode = models.CharField(max_length=100,verbose_name="QrCode", null=True, blank=True)
-
+    fk_status = models.ForeignKey(Status, on_delete=models.PROTECT, verbose_name="Situação", null=True)
+    obs = models.TextField(verbose_name="OBS:", null=True, blank=True)
+    
     def __str__(self):
         return self.id
         # return f"{self.aluno_nome} - {self.id}"

@@ -10,7 +10,7 @@
                 {% if message.tags == 'success' %}
                 <div class="alert alert-success" role="alert">{{ message }}</div>
                 {% elif message.tags == 'error' %}
-                <div class="alert-error alert" role="alert">{{ message }}</div>
+                <div class="alert alert-danger" role="alert">{{ message }}</div>
                 {% endif %}
             {% endfor %}
         {% endif %}
@@ -41,7 +41,7 @@
                         <tr>
                             <td style="text-align: center">{{ data.id }}</td>
                             <td style="text-align: center">{{ data.fk_turma }}</td>
-                            <td style="text-align: center">{{ data.fk_instrucao }}</td>
+                            <td style="text-align: center">{{ data.fk_instrucao.instrucao_sigla }} - {{ data.fk_instrucao.instrucao_descricao }}</td>
                             <td style="text-align: center">{{ data.tempo_instrucao }}</td>
                             <td style="text-align: center">
                                 {% if data.interno == 1 %}

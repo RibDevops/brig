@@ -10,10 +10,12 @@
                 {% if message.tags == 'success' %}
                 <div class="alert alert-success" role="alert">{{ message }}</div>
                 {% elif message.tags == 'error' %}
-                <div class="alert-error alert" role="alert">{{ message }}</div>
+                <div class="alert alert-danger" role="alert">{{ message }}</div>
                 {% endif %}
             {% endfor %}
         {% endif %}
+
+        
 
         <div class="col-md-15">
             <a href="/sgc_certificado_turma_lista/{{ id_turma }}/" class="btn btn-danger">Pendências da turma</a>

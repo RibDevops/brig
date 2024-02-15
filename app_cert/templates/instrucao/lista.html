@@ -10,7 +10,7 @@
                 {% if message.tags == 'success' %}
                 <div class="alert alert-success" role="alert">{{ message }}</div>
                 {% elif message.tags == 'error' %}
-                <div class="alert-error alert" role="alert">{{ message }}</div>
+                <div class="alert alert-danger" role="alert">{{ message }}</div>
                 {% endif %}
             {% endfor %}
         {% endif %}
@@ -26,8 +26,8 @@
                     <thead class="thead-dark">
                         <tr>
                             <th style="text-align: center">id</th>
-                            <th style="text-align: center">Instrução</th>
-                            <th style="text-align: center">Instrução descrição</th>
+                            <th style="text-align: center">Sigla da instrução</th>
+                            <th style="text-align: center"> Descrição da instrução</th>
                             <th style="text-align: center">Ações</th>
                         </tr>
                     </thead>

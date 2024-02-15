@@ -13,7 +13,7 @@
                 <table>
                     <thead>
                       <tr>
-                        <th>Instrução</th>
+                        <th>Sigla da instrução - Descrição da instrução&nbsp;&nbsp;&nbsp;</th>
                         <th>Interno&nbsp;&nbsp;&nbsp;</th>
                         <th>Externo&nbsp;&nbsp;&nbsp;</th>
                         <th>Tempo da Instrução</th>
@@ -23,10 +23,10 @@
                         {% for instrucao in instrucoes %}
                       <tr>
                         <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:left; vertical-align:middle; word-break:normal">
-                            <input type="checkbox" id="{{ instrucao.id }}" name="inst_{{ instrucao.id }}" value="{{ instrucao.id }}"> - {{ instrucao.instrucao_descricao }}</td>
+                            <input type="checkbox" id="{{ instrucao.id }}" name="inst_{{ instrucao.id }}" value="{{ instrucao.id }}"> - {{ instrucao.instrucao_sigla }}  - {{ instrucao.instrucao_descricao }}</td>
 
 
-                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:left; vertical-align:middle; word-break:normal">
+                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">
                             
                             
                             <input type="checkbox" id="{{ instrucao.id }}" name="int_{{ instrucao.id }}" value="1">
@@ -36,7 +36,7 @@
                             
                         </td>
 
-                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:left; vertical-align:middle; word-break:normal">
+                        <td style="border-top: 1px solid #9b9b9b; border-bottom: none; border-left: none; border-right: none; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px; text-align:center; vertical-align:middle; word-break:normal">
                             
                             
                             <input type="checkbox" id="{{ instrucao.id }}" name="ext_{{ instrucao.id }}" value="2">

@@ -131,7 +131,7 @@ def sgc_grade_nova(request):
     else:
         form = GradeTurmaForm()
         dataset = {
-            'instrucoes': Instrucao.objects.values('id', 'instrucao_descricao'),
+            'instrucoes': Instrucao.objects.values('id', 'instrucao_descricao', 'instrucao_sigla'),
             'in_ex': In_Ex.objects.values('id', 'in_ex'),
             'form': form
         }
