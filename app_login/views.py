@@ -7,6 +7,7 @@ from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
 from core.settings import LOGIN_REDIRECT_URL
 from django.contrib import messages
+from django.contrib.auth import logout
 
 
 @has_permission_decorator('cadastro_user')
@@ -77,3 +78,7 @@ def reset(request):
         else:
             messages.add_message(request, messages.ERROR, 'As senhas fornecidas não correspondem. Por favor, verifique e tente novamente.')
             return redirect('reset')
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
