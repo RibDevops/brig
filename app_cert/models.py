@@ -16,7 +16,7 @@ class Forca_Orgao(models.Model):
 
 class Om(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="FK Força/Orgão Externo", null=True, blank=True)
+    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="Força/Orgão Externo", null=True, blank=True)
     om = models.CharField(max_length=30, verbose_name="OM", null=True, blank=True)
     om_descricao = models.CharField(max_length=100, verbose_name="OM Descrição", null=True, blank=True)
     create_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -31,7 +31,7 @@ class Om(models.Model):
 
 class Posto(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="FK Força/Orgão Externo")
+    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="Força/Orgão Externo")
     hierarquia = models.IntegerField(verbose_name="Hierarquia")
     posto = models.CharField(max_length=10, verbose_name="Posto")
     posto_descricao = models.CharField(max_length=20, verbose_name="Posto Descrição")
@@ -47,7 +47,7 @@ class Posto(models.Model):
 
 class Quadro(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="FK Força/Orgão Externo")
+    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="Força/Orgão Externo")
     quadro = models.CharField(max_length=10, verbose_name="Quadro")
     quadro_descricao = models.CharField(max_length=20, verbose_name="Quadro Descrição")
     create_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -62,7 +62,7 @@ class Quadro(models.Model):
 
 class Especialidade(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="FK Força/Orgão Externo")
+    fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.CASCADE, verbose_name="Força/Orgão Externo")
     especialidade = models.CharField(max_length=10, verbose_name="Especialidade")
     especialidade_descricao = models.CharField(max_length=20, verbose_name="Especialidade Descrição")
     create_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -204,10 +204,10 @@ class Curso(models.Model):
 
 class Modelo(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_texto_modelo = models.ForeignKey(Textos, on_delete=models.CASCADE, verbose_name="FK Texto Tipo", related_name='fk_texto_modelo',null=True)
-    fk_texto_modelo_desc = models.ForeignKey(Textos, on_delete=models.CASCADE, verbose_name="FK Texto primeira parte", related_name='fk_texto_modelo_desc',null=True)
-    fk_texto_motivo = models.ForeignKey(Textos, on_delete=models.CASCADE, verbose_name="FK Texto Motivo", related_name='fk_texto_motivo',null=True)
-    # fk_id_aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT, verbose_name="FK ID Aluno", null=True)
+    fk_texto_modelo = models.ForeignKey(Textos, on_delete=models.CASCADE, verbose_name="Texto Tipo", related_name='fk_texto_modelo',null=True)
+    fk_texto_modelo_desc = models.ForeignKey(Textos, on_delete=models.CASCADE, verbose_name="Texto primeira parte", related_name='fk_texto_modelo_desc',null=True)
+    fk_texto_motivo = models.ForeignKey(Textos, on_delete=models.CASCADE, verbose_name="Texto Motivo", related_name='fk_texto_motivo',null=True)
+    # fk_id_aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT, verbose_name="ID Aluno", null=True)
     create_at = models.DateTimeField(auto_now_add=True, null=True)
     
     def __str__(self):
@@ -222,15 +222,15 @@ class Modelo(models.Model):
 
 class Turma(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_ano_curso = models.ForeignKey(Ano, on_delete=models.CASCADE, verbose_name="FK Ano do Curso")
-    fk_curso = models.ForeignKey(Curso, on_delete=models.CASCADE, verbose_name="FK Curso")
-    fk_tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE, verbose_name="FK Tipo: EAD - Presencial")
-    fk_modelo = models.ForeignKey(Modelo, on_delete=models.CASCADE, verbose_name="FK Modelo: Certificado/Honra/Participação")
+    fk_ano_curso = models.ForeignKey(Ano, on_delete=models.CASCADE, verbose_name="Ano do Curso")
+    fk_curso = models.ForeignKey(Curso, on_delete=models.CASCADE, verbose_name="Curso")
+    fk_tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE, verbose_name="Tipo: EAD - Presencial")
+    fk_modelo = models.ForeignKey(Modelo, on_delete=models.CASCADE, verbose_name="Modelo: Certificado/Honra/Participação")
     
-    fk_assinaturas_ch = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Assinaturas CH", related_name='fk_imagem_ch', null=True)
-    fk_assinaturas_dpl = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Chefe de divisão", related_name='fk_imagem_dpl',null=True)
-    fk_img_frente = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Frente", related_name='fk_img_frente',null=True)
-    fk_img_fundo = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="FK Fundo", related_name='fk_img_fundo',null=True)
+    fk_assinaturas_ch = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="Assinaturas CH", related_name='fk_imagem_ch', null=True)
+    fk_assinaturas_dpl = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="Chefe de divisão", related_name='fk_imagem_dpl',null=True)
+    fk_img_frente = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="Frente", related_name='fk_img_frente',null=True)
+    fk_img_fundo = models.ForeignKey(Imagem, on_delete=models.CASCADE, verbose_name="Fundo", related_name='fk_img_fundo',null=True)
 
     turma_sgc = models.CharField(max_length=50, verbose_name="Nome conforme arquivo da SGC Intraer:")
     turma = models.CharField(max_length=50, verbose_name="Descrição que irá aparecer no certificado:")
@@ -275,13 +275,13 @@ class Instrucao(models.Model):
 
 class GradeTurma(models.Model):
     id = models.AutoField(primary_key=True)
-    fk_turma = models.ForeignKey(Turma, on_delete=models.PROTECT, verbose_name="FK Turma", null=True)
-    # fk_in_ex = models.ForeignKey(In_Ex, on_delete=models.CASCADE, verbose_name="FK Tipo Interno Externo", null=True, blank=True)
+    fk_turma = models.ForeignKey(Turma, on_delete=models.PROTECT, verbose_name="Turma", null=True)
+    # fk_in_ex = models.ForeignKey(In_Ex, on_delete=models.CASCADE, verbose_name="Tipo Interno Externo", null=True, blank=True)
     interno = models.IntegerField(verbose_name="Interno", null=True, blank=True, default=0)
     externo = models.IntegerField(verbose_name="Externo", null=True, blank=True, default=0)
 
-    # fk_instrucao = models.ForeignKey(Instrucao, on_delete=models.CASCADE, verbose_name="FK Instrução", null=True, blank=True, default=0)
-    fk_instrucao = models.ForeignKey(Instrucao, on_delete=models.CASCADE, verbose_name="FK Instrução", null=True, blank=True)
+    # fk_instrucao = models.ForeignKey(Instrucao, on_delete=models.CASCADE, verbose_name="Instrução", null=True, blank=True, default=0)
+    fk_instrucao = models.ForeignKey(Instrucao, on_delete=models.CASCADE, verbose_name="Instrução", null=True, blank=True)
     tempo_instrucao = models.IntegerField(verbose_name="Tempo da Instrução", null=True, blank=True)
 
     def __str__(self):
@@ -291,7 +291,7 @@ class GradeTurma(models.Model):
 class Aluno(models.Model):
     id = models.AutoField(primary_key=True)
     
-    # fk_curso = models.ForeignKey(Curso, on_delete=models.PROTECT, verbose_name="FK Curso", null=True)
+    # fk_curso = models.ForeignKey(Curso, on_delete=models.PROTECT, verbose_name="Curso", null=True)
     fk_turma = models.ForeignKey(Turma, on_delete=models.PROTECT, verbose_name="Turma", null=True)
     fk_forca_orgao = models.ForeignKey(Forca_Orgao, on_delete=models.PROTECT, verbose_name="Força/Orgão", null=True)
     fk_om = models.ForeignKey(Om, on_delete=models.PROTECT, verbose_name="OM", null=True)
