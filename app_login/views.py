@@ -8,6 +8,7 @@ from rolepermissions.decorators import has_permission_decorator
 from core.settings import LOGIN_REDIRECT_URL
 from django.contrib import messages
 from django.contrib.auth import logout
+from django.contrib.auth import views as auth_views
 
 
 @has_permission_decorator('cadastro_user')
@@ -79,6 +80,8 @@ def reset(request):
             messages.add_message(request, messages.ERROR, 'As senhas fornecidas não correspondem. Por favor, verifique e tente novamente.')
             return redirect('reset')
 
-def logout_view(request):
+@login_required
+def custom_logout(request):
     logout(request)
-    return redirect('/')
+    messages.add_message(request, messages.SUCCESS, 'Logged out successfully!')
+    return redirect("/")
