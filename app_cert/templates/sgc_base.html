@@ -19,7 +19,7 @@
   <br />
 
   {% block menu %}
-  <div class="header">
+  <div class="header" >
     <nav id="menu-h">
       <ul>
 
@@ -41,30 +41,47 @@
                       <li><a href="{% url 'sgc_grade_lista' %}">Grade</a></li>
                       <li><a href="{% url 'sgc_aluno_lista' %}">Alunos</a></li>
                       <li><a href="{% url 'sgc_import_csv_view' %}">Import CSV</a></li>
-                      <li><a href="{% url 'sgc_certificado_ext' %}">Gerar Certificado Avulso</a></li>
-                      <li>
-                        <a href="#">Cadastro</a>
-                        <ul class="dropdown">
-                          {% if user|can:'cadastro_user' %}
-                            <li><a href="{% url 'cadastro' %}">Usuários</a></li>
-                          {% endif %}
-                          
-                          <li><a href="{% url 'reset' %}">Senha</a></li>
+                      
+                      
+
+                          <li>
+                            <a href="#">Certificados</a>
+                            <ul class="dropdown">
+                              <li><a href="{% url 'sgc_certificado_ext' %}">Gerar Certificado Avulso</a></li>
                           <li><a href="{% url 'sgc_tipo_lista' %}">Modalidades</a></li>
                           <li><a href="{% url 'sgc_ano_lista' %}">Ano</a></li>
                           <li><a href="{% url 'sgc_imagem_lista' %}">Imagem</a></li>
                           <li><a href="{% url 'sgc_tratamento_lista' %}">Tratamento</a></li>
                           <li><a href="{% url 'sgc_texto_lista' %}">Textos</a></li>
                           <li><a href="{% url 'sgc_modelo_lista' %}">Modelo</a></li>
+                            
+                          </ul>
+                        </li>
+                            <li>
+                              <a href="#">Instituição</a>
+                              <ul class="dropdown">
                           <li><a href="{% url 'scp_forca_lista' %}">Força/Orgão</a></li>
                           <li><a href="{% url 'scp_om_lista' %}">Om</a></li>
                           <li><a href="{% url 'scp_posto_lista' %}">Posto</a></li>
                           <li><a href="{% url 'scp_quadro_lista' %}">Quadro</a></li>
                           <li><a href="{% url 'scp_espe_lista' %}">Especialidade</a></li>
                         </ul>
+                      
+                      </li>
                       </li>
                       <li>
                         <a href="{% url 'sgc_certificado_manual' %}">Manual do usuário</a>
+                      </li>
+
+                      <li>
+                        <a href="#">Perfil</a>
+                        <ul class="dropdown">
+                          {% if user|can:'cadastro_user' %}
+                            <li><a href="{% url 'cadastro' %}">Usuários</a></li>
+                          {% endif %}
+                          
+                          <li><a href="{% url 'reset' %}">Senha</a></li>
+                        </ul>
                       </li>
 
                       <li>
