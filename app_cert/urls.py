@@ -17,7 +17,7 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', sgc_home, name='sgc_home'),
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/ciaer.ico'))),
+    
     path('sgc_turma_lista', sgc_turma_lista, name="sgc_turma_lista"),
     path('sgc_turma_nova', sgc_turma_nova, name="sgc_turma_nova"),
     path('sgc_turma_editar/<int:id>/', sgc_turma_editar, name="sgc_turma_editar"),
@@ -99,6 +99,8 @@ urlpatterns = [
     # path('sgc_load-om/', sgc_load_om, name='ajax_load_om'),  # Verifique se o nome da função está correto
     path('sgc_ajax_load_related_data_om/', sgc_ajax_load_related_data_om, name="sgc_ajax_load_related_data_om"),
     path('sgc_import_csv_view/', sgc_import_csv_view, name="sgc_import_csv_view"),
+
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/ciaer.ico')))
     
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
