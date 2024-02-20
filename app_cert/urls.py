@@ -99,8 +99,8 @@ urlpatterns = [
     path('sgc_ajax_load_related_data_om/', sgc_ajax_load_related_data_om, name="sgc_ajax_load_related_data_om"),
     path('sgc_import_csv_view/', sgc_import_csv_view, name="sgc_import_csv_view"),
 
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('/img/ciaer.ico'))),
-    path('favicon', RedirectView.as_view(url=staticfiles_storage.url('/img/ciaer.ico'))),
+    
+
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
