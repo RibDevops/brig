@@ -17,7 +17,6 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', sgc_home, name='sgc_home'),
-    
     path('sgc_turma_lista', sgc_turma_lista, name="sgc_turma_lista"),
     path('sgc_turma_nova', sgc_turma_nova, name="sgc_turma_nova"),
     path('sgc_turma_editar/<int:id>/', sgc_turma_editar, name="sgc_turma_editar"),
@@ -40,7 +39,7 @@ urlpatterns = [
     path('sgc_curso_novo', sgc_curso_novo, name="sgc_curso_novo"),
     path('sgc_curso_editar/<int:id>/', sgc_curso_editar, name="sgc_curso_editar"),
     path('sgc_curso_delete/<int:id>/', sgc_curso_delete, name="sgc_curso_delete"),
-    
+
     path('sgc_grade_lista', sgc_grade_lista, name="sgc_grade_lista"),
     path('sgc_grade_nova', sgc_grade_nova, name="sgc_grade_nova"),
     path('sgc_grade_editar/<int:id>/', sgc_grade_editar, name="sgc_grade_editar"),
@@ -100,8 +99,7 @@ urlpatterns = [
     path('sgc_ajax_load_related_data_om/', sgc_ajax_load_related_data_om, name="sgc_ajax_load_related_data_om"),
     path('sgc_import_csv_view/', sgc_import_csv_view, name="sgc_import_csv_view"),
 
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/ciaer.ico')))
-    
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/ciaer.ico'))),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
