@@ -100,6 +100,7 @@ urlpatterns = [
     path('sgc_import_csv_view/', sgc_import_csv_view, name="sgc_import_csv_view"),
 
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('/img/ciaer.ico'))),
+    path('favicon', RedirectView.as_view(url=staticfiles_storage.url('/img/ciaer.ico'))),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
