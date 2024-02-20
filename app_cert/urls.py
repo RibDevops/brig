@@ -12,9 +12,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', sgc_home, name='sgc_home'),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/ciaer.ico')))
     path('sgc_turma_lista', sgc_turma_lista, name="sgc_turma_lista"),
     path('sgc_turma_nova', sgc_turma_nova, name="sgc_turma_nova"),
     path('sgc_turma_editar/<int:id>/', sgc_turma_editar, name="sgc_turma_editar"),
