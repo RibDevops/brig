@@ -83,5 +83,5 @@ def reset(request):
 @login_required
 def custom_logout(request):
     logout(request)
-    messages.add_message(request, messages.SUCCESS, 'Logged out successfully!')
-    return redirect("/")
+    messages.add_message(request, messages.SUCCESS, 'Logout feito com sucesso!')
+    return redirect("login")
