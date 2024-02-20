@@ -38,7 +38,6 @@ def sgc_turma_lista(request):
             alunos_campos_faltando.append(aluno)
     
     print(alunos_campos_faltando)
-
     return render(request, 'turma/lista.html', context)
 
 def sgc_turma_editar(request, id):

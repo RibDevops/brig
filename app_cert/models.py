@@ -313,7 +313,7 @@ class Aluno(models.Model):
     obs = models.TextField(verbose_name="OBS:", null=True, blank=True)
     
     def __str__(self):
-        return self.id
+        return str(self.id)
         # return f"{self.aluno_nome} - {self.id}"
         # return f"{self.id} - {self.aluno_nome}"
     
