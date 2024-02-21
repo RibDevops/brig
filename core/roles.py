@@ -20,6 +20,7 @@ class Dpl_admin(AbstractUserRole):
         'gerar': True,
         'import': True,
         'lista': True,
+        'reset_user': True,
         
     }
 
