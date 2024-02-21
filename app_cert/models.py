@@ -304,12 +304,12 @@ class Aluno(models.Model):
     fk_tratamento = models.ForeignKey(Tratamento, on_delete=models.CASCADE, verbose_name="Tratamento", null=True)
     aluno_nome = models.CharField(max_length=100, verbose_name="Nome do Aluno")
     aluno_cpf = models.CharField(max_length=14, verbose_name="CPF", null=True)
-    aluno_email = models.CharField(max_length=50, verbose_name="Email do Aluno", null=True)
+    aluno_email = models.CharField(max_length=50, verbose_name="Email do Aluno", null=True, blank=True)
     aluno_nota = models.CharField(max_length=5, verbose_name="Nota do Aluno", null=True, blank=True)
     # codigo_hash = models.TextField(verbose_name="Código de Verificação", null=True,)
     codigo_hash = models.CharField(max_length=20,verbose_name="Código de Verificação", null=True, blank=True)
     qrcode = models.CharField(max_length=100,verbose_name="QrCode", null=True, blank=True)
-    fk_status = models.ForeignKey(Status, on_delete=models.PROTECT, verbose_name="Situação", null=True)
+    fk_status = models.ForeignKey(Status, on_delete=models.PROTECT, verbose_name="Situação", null=True, blank=True)
     obs = models.TextField(verbose_name="OBS:", null=True, blank=True)
     
     def __str__(self):

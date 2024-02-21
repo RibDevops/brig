@@ -74,7 +74,8 @@ def sgc_aluno_hash(request, id):
     
     # Gerar o hash com base nas informações do aluno
     # aluno_info = f"{aluno_ob.aluno_nome} {aluno_ob.aluno_cpf}"
-    aluno_info = f"{aluno_ob.aluno_nome} {aluno_ob.aluno_cpf} {aluno_ob.aluno_email} {aluno_ob.fk_turma.turma}"
+    # aluno_info = f"{aluno_ob.aluno_nome} {aluno_ob.aluno_cpf} {aluno_ob.aluno_email} {aluno_ob.fk_turma.turma}"
+    aluno_info = f"{aluno_ob.aluno_nome} {aluno_ob.aluno_cpf} {aluno_ob.fk_turma.turma}"
     hash_aluno = sgc_generate_hash(aluno_info)
 
     qrcode = sgc_generate_qr_code(hash_aluno, id)
