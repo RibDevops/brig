@@ -2,7 +2,7 @@ from rolepermissions.roles import AbstractUserRole
 
 class Sin(AbstractUserRole):
     available_permissions = {
-        'criar': True,
+        'novo': True,
         'editar': True,
         'excluir': True,
         'gerar': True,
@@ -14,7 +14,7 @@ class Sin(AbstractUserRole):
 
 class Dpl_admin(AbstractUserRole):
     available_permissions = {
-        'criar': True,
+        'novo': True,
         'editar': True,
         'excluir': True,
         'gerar': True,
@@ -26,7 +26,7 @@ class Dpl_admin(AbstractUserRole):
 
 class Dpl(AbstractUserRole):
     available_permissions = {
-        'criar': True,
+        'novo': True,
         'editar': True,
         'gerar': True,
         'import': True,
@@ -37,5 +37,6 @@ class Div(AbstractUserRole):
     available_permissions = {
         'lista': True,
     }
+    
     
     

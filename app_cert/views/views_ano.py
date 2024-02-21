@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from ..models import Ano
 from ..forms import AnoForm
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-
+@has_permission_decorator('novo')
 def sgc_ano_novo(request):
     if request.method == 'POST':
         form = AnoForm(request.POST)
@@ -14,6 +16,7 @@ def sgc_ano_novo(request):
     
     return render(request, 'ano/criar.html', {'form': form})
 
+@has_permission_decorator('lista')
 def sgc_ano_lista(request):
     dataset = Ano.objects.all()
     context = {"dataset": dataset}
@@ -25,6 +28,7 @@ def sgc_ano_lista(request):
 #     ano_ob = get_object_or_404(AnoForm, pk=pk)
 #     return render(request, 'ano/detalhes.html', {'ano_ob': ano_ob})
 
+@has_permission_decorator('editar')
 def sgc_ano_editar(request, id):
     context ={}
     ano_ob = get_object_or_404(Ano, id=id)
@@ -41,6 +45,7 @@ def sgc_ano_editar(request, id):
     }
     return render(request, 'ano/editar.html', context)
 
+@has_permission_decorator('excluir')
 def sgc_ano_delete(request, id):
     context ={}
     ano_ob = get_object_or_404(Ano, id=id)

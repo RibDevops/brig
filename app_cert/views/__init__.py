@@ -3,6 +3,7 @@ from .views_ano import *
 from .views_certificado import *
 from .views_curso import *
 from .views_grade import *
+from .views_home import *
 from .views_imagem import *
 from .views_import import *
 from .views_instrucao import *

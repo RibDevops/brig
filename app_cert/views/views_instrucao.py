@@ -2,16 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from requests import request
 from ..models import Instrucao
 from ..forms import InstrucaoForm # Importe o formulário adequado
-
 from django.contrib import messages
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-
-
-
-
-def sgc_home(request):
-    return render(request, 'sgc_home.html')
-
+@has_permission_decorator('novo')
 def sgc_instrucao_nova(request):
     if request.method == 'POST':
         form = InstrucaoForm(request.POST)
@@ -24,7 +19,7 @@ def sgc_instrucao_nova(request):
     
     return render(request, 'instrucao/criar.html', {'form': form})
 
-
+@has_permission_decorator('lista')
 def sgc_instrucao_lista(request):
     dataset = Instrucao.objects.all()
     # dataset = Instrucao.objects.select_related('fk_turma', 'fk_in_ex', ).all()
@@ -32,6 +27,7 @@ def sgc_instrucao_lista(request):
     print(dataset)
     return render(request, 'instrucao/lista.html', context)
 
+@has_permission_decorator('editar')
 def sgc_instrucao_editar(request, id):
     context ={}
     instrucao_ob = get_object_or_404(Instrucao, id=id)
@@ -49,6 +45,7 @@ def sgc_instrucao_editar(request, id):
     }
     return render(request, 'instrucao/editar.html', context)
 
+@has_permission_decorator('excluir')
 def sgc_instrucao_delete(request, id):
     context ={}
     instrucao_ob = get_object_or_404(Instrucao, id=id)

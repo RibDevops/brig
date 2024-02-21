@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from ..models import Imagem
 from ..forms import ImagemForm
 
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
+
+@has_permission_decorator('novo')
 def sgc_imagem_nova(request):
     if request.method == 'POST':
         form = ImagemForm(request.POST, request.FILES)
@@ -13,6 +17,7 @@ def sgc_imagem_nova(request):
     
     return render(request, 'imagem/criar.html', {'form': form})
 
+@has_permission_decorator('lista')
 def sgc_imagem_lista(request):
     dataset = Imagem.objects.all()
     context = {"dataset": dataset}
@@ -20,10 +25,7 @@ def sgc_imagem_lista(request):
         print(imagem.__dict__)
     return render(request, 'imagem/lista.html', context)
 
-# def sgc_assinatura_detalhes(request, pk):
-#     assinatura_ob = get_object_or_404(AssinaturaForm, pk=pk)
-#     return render(request, 'imagem/detalhes.html', {'assinatura_ob': assinatura_ob})
-
+@has_permission_decorator('editar')
 def sgc_imagem_editar(request, id):
     context ={}
     assinatura_ob = get_object_or_404(Imagem, id=id)
@@ -40,6 +42,7 @@ def sgc_imagem_editar(request, id):
     }
     return render(request, 'imagem/editar.html', context)
 
+@has_permission_decorator('excluir')
 def sgc_imagem_delete(request, id):
     context ={}
     assinatura_ob = get_object_or_404(Imagem, id=id)

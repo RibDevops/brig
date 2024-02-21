@@ -4,11 +4,12 @@ from requests import request
 from app_cert.models import Curso
 from app_cert.forms import CursoForm  # Importe o formulário adequado
 from django.contrib import messages
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
 
 
-
-
+@has_permission_decorator('novo')
 def sgc_curso_novo(request):
     if request.method == 'POST':
         form = CursoForm(request.POST)
@@ -21,6 +22,7 @@ def sgc_curso_novo(request):
     
     return render(request, 'curso/criar.html', {'form': form})
 
+@has_permission_decorator('lista')
 def sgc_curso_lista(request):
     dataset = Curso.objects.all()
     context = {"dataset": dataset}
@@ -38,6 +40,7 @@ def sgc_curso_lista(request):
     #         print("\n")
     return render(request, 'curso/lista.html', context)
 
+@has_permission_decorator('editar')
 def sgc_curso_editar(request, id):
     context ={}
     curso_ob = get_object_or_404(Curso, id=id)
@@ -55,6 +58,7 @@ def sgc_curso_editar(request, id):
     }
     return render(request, 'curso/editar.html', context)
 
+@has_permission_decorator('excluir')
 def sgc_curso_delete(request, id):
     context ={}
     curso_ob = get_object_or_404(Curso, id=id)

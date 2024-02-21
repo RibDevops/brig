@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from ..models import Tratamento
 from ..forms import TratamentoForm
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-def sgc_home(request):
-    return render(request, 'sgc_home.html')
-
+@has_permission_decorator('novo')
 def sgc_tratamento_novo(request):
     if request.method == 'POST':
         form = TratamentoForm(request.POST)
@@ -16,12 +16,14 @@ def sgc_tratamento_novo(request):
     
     return render(request, 'tratamento/criar.html', {'form': form})
 
+@has_permission_decorator('lista')
 def sgc_tratamento_lista(request):
     dataset = Tratamento.objects.all()
     context = {"dataset": dataset}
     # print(dataset)
     return render(request, 'tratamento/lista.html', context)
 
+@has_permission_decorator('editar')
 def sgc_tratamento_editar(request, id):
     context ={}
     tratamento_ob = get_object_or_404(Tratamento, id=id)
@@ -38,6 +40,7 @@ def sgc_tratamento_editar(request, id):
     }
     return render(request, 'tratamento/editar.html', context)
 
+@has_permission_decorator('excluir')
 def sgc_tratamento_delete(request, id):
     context ={}
     tratamento_ob = get_object_or_404(Tratamento, id=id)

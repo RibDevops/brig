@@ -1,20 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from ..models import Tipo
 from ..forms import TipoForm
-# from django.urls.conf import include
-# from django.urls import path
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-# app_name = 'views_tipo'  # Adicione esta linha
-
-# urlpatterns = [
-#     # URL padrão
-#     path('', include('app_cert.views_curso', namespace='views_curso')),
-# ]
-
-def sgc_home(request):
-    # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    return render(request, 'sgc_home.html')
-
+@has_permission_decorator('novo')
 def sgc_tipo_novo(request):
     if request.method == 'POST':
         form = TipoForm(request.POST)
@@ -26,17 +16,14 @@ def sgc_tipo_novo(request):
     
     return render(request, 'tipo/criar.html', {'form': form})
 
+@has_permission_decorator('lista')
 def sgc_tipo_lista(request):
     dataset = Tipo.objects.all()
     context = {"dataset": dataset}
     # print(dataset)
     return render(request, 'tipo/lista.html', context)
 
-
-# def sgc_tipo_detalhes(request, pk):
-#     tipo_ob = get_object_or_404(TipoForm, pk=pk)
-#     return render(request, 'tipo/detalhes.html', {'tipo_ob': tipo_ob})
-
+@has_permission_decorator('editar')
 def sgc_tipo_editar(request, id):
     context ={}
     tipo_ob = get_object_or_404(Tipo, id=id)
@@ -53,6 +40,7 @@ def sgc_tipo_editar(request, id):
     }
     return render(request, 'tipo/editar.html', context)
 
+@has_permission_decorator('ecluir')
 def sgc_tipo_delete(request, id):
     context ={}
     tipo_ob = get_object_or_404(Tipo, id=id)

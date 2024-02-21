@@ -3,11 +3,11 @@ from requests import request
 from ..models import Turma, Aluno
 from ..forms import TurmaForm
 from django.contrib import messages
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-def sgc_home(request):
-    # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    return render(request, 'sgc_home.html')
 
+@has_permission_decorator('novo')
 def sgc_turma_nova(request):
     if request.method == 'POST':
         form = TurmaForm(request.POST)
@@ -20,6 +20,7 @@ def sgc_turma_nova(request):
     
     return render(request, 'turma/criar.html', {'form': form})
 
+@has_permission_decorator('lista')
 def sgc_turma_lista(request):
     # dataset = Turma.objects.all()
     dataset = Turma.objects.select_related(
@@ -40,6 +41,7 @@ def sgc_turma_lista(request):
     print(alunos_campos_faltando)
     return render(request, 'turma/lista.html', context)
 
+@has_permission_decorator('editar')
 def sgc_turma_editar(request, id):
     context ={}
     turma_ob = get_object_or_404(Turma, id=id)
@@ -57,6 +59,7 @@ def sgc_turma_editar(request, id):
     }
     return render(request, 'turma/editar.html', context)
 
+@has_permission_decorator('excluir')
 def sgc_turma_delete(request, id):
     context ={}
     turma_ob = get_object_or_404(Turma, id=id)

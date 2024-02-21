@@ -28,7 +28,8 @@ from django.db.models import Q
 import time
 from django.contrib import messages
 from django.shortcuts import redirect, render, get_object_or_404
-
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
 
 
@@ -423,10 +424,11 @@ class GeraPDFAluno(View):
             return HttpResponseRedirect(reverse_lazy('certificado_lista'))
 
 
+@has_permission_decorator('novo')
 def sgc_certificado_manual(request):
     return render(request, 'certificado/manual.html')
 
-
+@has_permission_decorator('novo')
 def sgc_certificado_ext(request):
     if request.method == 'POST':
         form = CertExtForm(request.POST)

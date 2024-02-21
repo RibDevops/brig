@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from ..models import Status
 from ..forms import StatusForm
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
 
+@has_permission_decorator('novo')
 def sgc_status_nova(request):
     if request.method == 'POST':
         form = StatusForm(request.POST)
@@ -14,17 +17,14 @@ def sgc_status_nova(request):
     
     return render(request, 'status/criar.html', {'form': form})
 
+@has_permission_decorator('lista')
 def sgc_status_lista(request):
     dataset = Status.objects.all()
     context = {"dataset": dataset}
     # print(dataset)
     return render(request, 'status/lista.html', context)
 
-
-# def sgc_status_detalhes(request, pk):
-#     status_ob = get_object_or_404(StatusForm, pk=pk)
-#     return render(request, 'status/detalhes.html', {'status_ob': status_ob})
-
+@has_permission_decorator('editar')
 def sgc_status_editar(request, id):
     context ={}
     status_ob = get_object_or_404(Status, id=id)
@@ -41,6 +41,7 @@ def sgc_status_editar(request, id):
     }
     return render(request, 'status/editar.html', context)
 
+@has_permission_decorator('excluir')
 def sgc_status_delete(request, id):
     context ={}
     status_ob = get_object_or_404(Status, id=id)
