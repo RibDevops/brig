@@ -51,12 +51,12 @@ def login(request):
             return redirect('login')
 
 
-@login_required(login_url="/auth/login/")
-def plataforma(request):
-    user = request.user
-    user_roles = get_user_roles(user)
+# @login_required(login_url="/auth/login/")
+# def plataforma(request):
+#     user = request.user
+#     user_roles = get_user_roles(user)
     
-    return render(request, 'home.html', {'user': user, 'user_roles': user_roles})
+#     return render(request, 'home.html', {'user': user, 'user_roles': user_roles})
 
 
 # @login_required(login_url="/auth/login/")
