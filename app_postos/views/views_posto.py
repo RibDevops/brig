@@ -5,19 +5,10 @@ from ..forms import PostoForm
 from django.db.models import Count
 from django.contrib import messages
 
-# Create your views here.
-def home(request):
-    # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    # return render(request, 'home.html', context )
-    return render(request, 'sgu_home.html')
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-# def scp_posto_lista(request):
-#     dataset = Posto.objects.all()
-#     context = {"dataset": dataset}
-#     # print(dataset)
-#     return render(request, 'posto/lista.html', context)
-
-
+@has_permission_decorator('lista')
 def scp_posto_lista(request):
     # Consulta para obter todas as OM ordenadas por força/orgão
     dataset = (
@@ -31,6 +22,7 @@ def scp_posto_lista(request):
     context = {"dataset": dataset}
     return render(request, 'posto/lista.html', context)
 
+@has_permission_decorator('lista')
 def scp_posto_detalhes(request, id):
     # Obtém a instância da Posto com o ID fornecido ou retorna um erro 404 caso não exista
     # om = get_object_or_404(Posto, pk=id)
@@ -44,7 +36,7 @@ def scp_posto_detalhes(request, id):
     }
     return render(request, 'posto/lista_posto.html', context)
 
-
+@has_permission_decorator('novo')
 def scp_posto_novo(request):
     if request.method == 'POST':
         form = PostoForm(request.POST)
@@ -57,6 +49,7 @@ def scp_posto_novo(request):
     
     return render(request, 'posto/criar.html', {'form': form})
 
+@has_permission_decorator('editar')
 def scp_posto_editar(request, id):
     context ={}
     posto_ob = get_object_or_404(Posto, id=id)
@@ -74,6 +67,7 @@ def scp_posto_editar(request, id):
     }
     return render(request, 'posto/editar.html', context)
 
+@has_permission_decorator('excluir')
 def scp_posto_delete(request, id):
     context ={}
     posto_ob = get_object_or_404(Posto, id=id)

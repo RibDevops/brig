@@ -5,19 +5,10 @@ from ..forms import QuadroForm
 from django.db.models import Count
 from django.contrib import messages
 
-# Create your views here.
-def home(request):
-    # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    # return render(request, 'home.html', context )
-    return render(request, 'sgu_home.html')
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-# def scp_quadro_lista(request):
-#     dataset = Quadro.objects.all()
-#     context = {"dataset": dataset}
-#     # print(dataset)
-#     return render(request, 'omlista.html', context)
-
-
+@has_permission_decorator('lista')
 def scp_quadro_lista(request):
     # Consulta para obter todas as OM ordenadas por força/orgão
     dataset = (
@@ -31,6 +22,7 @@ def scp_quadro_lista(request):
     context = {"dataset": dataset}
     return render(request, 'quadro/lista.html', context)
 
+@has_permission_decorator('lista')
 def scp_quadro_detalhes(request, id):
     # Obtém a instância da Quadro com o ID fornecido ou retorna um erro 404 caso não exista
     # om = get_object_or_404(Quadro, pk=id)
@@ -44,7 +36,7 @@ def scp_quadro_detalhes(request, id):
     }
     return render(request, 'quadro/lista_quadro.html', context)
 
-
+@has_permission_decorator('novo')
 def scp_quadro_novo(request):
     if request.method == 'POST':
         form = QuadroForm(request.POST)
@@ -57,6 +49,7 @@ def scp_quadro_novo(request):
     
     return render(request, 'quadro/criar.html', {'form': form})
 
+@has_permission_decorator('editar')
 def scp_quadro_editar(request, id):
     context ={}
     quadro_ob = get_object_or_404(Quadro, id=id)
@@ -74,6 +67,7 @@ def scp_quadro_editar(request, id):
     }
     return render(request, 'quadro/editar.html', context)
 
+@has_permission_decorator('excluir')
 def scp_quadro_delete(request, id):
     context ={}
     quadro_ob = get_object_or_404(Quadro, id=id)

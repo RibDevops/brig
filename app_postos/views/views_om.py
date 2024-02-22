@@ -4,22 +4,10 @@ from app_cert.models import Om
 from ..forms import OmForm
 from django.db.models import Count
 from django.contrib import messages
+from rolepermissions.roles import assign_role, get_user_roles
+from rolepermissions.decorators import has_permission_decorator
 
-
-
-# Create your views here.
-def home(request):
-    # context = gera_menu()  # Mescla o contexto existente com o novo contexto
-    # return render(request, 'home.html', context )
-    return render(request, 'sgu_home.html')
-
-# def scp_om_lista(request):
-#     dataset = Om.objects.all()
-#     context = {"dataset": dataset}
-#     # print(dataset)
-#     return render(request, 'om/lista.html', context)
-
-
+@has_permission_decorator('lista')
 def scp_om_lista(request):
     # Consulta para obter todas as OM ordenadas por força/orgão
     dataset = (
@@ -33,6 +21,7 @@ def scp_om_lista(request):
     context = {"dataset": dataset}
     return render(request, 'om/lista.html', context)
 
+@has_permission_decorator('lista')
 def scp_om_detalhes(request, id):
     # Obtém a instância da Om com o ID fornecido ou retorna um erro 404 caso não exista
     # om = get_object_or_404(Om, pk=id)
@@ -46,7 +35,7 @@ def scp_om_detalhes(request, id):
     }
     return render(request, 'om/lista_om.html', context)
 
-
+@has_permission_decorator('novo')
 def scp_om_nova(request):
     if request.method == 'POST':
         form = OmForm(request.POST)
@@ -59,6 +48,7 @@ def scp_om_nova(request):
     
     return render(request, 'om/criar.html', {'form': form})
 
+@has_permission_decorator('editar')
 def scp_om_editar(request, id):
     context ={}
     om_ob = get_object_or_404(Om, id=id)
@@ -76,6 +66,7 @@ def scp_om_editar(request, id):
     }
     return render(request, 'om/editar.html', context)
 
+@has_permission_decorator('excluir')
 def scp_om_delete(request, id):
     context ={}
     om_ob = get_object_or_404(Om, id=id)

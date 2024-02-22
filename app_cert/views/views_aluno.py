@@ -194,7 +194,7 @@ def sgc_aluno_lista_detalhes(request, id):
 #     aluno_ob = get_object_or_404(AlunoForm, pk=pk)
 #     return render(request, 'aluno/detalhes.html', {'aluno_ob': aluno_ob})
 
-@has_permission_decorator('ediar')
+@has_permission_decorator('editar')
 def sgc_aluno_editar(request, id):
     context ={}
     aluno_ob = get_object_or_404(Aluno, id=id)
