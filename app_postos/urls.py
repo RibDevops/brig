@@ -34,8 +34,7 @@ from django.contrib.auth import views as auth_views
 # ]
 
 urlpatterns = [
-    path('sgu', home, name='sgu'),
-
+   
     path('scp_espe_lista/', scp_espe_lista, name="scp_espe_lista"),
     path('scp_espe_nova/', scp_espe_nova, name="scp_espe_nova"),
     path('scp_espe_detalhes/<int:id>/', scp_espe_detalhes, name="scp_espe_detalhes"),
