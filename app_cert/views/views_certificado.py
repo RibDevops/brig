@@ -176,6 +176,10 @@ class GeraPDFTurma(View):
         # Obtendo todos os alunos da turma fornecida
         alunos_turma = Aluno.objects.filter(fk_turma=id_turma)
 
+        # Diretório temporário para armazenar os arquivos PDF
+        temp_dir = '/tmp/certificados_turma'
+        os.makedirs(temp_dir, exist_ok=True)
+
         # Lista para armazenar os caminhos dos arquivos PDF gerados
         pdf_paths = []
 
@@ -189,8 +193,10 @@ class GeraPDFTurma(View):
                 # Determinando o nome do arquivo
                 file_name = f"{aluno.aluno_nome}_{turma.turma}.pdf"
 
+                # Caminho completo do arquivo PDF
+                file_path = os.path.join(temp_dir, file_name)
+
                 # Salvando o PDF no sistema de arquivos temporário
-                file_path = f"/tmp/{file_name}"
                 with open(file_path, 'wb') as pdf_file:
                     pdf_file.write(response.content)
 
@@ -202,7 +208,7 @@ class GeraPDFTurma(View):
         with zipfile.ZipFile(zip_buffer, 'a', zipfile.ZIP_DEFLATED) as zip_file:
             for pdf_path in pdf_paths:
                 # Adicionando o PDF ao arquivo ZIP com o nome do aluno e turma
-                zip_file.write(pdf_path, arcname=pdf_path.split('/')[-1])
+                zip_file.write(pdf_path, arcname=file_name)
 
         # Configurando a resposta para o arquivo ZIP
         response = HttpResponse(
