@@ -115,6 +115,58 @@ def sgc_certificado_novo(request):
 
 
 
+# class GeraPDFTurma(View):
+
+#     def get(self, request, id_turma):
+#         # Obtendo a turma
+#         turma = Turma.objects.get(pk=id_turma)
+
+#         # Obtendo todos os alunos da turma fornecida
+#         alunos_turma = Aluno.objects.filter(fk_turma=id_turma)
+
+#         # Lista para armazenar as respostas de arquivo para download
+#         file_responses = []
+
+#         # Gerando os certificados de cada aluno
+#         for aluno in alunos_turma:
+#             # Chamando a view GeraPDFAluno para gerar o PDF de cada aluno
+#             response = GeraPDFAluno.as_view()(request, id=aluno.id)
+
+#             # Verificando se a resposta é um HttpResponse válido
+#             if isinstance(response, HttpResponse) and response.status_code == 200:
+#                 # Determinando o nome do arquivo
+#                 file_name = f"{aluno.aluno_nome}_{turma.turma}.pdf"
+
+#                 # Criando uma resposta de arquivo para download
+#                 file_response = FileResponse(
+#                     io.BytesIO(response.content),
+#                     content_type='application/pdf'
+#                 )
+#                 file_response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+#                 file_responses.append(file_response)
+
+#         # Combinando todos os certificados em um arquivo ZIP antes de enviar
+#         zip_buffer = io.BytesIO()
+#         with zipfile.ZipFile(zip_buffer, 'a', zipfile.ZIP_DEFLATED) as zip_file:
+#             for file_response in file_responses:
+#                 # Obtendo o nome do arquivo do response
+#                 file_name = file_response['Content-Disposition'].split('"')[1]
+
+#                 # Escrevendo o arquivo no arquivo ZIP
+#                 zip_file.writestr(file_name, file_response.getvalue())
+
+#         # Configurando a resposta para o arquivo ZIP
+#         response = HttpResponse(
+#             zip_buffer.getvalue(),
+#             content_type='application/zip'
+#         )
+#         response['Content-Disposition'] = f'attachment; filename="certificados_turma_{turma.turma}.zip"'
+
+#         return response
+
+       
+
+#------------------------------------------
 class GeraPDFTurma(View):
 
     def get(self, request, id_turma):
@@ -124,8 +176,8 @@ class GeraPDFTurma(View):
         # Obtendo todos os alunos da turma fornecida
         alunos_turma = Aluno.objects.filter(fk_turma=id_turma)
 
-        # Lista para armazenar as respostas de arquivo para download
-        file_responses = []
+        # Lista para armazenar os caminhos dos arquivos PDF gerados
+        pdf_paths = []
 
         # Gerando os certificados de cada aluno
         for aluno in alunos_turma:
@@ -137,23 +189,20 @@ class GeraPDFTurma(View):
                 # Determinando o nome do arquivo
                 file_name = f"{aluno.aluno_nome}_{turma.turma}.pdf"
 
-                # Criando uma resposta de arquivo para download
-                file_response = FileResponse(
-                    io.BytesIO(response.content),
-                    content_type='application/pdf'
-                )
-                file_response['Content-Disposition'] = f'attachment; filename="{file_name}"'
-                file_responses.append(file_response)
+                # Salvando o PDF no sistema de arquivos temporário
+                file_path = f"/tmp/{file_name}"
+                with open(file_path, 'wb') as pdf_file:
+                    pdf_file.write(response.content)
 
-        # Combinando todos os certificados em um arquivo ZIP antes de enviar
+                # Adicionando o caminho do arquivo à lista
+                pdf_paths.append(file_path)
+
+        # Criando o arquivo ZIP e adicionando os arquivos PDF
         zip_buffer = io.BytesIO()
         with zipfile.ZipFile(zip_buffer, 'a', zipfile.ZIP_DEFLATED) as zip_file:
-            for file_response in file_responses:
-                # Obtendo o nome do arquivo do response
-                file_name = file_response['Content-Disposition'].split('"')[1]
-
-                # Escrevendo o arquivo no arquivo ZIP
-                zip_file.writestr(file_name, file_response.getvalue())
+            for pdf_path in pdf_paths:
+                # Adicionando o PDF ao arquivo ZIP com o nome do aluno e turma
+                zip_file.write(pdf_path, arcname=pdf_path.split('/')[-1])
 
         # Configurando a resposta para o arquivo ZIP
         response = HttpResponse(
@@ -163,11 +212,6 @@ class GeraPDFTurma(View):
         response['Content-Disposition'] = f'attachment; filename="certificados_turma_{turma.turma}.zip"'
 
         return response
-
-       
-
-#------------------------------------------
-
 #------------------------------------------
 
 def verificar_pendencias(aluno):
