@@ -186,8 +186,10 @@ class GeraPDFTurma(View):
             # Verificando se a resposta é um HttpResponse válido
             if isinstance(response, HttpResponse) and response.status_code == 200:
                 # Determinando o nome do arquivo
+
                 file_name = f"{aluno.aluno_nome}_{turma.turma.replace('/', '_')}.pdf"  # Substituir espaços por '_'
                 file_name = file_name.replace(' ', '')
+
 
                 # Caminho completo do arquivo PDF
                 temp_dir = '/tmp/certificados_turma'  # Diretório temporário para armazenar os PDFs
@@ -217,6 +219,7 @@ class GeraPDFTurma(View):
         response['Content-Disposition'] = f'attachment; filename="certificados_turma_{turma.turma}.zip"'
 
         return response
+
 #------------------------------------------
 
 def verificar_pendencias(aluno):
