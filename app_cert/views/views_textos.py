@@ -3,8 +3,10 @@ from ..models import Textos
 from ..forms import TextoForm
 from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
+from django.contrib.auth.decorators import login_required
 
-@has_permission_decorator('novo')
+
+@login_required
 def sgc_texto_novo(request):
     if request.method == 'POST':
         form = TextoForm(request.POST)
@@ -16,7 +18,7 @@ def sgc_texto_novo(request):
     
     return render(request, 'texto/criar.html', {'form': form})
 
-@has_permission_decorator('lista')
+@login_required
 def sgc_texto_lista(request):
     dataset = Textos.objects.all()
     # dataset = Textos.objects.select_related(
@@ -27,7 +29,7 @@ def sgc_texto_lista(request):
     # print(dataset)
     return render(request, 'texto/lista.html', context)
 
-@has_permission_decorator('editar')
+@login_required
 def sgc_texto_editar(request, id):
     context ={}
     texto_ob = get_object_or_404(Textos, id=id)
@@ -44,7 +46,7 @@ def sgc_texto_editar(request, id):
     }
     return render(request, 'texto/editar.html', context)
 
-@has_permission_decorator('excluir')
+@login_required
 def sgc_texto_delete(request, id):
     context ={}
     texto_ob = get_object_or_404(Textos, id=id)

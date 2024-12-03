@@ -4,8 +4,10 @@ from ..forms import ImagemForm
 
 from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
+from django.contrib.auth.decorators import login_required
 
-@has_permission_decorator('novo')
+
+@login_required
 def sgc_imagem_nova(request):
     if request.method == 'POST':
         form = ImagemForm(request.POST, request.FILES)
@@ -17,7 +19,7 @@ def sgc_imagem_nova(request):
     
     return render(request, 'imagem/criar.html', {'form': form})
 
-@has_permission_decorator('lista')
+@login_required
 def sgc_imagem_lista(request):
     dataset = Imagem.objects.all()
     context = {"dataset": dataset}
@@ -25,7 +27,7 @@ def sgc_imagem_lista(request):
         print(imagem.__dict__)
     return render(request, 'imagem/lista.html', context)
 
-@has_permission_decorator('editar')
+@login_required
 def sgc_imagem_editar(request, id):
     context ={}
     assinatura_ob = get_object_or_404(Imagem, id=id)
@@ -42,7 +44,7 @@ def sgc_imagem_editar(request, id):
     }
     return render(request, 'imagem/editar.html', context)
 
-@has_permission_decorator('excluir')
+@login_required
 def sgc_imagem_delete(request, id):
     context ={}
     assinatura_ob = get_object_or_404(Imagem, id=id)

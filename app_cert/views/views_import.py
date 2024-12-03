@@ -9,6 +9,8 @@ from ..forms import CSVUploadForm
 from ..models import Aluno, Posto, Quadro, Especialidade, Om, Tratamento, Turma
 from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
+from django.contrib.auth.decorators import login_required
+
 
 
 # Baixe o corpus de nomes se ainda não tiver feito isso
@@ -30,7 +32,7 @@ def identificar_genero(nome, nomes_masculinos, nomes_femininos):
     else:
         return "1"
 
-@has_permission_decorator('import')
+@login_required
 def sgc_import_csv_view(request):
     if request.method == 'POST':
         form = CSVUploadForm(request.POST, request.FILES)

@@ -6,9 +6,12 @@ from django.db.models import Count
 from django.contrib import messages
 from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
+from django.contrib.auth.decorators import login_required
 
 
-@has_permission_decorator('lista')
+
+
+@login_required
 def scp_forca_lista(request):
     # Consulta para obter todas as OM ordenadas por força/orgão
     dataset = (
@@ -22,7 +25,7 @@ def scp_forca_lista(request):
     context = {"dataset": dataset}
     return render(request, 'forca/lista.html', context)
 
-@has_permission_decorator('lista')
+@login_required
 def scp_forca_detalhes(request, id):
     # Obtém a instância da Om com o ID fornecido ou retorna um erro 404 caso não exista
     # om = get_object_or_404(Om, pk=id)
@@ -36,7 +39,7 @@ def scp_forca_detalhes(request, id):
     }
     return render(request, 'forca/lista_detalhes.html', context)
 
-@has_permission_decorator('novo')
+@login_required
 def scp_forca_nova(request):
     if request.method == 'POST':
         form = ForcaForm(request.POST)
@@ -49,7 +52,7 @@ def scp_forca_nova(request):
     
     return render(request, 'forca/criar.html', {'form': form})
 
-@has_permission_decorator('editar')
+@login_required
 def scp_forca_editar(request, id):
     context ={}
     forca_ob = get_object_or_404(Forca_Orgao, id=id)
@@ -72,7 +75,7 @@ from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
 
 
-@has_permission_decorator('excluir')
+@login_required
 def scp_forca_delete(request, id):
     context ={}
     forca_ob = get_object_or_404(Forca_Orgao, id=id)

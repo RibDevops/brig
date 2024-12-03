@@ -1,0 +1,2 @@
+
+ERROR 2024-12-03 10:37:59,195 Thread-53 (process_request_thread) 129134917322304 basehttp basehttp.py 161 django.server log_message 450395 "POST /sgc_grade_nova/ HTTP/1.1" 500 83317

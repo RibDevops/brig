@@ -5,9 +5,9 @@ from ..forms import TurmaForm
 from django.contrib import messages
 from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
+from django.contrib.auth.decorators import login_required
 
-
-@has_permission_decorator('novo')
+@login_required
 def sgc_turma_nova(request):
     if request.method == 'POST':
         form = TurmaForm(request.POST)
@@ -20,7 +20,7 @@ def sgc_turma_nova(request):
     
     return render(request, 'turma/criar.html', {'form': form})
 
-@has_permission_decorator('lista')
+@login_required
 def sgc_turma_lista(request):
     # dataset = Turma.objects.all()
     dataset = Turma.objects.select_related(
@@ -41,7 +41,7 @@ def sgc_turma_lista(request):
     print(alunos_campos_faltando)
     return render(request, 'turma/lista.html', context)
 
-@has_permission_decorator('editar')
+@login_required
 def sgc_turma_editar(request, id):
     context ={}
     turma_ob = get_object_or_404(Turma, id=id)
@@ -59,7 +59,7 @@ def sgc_turma_editar(request, id):
     }
     return render(request, 'turma/editar.html', context)
 
-@has_permission_decorator('excluir')
+@login_required
 def sgc_turma_delete(request, id):
     context ={}
     turma_ob = get_object_or_404(Turma, id=id)
@@ -73,4 +73,3 @@ def sgc_turma_delete(request, id):
     }
     
     return render(request, 'turma/excluir.html', context)
-

@@ -3,8 +3,10 @@ from ..models import Tipo
 from ..forms import TipoForm
 from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
+from django.contrib.auth.decorators import login_required
 
-@has_permission_decorator('novo')
+
+@login_required
 def sgc_tipo_novo(request):
     if request.method == 'POST':
         form = TipoForm(request.POST)
@@ -16,14 +18,14 @@ def sgc_tipo_novo(request):
     
     return render(request, 'tipo/criar.html', {'form': form})
 
-@has_permission_decorator('lista')
+@login_required
 def sgc_tipo_lista(request):
     dataset = Tipo.objects.all()
     context = {"dataset": dataset}
     # print(dataset)
     return render(request, 'tipo/lista.html', context)
 
-@has_permission_decorator('editar')
+@login_required
 def sgc_tipo_editar(request, id):
     context ={}
     tipo_ob = get_object_or_404(Tipo, id=id)
@@ -40,7 +42,7 @@ def sgc_tipo_editar(request, id):
     }
     return render(request, 'tipo/editar.html', context)
 
-@has_permission_decorator('ecluir')
+@login_required
 def sgc_tipo_delete(request, id):
     context ={}
     tipo_ob = get_object_or_404(Tipo, id=id)

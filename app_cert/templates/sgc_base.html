@@ -67,18 +67,10 @@
                         <li><a class="dropdown-item" href="{% url 'scp_espe_lista' %}">Especialidade</a></li>
                     </ul>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navbar-text" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Perfil
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        {% if user|can:'cadastro_user' %}
-                        <li><a class="dropdown-item" href="{% url 'cadastro' %}">Usuários</a></li>
-                        {% endif %}
-                        <li><a class="dropdown-item" href="{% url 'reset' %}">Senha</a></li>
-                    </ul>
-                </li>
+                {% if request.user.is_staff %}
+                <li><a class="nav-link navbar-text" href="{% url 'cadastro' %}">Cadastro de usúario</a></li>
+                {% endif %}
+                
 
                 <li><a class="nav-link navbar-text" href="{% url 'sgc_certificado_manual' %}">Manual do usuário</a></li>
                 <li><a class="nav-link navbar-text" style="float:right;" href="{% url 'logout' %}">Sair</a></li>

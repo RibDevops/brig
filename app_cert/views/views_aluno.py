@@ -28,6 +28,8 @@ import os
 from django.contrib import messages
 from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
+from django.contrib.auth.decorators import login_required
+
 
 from itertools import count, groupby
 
@@ -122,7 +124,7 @@ def sgc_ajax_load_related_data_om(request):
 
     return JsonResponse(data)
 
-@has_permission_decorator('novo')
+@login_required
 def sgc_aluno_novo(request):
     if request.method == 'POST':
         aluno_nome = request.POST.get('aluno_nome')
@@ -163,7 +165,7 @@ def sgc_aluno_novo(request):
     
 #     return render(request, 'aluno/lista.html', context)
 
-@has_permission_decorator('lista')
+@login_required
 def sgc_aluno_lista(request):
     # Obtém todos os alunos
     dataset = (
@@ -176,7 +178,7 @@ def sgc_aluno_lista(request):
     context = {"dataset": dataset}
     return render(request, 'aluno/lista_turma.html', context)
 
-@has_permission_decorator('lista')
+@login_required
 def sgc_aluno_lista_detalhes(request, id):
     print(id)
     # Filtra o conjunto de dados de Aluno com base na turma específica
@@ -194,7 +196,7 @@ def sgc_aluno_lista_detalhes(request, id):
 #     aluno_ob = get_object_or_404(AlunoForm, pk=pk)
 #     return render(request, 'aluno/detalhes.html', {'aluno_ob': aluno_ob})
 
-@has_permission_decorator('editar')
+@login_required
 def sgc_aluno_editar(request, id):
     context ={}
     aluno_ob = get_object_or_404(Aluno, id=id)
@@ -214,7 +216,7 @@ def sgc_aluno_editar(request, id):
     }
     return render(request, 'aluno/editar.html', context)
 
-@has_permission_decorator('excluir')
+@login_required
 def sgc_aluno_delete(request, id):
     context ={}
     aluno_ob = get_object_or_404(Aluno, id=id)

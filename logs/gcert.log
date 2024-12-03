@@ -1,0 +1,194 @@
+
+WARNING 2024-10-21 10:42:42,824 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:42:45,327 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:42:51,223 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:43:41,773 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:43:44,624 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:43:52,805 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:45:50,022 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:46:17,384 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:46:24,795 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:50:43,185 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:56:20,318 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 10:57:37,131 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 11:05:35,420 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 11:07:23,718 log log.py 241 log_response Not Found: /sgc_turma_delete/12/
+WARNING 2024-10-21 13:36:38,310 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-10-21 13:54:54,825 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+WARNING 2024-11-14 10:56:08,570 log log.py 241 log_response Not Found: /sgc_aluno_lista_detalhes/None
+ERROR 2024-11-14 11:12:09,439 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+ERROR 2024-11-14 11:12:43,116 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0,5'
+ERROR 2024-11-14 11:13:43,328 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1.5'
+ERROR 2024-11-14 11:13:49,911 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1,5'
+ERROR 2024-11-14 11:14:21,083 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '30 MIN'
+ERROR 2024-11-14 11:14:31,728 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.5'
+ERROR 2024-11-14 11:46:49,017 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = float(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.5'
+ERROR 2024-11-14 11:51:19,502 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = post_data.get(f'tempo_{inst_num}', 0)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.5'
+ERROR 2024-11-14 11:53:18,314 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = post_data.get(f'tempo_{inst_num}', 0)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0,5'
+ERROR 2024-11-14 11:54:29,329 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = float(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.5'
+ERROR 2024-11-14 11:55:03,109 log log.py 241 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/venv/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.5'
+ERROR 2024-12-03 10:37:59,194 log log.py 224 log_response Internal Server Error: /sgc_grade_nova/
+Traceback (most recent call last):
+  File "/home/suporte/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/suporte/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/suporte/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/suporte/dev/doc/app_cert/views/views_grade.py", line 32, in sgc_grade_nova
+    tempo_value = int(post_data.get(f'tempo_{inst_num}', 0))
+ValueError: invalid literal for int() with base 10: ''

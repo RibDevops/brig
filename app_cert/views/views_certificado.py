@@ -32,6 +32,8 @@ from rolepermissions.roles import assign_role, get_user_roles
 from rolepermissions.decorators import has_permission_decorator
 
 from django.views import View
+from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -187,8 +189,11 @@ class GeraPDFTurma(View):
             if isinstance(response, HttpResponse) and response.status_code == 200:
                 # Determinando o nome do arquivo
 
-                file_name = f"{aluno.aluno_nome}_{turma.turma.replace('/', '_')}.pdf"  # Substituir espaços por '_'
-                file_name = file_name.replace(' ', '')
+               # file_name = f"{aluno.aluno_nome}_{turma.turma.replace('/', '_')}.pdf"  # Substituir espaços por '_'
+#                file_name = f"{aluno.fk_posto.posto_descricao}_{aluno.aluno_nome}_{turma.turma.replace('/', '_')}.pdf"  # Substituir espaços por '_'
+                posto_descricao = aluno.fk_posto.posto_descricao if aluno.fk_posto else ''
+
+                file_name = f"{posto_descricao}_{aluno.aluno_nome}_{turma.turma.replace('/', '_')}.pdf"  # Substituir espaços por '_'                file_name = file_name.replace(' ', '_')
 
 
                 # Caminho completo do arquivo PDF
@@ -235,7 +240,7 @@ def verificar_pendencias(aluno):
         aluno.fk_forca_orgao is None or
         aluno.fk_posto is None or
         aluno.fk_quadro is None or
-        aluno.fk_especialidade is None or
+        #aluno.fk_especialidade is None or
         aluno.fk_in_ex is None or
         aluno.fk_tratamento is None
     )
@@ -385,8 +390,19 @@ class GeraPDFAluno(View):
         ).get(id=id)
 
     
-        posto_quadro_esp = f"{aluno.fk_posto} {aluno.fk_quadro} {aluno.fk_especialidade} "
+#        posto_quadro_esp = f"{aluno.fk_posto.posto_descricao} {aluno.fk_quadro} {aluno.fk_especialidade} "
+# Verifica se algum campo está vazio e substitui por um espaço vazio
+        # Verifica se fk_posto não é None antes de acessar o atributo posto_descricao
+        posto_descricao = aluno.fk_posto.posto_descricao if aluno.fk_posto else ''
 
+        # Verifica se fk_quadro não é None antes de acessar o atributo
+        quadro = aluno.fk_quadro if aluno.fk_quadro else ''
+
+        # Verifica se fk_especialidade não é None antes de acessar o atributo
+        especialidade = aluno.fk_especialidade if aluno.fk_especialidade else ''
+
+        # Monta a string final
+        posto_quadro_esp = f"{posto_descricao} {quadro} {especialidade} "
         codigo_hash = aluno.codigo_hash
         qrcode = aluno.qrcode
 
@@ -534,11 +550,11 @@ class GeraPDFAluno(View):
             return HttpResponseRedirect(reverse_lazy('certificado_lista'))
 
 
-@has_permission_decorator('novo')
+@login_required
 def sgc_certificado_manual(request):
     return render(request, 'certificado/manual.html')
 
-@has_permission_decorator('novo')
+@login_required
 def sgc_certificado_ext(request):
     if request.method == 'POST':
         form = CertExtForm(request.POST)
